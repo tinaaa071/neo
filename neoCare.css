@@ -1315,12 +1315,10 @@ body {
   display: flex;
   align-items: center;
   gap: var(--sys-size-spacing-sm);
-  margin-bottom: var(--sys-size-spacing-md);
 }
 
 .year-input {
-  padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-sm)
-    var(--sys-size-spacing-sm) var(--sys-size-spacing-md);
+  padding: var(--sys-size-spacing-sm);
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background: var(--sys-color-surface-primary);
@@ -1689,7 +1687,7 @@ body {
 /* 結案彈出視窗樣式 */
 .form-textarea {
   width: 100%;
-  padding: var(--sys-size-spacing-md);
+  padding: var(--sys-size-spacing-sm);
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background-color: var(--sys-color-surface-primary);
@@ -1874,4 +1872,86 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--sys-color-neutral-200) var(--sys-color-neutral-100);
+}
+
+/* 新增的肺炎雙球菌疫苗相關樣式 */
+/* 修改 hidden class 以支援過渡 */
+.hidden {
+  /* display: none !important; */ /* 移除 display none */
+  max-height: 0 !important; /* 隱藏時高度為 0 */
+  opacity: 0 !important; /* 隱藏時透明度為 0 */
+  overflow: hidden !important; /* 隱藏溢出內容 */
+  /* 保持 visbility 為 hidden 以確保無法互動 */
+  visibility: hidden !important;
+}
+
+.vaccine-container {
+  display: block;
+}
+
+.vaccination-details-fields {
+  margin-top: var(--sys-size-spacing-md);
+  margin-left: var(--sys-size-spacing-4xl);
+  border-left: 1.5px solid var(--sys-color-primary-500);
+  padding-left: var(--sys-size-spacing-md);
+
+  /* 新增過渡效果 */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+    visibility 0.3s ease-out;
+  /* 設定一個足夠大的 max-height，確保內容能完全顯示 */
+  max-height: 300px; /* 設置一個預設的 max-height */
+  opacity: 1;
+  visibility: visible;
+}
+
+.vaccination-year-label {
+  margin-bottom: var(--sys-size-spacing-xs, 5px);
+}
+
+.vaccination-year-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.vaccination-year-input {
+  flex-grow: 1;
+  max-width: 200px;
+  margin-right: 0;
+  margin-bottom: var(--sys-size-spacing-lg);
+}
+
+.vaccination-unknown-checkbox {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+/* 停用狀態的文字輸入框樣式 */
+.form-textarea:disabled {
+  background-color: var(--sys-color-surface-tertiary); /* 使用較淺的背景色 */
+  color: var(--sys-color-text-tertiary); /* 使用較淺的文字顏色 */
+  border-color: var(--sys-color-border-primary); /* 保持邊框顏色或變淡 */
+  cursor: not-allowed; /* 顯示禁止游標 */
+  opacity: 0.7; /* 可選：降低透明度 */
+}
+
+/* 停用狀態的 checkbox 輸入框樣式 */
+.checkbox-option input[type="checkbox"]:disabled {
+  border-color: var(--sys-color-border-primary); /* 邊框變淡 */
+  background-color: var(--sys-color-surface-tertiary); /* 背景變淡 */
+  cursor: not-allowed; /* 顯示禁止游標 */
+  opacity: 0.7; /* 可選：降低透明度 */
+}
+
+/* 停用狀態的 checkbox 輸入框被選中時的樣式調整 */
+.checkbox-option input[type="checkbox"]:disabled:checked {
+  background-color: var(--sys-color-neutral-300); /* 被選中且停用時的背景色 */
+  border-color: var(--sys-color-neutral-300); /* 被選中且停用時的邊框色 */
+}
+
+/* 停用狀態的 checkbox 標籤樣式 */
+.checkbox-option input[type="checkbox"]:disabled + label {
+  color: var(--sys-color-text-tertiary); /* 文字顏色變淡 */
+  cursor: not-allowed; /* 顯示禁止游標 */
+  opacity: 0.7; /* 可選：降低透明度 */
 }
