@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neova - 收案列表</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom styles for this template-->
+    <link href="/neoCare.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 側邊欄 -->
+      <div class="sidebar">
+        <button class="sidebar-toggle" title="縮小側邊欄">
+          <i class="fa-solid fa-angles-left"></i>
+        </button>
+        <div class="sidebar-content">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.85807 2C5.07072 2 2 5.07071 2 8.85807C2 12.6454 5.07072 15.7161 8.85807 15.7161C12.6454 15.7161 15.7161 12.6454 15.7161 8.85807"
+                  stroke="#CC20FF"
+                  stroke-width="3.33321"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M17.1519 15.7495C20.9392 15.7495 24.0099 12.6788 24.0099 8.89143C24.0099 5.10408 20.9392 2.03336 17.1519 2.03336C13.3645 2.03336 10.2938 5.10408 10.2938 8.89143"
+                  stroke="#CC20FF"
+                  stroke-width="3.33321"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <svg
+                width="72"
+                height="14"
+                viewBox="0 0 72 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.902893 6.83296C0.902893 5.09677 1.31751 3.67227 2.14601 2.55872C2.97523 1.44589 4.1622 0.888763 5.70835 0.888763H8.56457C10.11 0.888763 11.2977 1.44517 12.1269 2.55872C12.9561 3.67227 13.37 5.09677 13.37 6.83296V12.3359C13.37 12.6296 13.2527 12.7771 13.0173 12.7771C12.7819 12.7771 12.6646 12.6303 12.6646 12.3359V6.83296C12.6646 5.33503 12.3061 4.10992 11.5892 3.15761C10.8723 2.2053 9.85303 1.7295 8.53146 1.7295H5.7422C4.42062 1.7295 3.40136 2.2053 2.68442 3.15761C1.96749 4.10992 1.60903 5.33503 1.60903 6.83296V12.3359C1.60903 12.6296 1.49171 12.7771 1.25633 12.7771C1.02095 12.7771 0.903614 12.6303 0.903614 12.3359V6.83296H0.902893Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M17.5291 3.03165C16.818 3.89974 16.4285 5.02697 16.3616 6.41332H26.2244C26.4483 6.41332 26.5606 6.55368 26.5606 6.83369C26.5606 7.1137 26.4483 7.25406 26.2244 7.25406H16.3616C16.4285 8.64041 16.818 9.76763 17.5291 10.6357C18.2403 11.5038 19.2293 11.9379 20.4948 11.9379H27.2833C27.5072 11.9379 27.6194 12.0782 27.6194 12.3575C27.6194 12.6368 27.5072 12.7779 27.2833 12.7779H20.4616C18.9155 12.7779 17.7285 12.2215 16.8993 11.1079C16.0701 9.9951 15.6562 8.56987 15.6562 6.83369C15.6562 5.09751 16.0708 3.673 16.8993 2.55945C17.7285 1.44663 18.9155 0.889496 20.4616 0.889496H27.2833C27.5072 0.889496 27.6194 1.02986 27.6194 1.30914C27.6194 1.58843 27.5072 1.72951 27.2833 1.72951H20.4948C19.2293 1.72951 18.2403 2.16356 17.5291 3.03165Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M41.3124 2.55872C42.1416 3.67155 42.5555 5.09677 42.5555 6.83296C42.5555 8.56914 42.1409 9.99365 41.3124 11.1072C40.4832 12.22 39.2962 12.7771 37.7501 12.7771H34.4231C32.8769 12.7771 31.69 12.2207 30.8608 11.1072C30.0315 9.99437 29.6176 8.56914 29.6176 6.83296C29.6176 5.09677 30.0323 3.67227 30.8608 2.55872C31.69 1.44589 32.8769 0.888763 34.4231 0.888763H37.7501C39.2962 0.888763 40.4832 1.44517 41.3124 2.55872ZM34.4569 1.7295C33.1354 1.7295 32.1161 2.2053 31.3992 3.15761C30.6822 4.10992 30.3238 5.33503 30.3238 6.83296C30.3238 8.33088 30.6822 9.53873 31.3992 10.4982C32.1161 11.4577 33.1354 11.9371 34.4569 11.9371H37.717C39.0385 11.9371 40.0578 11.4577 40.7747 10.4982C41.4916 9.53945 41.8501 8.31721 41.8501 6.83296C41.8501 5.34871 41.4916 4.10992 40.7747 3.15761C40.0578 2.2053 39.0385 1.7295 37.717 1.7295H34.4569Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M50.9406 12.5663C50.8621 12.7066 50.7614 12.7764 50.6383 12.7764C50.5152 12.7764 50.4144 12.7066 50.3359 12.5663L44.052 1.62369C43.9959 1.53947 43.9678 1.44158 43.9678 1.33001C43.9678 1.03632 44.0851 0.888763 44.3205 0.888763C44.4436 0.888763 44.5443 0.96578 44.6228 1.11982L50.6548 11.6629L56.7034 1.11982C56.7934 0.96578 56.8884 0.888763 56.9892 0.888763C57.213 0.888763 57.3253 1.02912 57.3253 1.30841C57.3253 1.4207 57.2972 1.51859 57.2411 1.60209L50.9399 12.5655L50.9406 12.5663Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M61.3238 12.7764C60.5061 12.7764 59.8734 12.4756 59.425 11.8731C58.9765 11.2706 58.7527 10.5083 58.7527 9.58407C58.7527 8.65983 58.9737 7.90044 59.4163 7.30516C59.859 6.70987 60.4946 6.41259 61.3231 6.41259H70.161C70.094 5.02623 69.7075 3.89901 69.0013 3.03092C68.2959 2.16283 67.3098 1.72878 66.0444 1.72878H59.407C59.1831 1.72878 59.0708 1.58842 59.0708 1.30841C59.0708 1.0284 59.1831 0.888763 59.407 0.888763H66.0775C67.6236 0.888763 68.8106 1.44517 69.6398 2.55872C70.469 3.67227 70.8829 5.09677 70.8829 6.83296V7.71472C70.8829 9.19897 70.5302 10.4133 69.8241 11.3584C69.1187 12.3035 68.1045 12.7764 66.7829 12.7764H61.3224H61.3238ZM69.2634 10.7185C69.8738 9.90655 70.179 8.86354 70.179 7.58948V7.25332H61.3411C60.7365 7.25332 60.2715 7.47359 59.9461 7.91483C59.6215 8.35608 59.4588 8.91969 59.4588 9.60567C59.4588 10.2916 59.6215 10.8517 59.9461 11.2857C60.2708 11.7198 60.7358 11.9364 61.3411 11.9364H66.6504C67.782 11.9364 68.653 11.5304 69.2634 10.7185Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="demo-badge-container">
+            <div class="demo-badge">
+              <div class="user-info-header">
+                <div class="user-info-left">
+                  <i class="fa-solid fa-circle-user"></i>
+                  <span>Demo測試帳號</span>
+                </div>
+                <button class="more-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+              <span class="expiry-time"
+                >自動登出時間：<span class="number">3000</span> 秒</span
+              >
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-clipboard-list"></i></span>
+                <span>個案列表</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item active">收案</div>
+              <div class="nav-item">轉案</div>
+              <div class="nav-item">清冊</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-users"></i></span>
+                <span>個案</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">基本表單</div>
+              <div class="nav-item">評估表單</div>
+              <div class="nav-item">家庭照護技能</div>
+              <div class="nav-item">四個月評估表</div>
+              <div class="nav-item">呼吸表單</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-user"></i></span>
+                <span>人事</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">人事列表</div>
+              <div class="nav-item">人事管理</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-hospital"></i></span>
+                <span>健保</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">健保作業</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-chart-bar"></i></span>
+                <span>行政</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">一般設定</div>
+              <div class="nav-item">一般行政</div>
+              <div class="nav-item">統計報表</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主內容區 -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">收案列表</h1>
+          <div class="header-actions">
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="搜尋" />
+              <button class="search-btn" title="搜尋">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div class="select-wrapper">
+              <select class="region-select">
+                <option>全部區域</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+            <button class="btn btn-primary">
+              <i class="fa-solid fa-list"></i> 區域管理
+            </button>
+            <button class="btn btn-secondary">
+              <i class="fas fa-plus"></i> 新增個案
+            </button>
+          </div>
+        </div>
+
+        <div class="sub-content">
+          <div class="tabs">
+            <div class="tab active">全部</div>
+            <div class="tab">一般居護</div>
+            <div class="tab">四階 (IDS)</div>
+            <div class="tab">安寧照護</div>
+            <div class="tab">居整</div>
+            <div class="tab">居整(呼吸器)</div>
+            <div class="tab">居整(安寧)</div>
+            <div class="tab">HAH</div>
+            <div class="tab">自費</div>
+            <div class="tab">長照2.0</div>
+          </div>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>
+                    <span>區域</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>案號</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>姓名</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>性別</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>年齡</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>類型</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>收案日</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>
+                    <span>主責人員</span
+                    ><button class="sort-btn">
+                      <i class="fas fa-sort-up"></i
+                      ><i class="fas fa-sort-down"></i>
+                    </button>
+                  </th>
+                  <th>功能</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>全區</td>
+                  <td>0002</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小美
+                    </button>
+                  </td>
+                  <td><i class="fas fa-venus"></i></td>
+                  <td>70歲0個月</td>
+                  <td>
+                    <span class="status-badge status-general">一般居護</span>
+                  </td>
+                  <td>2025-04-30</td>
+                  <td>
+                    黃護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>全區</td>
+                  <td>0003</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小名
+                    </button>
+                  </td>
+                  <td><i class="fas fa-mars"></i></td>
+                  <td>85歲4個月</td>
+                  <td>
+                    <span class="status-badge status-residential">居整</span>
+                  </td>
+                  <td>2025-04-30</td>
+                  <td>
+                    黃護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>新北</td>
+                  <td>0004</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小帥
+                    </button>
+                  </td>
+                  <td><i class="fas fa-mars"></i></td>
+                  <td>46歲7個月</td>
+                  <td><span class="status-badge status-hah">HAH</span></td>
+                  <td>2025-04-30</td>
+                  <td>
+                    黃護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>台北</td>
+                  <td>0005</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小華
+                    </button>
+                  </td>
+                  <td><i class="fas fa-venus"></i></td>
+                  <td>65歲2個月</td>
+                  <td>
+                    <span class="status-badge status-ids">四階 (IDS)</span>
+                  </td>
+                  <td>2025-04-29</td>
+                  <td>
+                    林護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>桃園</td>
+                  <td>0006</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小明
+                    </button>
+                  </td>
+                  <td><i class="fas fa-mars"></i></td>
+                  <td>78歲9個月</td>
+                  <td>
+                    <span class="status-badge status-hospice">安寧照護</span>
+                  </td>
+                  <td>2025-04-28</td>
+                  <td>
+                    王護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>台中</td>
+                  <td>0007</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小芳
+                    </button>
+                  </td>
+                  <td><i class="fas fa-venus"></i></td>
+                  <td>82歲3個月</td>
+                  <td>
+                    <span class="status-badge status-residential"
+                      >居整(呼吸器)</span
+                    >
+                  </td>
+                  <td>2025-04-27</td>
+                  <td>
+                    張護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>高雄</td>
+                  <td>0008</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小強
+                    </button>
+                  </td>
+                  <td><i class="fas fa-mars"></i></td>
+                  <td>75歲6個月</td>
+                  <td>
+                    <span class="status-badge status-hospice">居整(安寧)</span>
+                  </td>
+                  <td>2025-04-26</td>
+                  <td>
+                    李護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>台南</td>
+                  <td>0009</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小玲
+                    </button>
+                  </td>
+                  <td><i class="fas fa-venus"></i></td>
+                  <td>68歲1個月</td>
+                  <td>
+                    <span class="status-badge status-self-pay">自費</span>
+                  </td>
+                  <td>2025-04-25</td>
+                  <td>
+                    陳護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>新竹</td>
+                  <td>0010</td>
+                  <td>
+                    <button
+                      class="name-btn"
+                      onclick="window.location.href='table.html'"
+                    >
+                      小偉
+                    </button>
+                  </td>
+                  <td><i class="fas fa-mars"></i></td>
+                  <td>72歲8個月</td>
+                  <td><span class="status-badge status-ltc">長照2.0</span></td>
+                  <td>2025-04-24</td>
+                  <td>
+                    吳護師
+                    <button class="action-btn" data-tooltip="編輯主責人員">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="action-btn" data-tooltip="修改案號、類型">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="變更區域">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="action-btn" data-tooltip="結案">
+                      <i class="fas fa-user-slash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="pagination">
+              <div>顯示第 1 至 3 筆結果，共 3 筆</div>
+              <div class="pagination-nav">
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer" id="footer">
+          Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 將下拉選單移到這裡 -->
+    <div class="more-options-dropdown">
+      <a href="#" class="dropdown-item">
+        <i class="fas fa-lock"></i>
+        <span>變更密碼</span>
+      </a>
+      <a href="#" class="dropdown-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>登出</span>
+      </a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const moreBtn = document.querySelector(".more-btn");
+        const dropdown = document.querySelector(".more-options-dropdown");
+        const demoBadgeContainer = document.querySelector(
+          ".demo-badge-container"
+        );
+
+        moreBtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+
+          // 計算下拉選單的位置
+          const containerRect = demoBadgeContainer.getBoundingClientRect();
+          const btnRect = moreBtn.getBoundingClientRect();
+
+          // 設置下拉選單的位置
+          dropdown.style.top = `${btnRect.top}px`;
+          dropdown.style.left = `${containerRect.right + 8}px`;
+
+          dropdown.classList.toggle("show");
+        });
+
+        // 點擊其他地方時關閉下拉選單
+        document.addEventListener("click", function (event) {
+          if (
+            !dropdown.contains(event.target) &&
+            !moreBtn.contains(event.target)
+          ) {
+            dropdown.classList.remove("show");
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 更新頁尾年份
+        const currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+
+        // 編輯主責人員彈出視窗功能
+        const editStaffBtns = document.querySelectorAll(
+          '.action-btn[data-tooltip="編輯主責人員"]'
+        );
+        const modal = document.getElementById("editStaffModal");
+        const closeBtn = modal.querySelector(".close-btn");
+        const cancelBtn = modal.querySelector(".cancel-btn");
+        const confirmBtn = modal.querySelector(".confirm-btn");
+
+        // 打開彈出視窗
+        editStaffBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            modal.classList.add("show");
+          });
+        });
+
+        // 關閉彈出視窗的函數
+        function closeModal() {
+          modal.classList.remove("show");
+        }
+
+        // 點擊關閉按鈕
+        closeBtn.addEventListener("click", closeModal);
+
+        // 點擊取消按鈕
+        cancelBtn.addEventListener("click", closeModal);
+
+        // 點擊確認按鈕
+        confirmBtn.addEventListener("click", function () {
+          const selectedStaff = document.getElementById("staffSelect").value;
+          if (selectedStaff) {
+            // TODO: 處理確認邏輯
+            closeModal();
+          }
+        });
+
+        // 點擊彈出視窗外部關閉
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+        // 獲取所有導航區塊
+        const navSections = document.querySelectorAll(".nav-section");
+        const sidebar = document.querySelector(".sidebar");
+        const sidebarToggle = document.querySelector(".sidebar-toggle");
+
+        // 搜尋功能
+        const searchBtn = document.querySelector(".search-btn");
+        const searchInput = document.querySelector(".search-input");
+
+        searchBtn.addEventListener("click", function () {
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            // 這裡可以添加搜尋邏輯
+            console.log("搜尋:", searchTerm);
+            // TODO: 實作搜尋功能
+          }
+        });
+
+        // 按下 Enter 鍵也可以搜尋
+        searchInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            searchBtn.click();
+          }
+        });
+
+        // 為每個導航區塊添加點擊事件
+        navSections.forEach((section) => {
+          const header = section.querySelector(".nav-header");
+
+          header.addEventListener("click", () => {
+            // 如果側邊欄是收合狀態，先展開側邊欄
+            if (sidebar.classList.contains("minimal")) {
+              sidebar.classList.remove("minimal");
+            }
+            // 切換收合狀態
+            section.classList.toggle("collapsed");
+          });
+        });
+
+        // 側邊欄縮小功能
+        sidebarToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("minimal");
+        });
+
+        // 排序按鈕功能
+        const sortButtons = document.querySelectorAll(".sort-btn");
+        const tableBody = document.querySelector(".table tbody");
+
+        function sortTable(columnIndex, direction) {
+          const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+          rows.sort((a, b) => {
+            const aValue = a.cells[columnIndex].textContent.trim();
+            const bValue = b.cells[columnIndex].textContent.trim();
+
+            // 處理數字類型
+            if (!isNaN(aValue) && !isNaN(bValue)) {
+              return direction === "asc" ? aValue - bValue : bValue - aValue;
+            }
+
+            // 處理日期類型
+            if (
+              aValue.match(/^\d{4}-\d{2}-\d{2}$/) &&
+              bValue.match(/^\d{4}-\d{2}-\d{2}$/)
+            ) {
+              return direction === "asc"
+                ? new Date(aValue) - new Date(bValue)
+                : new Date(bValue) - new Date(aValue);
+            }
+
+            // 處理文字類型
+            return direction === "asc"
+              ? aValue.localeCompare(bValue, "zh-TW")
+              : bValue.localeCompare(aValue, "zh-TW");
+          });
+
+          // 清空表格並重新添加排序後的行
+          tableBody.innerHTML = "";
+          rows.forEach((row) => tableBody.appendChild(row));
+        }
+
+        sortButtons.forEach((button, index) => {
+          button.addEventListener("click", function () {
+            // 移除其他按鈕的狀態
+            sortButtons.forEach((btn) => {
+              if (btn !== this) {
+                btn.classList.remove("active", "asc", "desc");
+              }
+            });
+
+            // 切換當前按鈕的狀態並執行排序
+            if (!this.classList.contains("active")) {
+              // 第一次點擊：升序
+              this.classList.add("active", "asc");
+              this.classList.remove("desc");
+              sortTable(index, "asc");
+            } else if (this.classList.contains("asc")) {
+              // 第二次點擊：降序
+              this.classList.remove("asc");
+              this.classList.add("desc");
+              sortTable(index, "desc");
+            } else {
+              // 第三次點擊：恢復預設
+              this.classList.remove("active", "desc");
+              // 恢復原始順序（可以根據需要實現）
+              sortTable(index, "default");
+            }
+          });
+        });
+
+        // 結案按鈕功能
+        const closeCaseBtns = document.querySelectorAll(
+          '.action-btn[data-tooltip="結案"]'
+        );
+        const closeCaseModal = document.getElementById("closeCaseModal");
+        const closeCaseCloseBtn = closeCaseModal.querySelector(".close-btn");
+        const closeCaseCancelBtn = closeCaseModal.querySelector(".cancel-btn");
+        const closeCaseConfirmBtn =
+          closeCaseModal.querySelector(".confirm-btn");
+        const caseNameSpan = document.getElementById("caseName");
+        const caseIdSpan = document.getElementById("caseId");
+
+        // 打開結案彈出視窗
+        closeCaseBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // 獲取當前行的個案資料
+            const row = this.closest("tr");
+            const name = row.cells[2].textContent;
+            const id = row.cells[1].textContent;
+
+            // 更新彈出視窗標題
+            caseNameSpan.textContent = name;
+            caseIdSpan.textContent = id;
+
+            // 設置預設日期為今天
+            document.getElementById("closeDate").valueAsDate = new Date();
+
+            closeCaseModal.classList.add("show");
+          });
+        });
+
+        // 關閉結案彈出視窗的函數
+        function closeCloseCaseModal() {
+          closeCaseModal.classList.remove("show");
+          // 重置表單
+          document.getElementById("closeReason").value = "";
+          document.getElementById("closeDate").value = "";
+        }
+
+        // 點擊關閉按鈕
+        closeCaseCloseBtn.addEventListener("click", closeCloseCaseModal);
+
+        // 點擊取消按鈕
+        closeCaseCancelBtn.addEventListener("click", closeCloseCaseModal);
+
+        // 點擊確認按鈕
+        closeCaseConfirmBtn.addEventListener("click", function () {
+          const closeReason = document.getElementById("closeReason").value;
+          const closeDate = document.getElementById("closeDate").value;
+
+          if (closeReason && closeDate) {
+            // TODO: 處理結案確認邏輯
+            console.log("結案原因:", closeReason);
+            console.log("結案日期:", closeDate);
+            closeCloseCaseModal();
+          } else {
+            alert("請填寫完整資訊");
+          }
+        });
+
+        // 點擊彈出視窗外部關閉
+        closeCaseModal.addEventListener("click", function (e) {
+          if (e.target === closeCaseModal) {
+            closeCloseCaseModal();
+          }
+        });
+      });
+    </script>
+
+    <!-- 編輯主責人員彈出視窗 -->
+    <div class="modal" id="editStaffModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>編輯主責人員</h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="staffSelect">選擇主責人員</label>
+            <div class="select-wrapper">
+              <select id="staffSelect" class="staffSelect">
+                <option value="">請選擇主責人員</option>
+                <option value="1">黃護師</option>
+                <option value="2">林護師</option>
+                <option value="3">王護師</option>
+                <option value="4">張護師</option>
+                <option value="5">李護師</option>
+                <option value="6">陳護師</option>
+                <option value="7">吳護師</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 結案確認彈出視窗 -->
+    <div class="modal" id="closeCaseModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>
+            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
+          </h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="closeReason">結案原因</label>
+            <div class="select-wrapper">
+              <select id="closeReason" class="staffSelect">
+                <option value="">請選擇結案原因</option>
+                <option value="1">個案已康復</option>
+                <option value="2">個案轉院</option>
+                <option value="3">個案拒絕服務</option>
+                <option value="4">個案過世</option>
+                <option value="5">其他原因</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="closeDate">結案日期</label>
+            <div class="date-input-wrapper">
+              <input type="date" id="closeDate" class="form-date" required />
+              <i class="fa-regular fa-calendar date-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認結案</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
