@@ -833,16 +833,6 @@ body {
 }
 
 .btn-primary {
-  background: var(--comp-color-button-tertiary-bg);
-  color: var(--comp-color-button-tertiary-text);
-}
-
-.btn-primary:hover {
-  background: var(--comp-color-button-tertiary-bg-hover);
-  opacity: 0.9;
-}
-
-.btn-secondary {
   background: linear-gradient(
     135deg,
     var(--sys-color-primary-500),
@@ -851,7 +841,7 @@ body {
   color: var(--sys-color-text-inverse);
 }
 
-.btn-secondary:hover {
+.btn-primary:hover {
   opacity: 0.9;
   background: linear-gradient(
     135deg,
@@ -860,10 +850,19 @@ body {
   );
 }
 
+.btn-secondary {
+  background: var(--comp-color-button-tertiary-bg);
+  color: var(--comp-color-button-tertiary-text);
+}
+
+.btn-secondary:hover {
+  background: var(--comp-color-button-tertiary-bg-hover);
+  opacity: 0.9;
+}
+
 .btn-danger {
   background: var(--comp-color-button-danger-bg);
   color: var(--comp-color-button-danger-text);
-  border: 1.5px solid var(--comp-color-button-danger-border);
 }
 
 .btn-danger:hover {
@@ -874,7 +873,6 @@ body {
 .btn-dark {
   background: var(--comp-color-button-dark-bg);
   color: var(--comp-color-button-dark-text);
-  border: 1.5px solid var(--comp-color-button-dark-border);
 }
 
 .btn-dark:hover {
@@ -1700,7 +1698,6 @@ body {
 .form-select:focus {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .modal-footer {
@@ -1716,25 +1713,25 @@ body {
   padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-lg);
 }
 
-.modal-footer .cancel-btn {
+.cancel-btn {
   background: transparent;
   border: 1.5px solid var(--sys-color-border-primary);
   color: var(--sys-color-text-secondary);
 }
 
-.modal-footer .cancel-btn:hover {
+.cancel-btn:hover {
   background: var(--sys-color-surface-secondary);
   border-color: var(--sys-color-border-secondary);
   color: var(--sys-color-text-primary);
 }
 
-.modal-footer .confirm-btn {
+.confirm-btn {
   background: var(--sys-color-primary-500);
   border: 1.5px solid var(--sys-color-primary-500);
   color: var(--sys-color-text-inverse);
 }
 
-.modal-footer .confirm-btn:hover {
+.confirm-btn:hover {
   background: var(--sys-color-primary-700);
   border-color: var(--sys-color-primary-700);
 }
@@ -1756,7 +1753,6 @@ body {
 .form-textarea:focus {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .form-textarea::placeholder {
@@ -1853,7 +1849,6 @@ body {
 .form-date:focus-within {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .form-date:focus + .date-icon,
@@ -1863,7 +1858,6 @@ body {
 
 .form-date:in-range {
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .form-date:in-range + .date-icon {
@@ -2100,7 +2094,6 @@ body {
 .form-time:focus-within {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .form-time:focus + .time-icon,
@@ -2116,7 +2109,6 @@ body {
 .form-time:in-range:focus-within {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
-  box-shadow: var(--sys-shadow-inner);
 }
 
 .form-time:in-range:focus + .time-icon {
@@ -2148,4 +2140,50 @@ body {
 .form-time:disabled:focus {
   border-color: var(--sys-color-border-primary);
   box-shadow: none;
+}
+
+/* Button Showcase - 按鈕展示 */
+.button-section {
+  margin-bottom: var(--sys-size-spacing-xl);
+  padding: var(--sys-size-spacing-md);
+  border: 1px solid var(--sys-color-border-primary);
+  border-radius: var(--sys-size-radius-sm);
+  background-color: var(--sys-color-surface-primary);
+}
+
+.button-section h3 {
+  margin-bottom: var(--sys-size-spacing-md);
+  color: var(--sys-color-text-primary);
+}
+
+.button-group {
+  display: flex;
+  gap: var(--sys-size-spacing-md);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.style-description,
+.js-description {
+  background-color: var(--sys-color-surface-secondary);
+  padding: var(--sys-size-spacing-md);
+  border-radius: var(--sys-size-radius-sm);
+}
+
+.style-description ul,
+.js-description ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.style-description li,
+.js-description li {
+  margin-bottom: var(--sys-size-spacing-sm);
+}
+
+code {
+  background-color: var(--sys-color-surface-tertiary);
+  padding: var(--sys-size-spacing-xs) var(--sys-size-spacing-sm);
+  border-radius: var(--sys-size-radius-xs);
+  font-family: monospace;
 }

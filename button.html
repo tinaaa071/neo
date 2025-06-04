@@ -191,292 +191,129 @@
       <!-- 主內容區 -->
       <div class="main-content">
         <div class="header">
-          <div class="title-container">
-            <button class="back-btn" title="返回">
-              <i class="fas fa-arrow-left"></i>
-            </button>
-            <h1 class="page-title">健康紀錄</h1>
-          </div>
-          <div class="header-actions">
-            <div class="select-wrapper">
-              <span>選擇個案：</span>
-              <select class="region-select">
-                <option>小美【002】</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-            <div class="select-wrapper">
-              <span style="white-space: nowrap">選擇日期：</span>
-              <div class="date-input-wrapper">
-                <input
-                  type="date"
-                  class="form-date"
-                  value="2025-05-16"
-                  required
-                />
-                <i class="fa-regular fa-calendar date-icon"></i>
-              </div>
-            </div>
-            <button class="btn btn-danger">
-              <i class="fa-solid fa-trash"></i> 刪除個案
-            </button>
-            <button class="btn btn-primary">
-              <i class="fas fa-plus"></i> 新增個案
-            </button>
-            <button class="btn btn-dark">
-              <i class="fa-solid fa-print"></i> 列印
-            </button>
-          </div>
-        </div>
-
-        <!-- 個案資料表格 -->
-        <div class="table-container case-data-table-container">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>區域</th>
-                <th>居字號</th>
-                <th>個案</th>
-                <th>性別</th>
-                <th>年齡</th>
-                <th>生日</th>
-                <th>收案日</th>
-                <th>診斷</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>中壢區</td>
-                <td>0002</td>
-                <td>小美</td>
-                <td><i class="fas fa-venus"></i></td>
-                <td>72歲8個月</td>
-                <td>2025-04-30</td>
-                <td>2025-04-30</td>
-                <td>161789</td>
-              </tr>
-            </tbody>
-          </table>
+          <h1 class="page-title">按鈕展示</h1>
         </div>
 
         <div class="sub-content">
           <div class="form-sections">
-            <!-- 指導日期欄位 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">指導日期</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper" style="max-width: 240px">
-                      <input
-                        type="date"
-                        id="guidanceDate"
-                        class="form-date"
-                        value="2025-05-16"
-                        required
-                      />
-                      <i class="fa-regular fa-calendar date-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 基本按鈕 -->
+            <div class="button-section">
+              <h3>基本按鈕</h3>
+              <div class="button-group">
+                <button class="btn btn-primary">主要按鈕</button>
+                <button class="btn btn-secondary">次要按鈕</button>
+                <button class="btn btn-secondary cancel-btn">取消</button>
+              </div>
             </div>
 
-            <!-- 主要表單內容 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td
-                    rowspan="7"
-                    class="main-label-column vertical merged-cell"
-                  >
-                    表頭一
-                  </td>
-                  <td class="sub-label-column">輸入框</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <input
-                        class="form-textarea"
-                        placeholder="請輸入內容..."
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">文字區塊</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        placeholder="請輸入內容..."
-                      ></textarea>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">文字區塊（唯讀）</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        readonly
-                      >這是唯讀的文字內容</textarea>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">數字選擇</td>
-                  <td class="third-label-column">數字選擇</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input type="number" class="year-input" placeholder="" />
-                      <span
-                        >年
-                        (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">單選radio-btn</td>
-                  <td class="third-label-column">單選radio-btn</td>
-                  <td class="content-column">
-                    <div class="radio-group">
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="no-drinking"
-                          name="drinking-status"
-                          value="不喝酒"
-                          checked
-                        />
-                        <label for="no-drinking">不喝酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="quit-drinking"
-                          name="drinking-status"
-                          value="已戒酒"
-                        />
-                        <label for="quit-drinking">已戒酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="drinking"
-                          name="drinking-status"
-                          value="喝酒"
-                        />
-                        <label for="drinking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">多選checkbox</td>
-                  <td class="third-label-column">多選checkbox</td>
-                  <td class="content-column">
-                    <div class="checkbox-group">
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="no-smoking"
-                          name="smoking-status"
-                          value="不吸菸"
-                          checked
-                        />
-                        <label for="no-smoking">不吸菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="quit-smoking"
-                          name="smoking-status"
-                          value="已戒菸"
-                        />
-                        <label for="quit-smoking">已戒酒</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="smoking"
-                          name="smoking-status"
-                          value="喝酒"
-                        />
-                        <label for="smoking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">互動式</td>
-                  <td class="third-label-column">互動式</td>
-                  <td class="content-column">
-                    <div class="vaccine-container">
-                      <div class="radio-group">
-                        <div class="radio-option">
-                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
-                          <label for="pneumococcal-vaccine-no">無</label>
-                        </div>
-                        <div class="radio-option yes-option">
-                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
-                          <label for="pneumococcal-vaccine-yes">有</label>
-                        </div>
-                      </div>
-                      <!-- 施打西元年及不記得選項，預設隱藏並套用 CSS 變數 -->
-                      <div id="vaccination-details" class="hidden vaccination-details-fields">
-                        <div class="vaccination-year-label">施打西元年:</div>
-                        <div class="vaccination-year-input-group">
-                          <div class="input-group vaccination-year-input">
-                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
-                          </div>
-                          <div class="checkbox-option vaccination-unknown-checkbox">
-                            <input type="checkbox" id="vaccination-year-unknown">
-                            <label for="vaccination-year-unknown">不記得</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 圖示按鈕 -->
+            <div class="button-section">
+              <h3>圖示按鈕</h3>
+              <div class="button-group">
+                <button class="btn btn-primary">
+                  <i class="fas fa-plus"></i> 新增個案
+                </button>
+                <button class="btn btn-secondary">
+                  <i class="fa-solid fa-list"></i> 區域管理
+                </button>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i> 刪除
+                </button>
+                <button class="btn btn-dark">
+                  <i class="fas fa-print"></i> 列印
+                </button>
+              </div>
             </div>
 
-            <!-- 新增的區塊 -->
-            <button class="form-container form-container-add" type="button">
-              <i class="fas fa-plus"></i> 新增目前使用中藥物
-            </button>
-          </div>
+            <!-- 功能按鈕 -->
+            <div class="button-section">
+              <h3>功能按鈕</h3>
+              <div class="button-group">
+                <button class="action-btn" data-tooltip="編輯主責人員">
+                  <i class="fa-solid fa-user-pen"></i>
+                </button>
+                <button class="action-btn" data-tooltip="修改案號、類型">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn" data-tooltip="變更區域">
+                  <i class="fas fa-map-marker-alt"></i>
+                </button>
+                <button class="action-btn" data-tooltip="結案">
+                  <i class="fas fa-user-slash"></i>
+                </button>
+              </div>
+            </div>
 
-          <!-- 儲存按鈕 -->
-          <div
-            style="
-              text-align: center;
-              margin-top: var(--sys-size-spacing-xl);
-              display: flex;
-              justify-content: center;
-            "
-          >
-            <button
-              class="btn btn-secondary"
-              style="
-                width: 100%;
-                max-width: 120px;
-                font-size: var(--sys-size-text-md);
-              "
-            >
-              儲存
-            </button>
+            <!-- 導航按鈕 -->
+            <div class="button-section">
+              <h3>導航按鈕</h3>
+              <div class="button-group">
+                <button class="sidebar-toggle" title="縮小側邊欄">
+                  <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="more-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 分頁按鈕 -->
+            <div class="button-section">
+              <h3>分頁按鈕</h3>
+              <div class="button-group">
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 彈出視窗按鈕 -->
+            <div class="button-section">
+              <h3>彈出視窗按鈕</h3>
+              <div class="button-group">
+                <button class="close-btn">
+                  <i class="fas fa-times"></i>
+                </button>
+                <button class="btn btn-secondary cancel-btn">取消</button>
+                <button class="btn btn-primary confirm-btn">確認</button>
+              </div>
+            </div>
+
+            <!-- 按鈕樣式說明 -->
+            <div class="button-section">
+              <h3>按鈕樣式說明</h3>
+              <div class="style-description">
+                <ul>
+                  <li><code>.btn</code> - 基本按鈕樣式</li>
+                  <li><code>.btn-primary</code> - 主要按鈕樣式</li>
+                  <li><code>.btn-secondary</code> - 次要按鈕樣式</li>
+                  <li><code>.action-btn</code> - 功能按鈕樣式</li>
+                  <li><code>.page-btn</code> - 分頁按鈕樣式</li>
+                  <li><code>.sort-btn</code> - 排序按鈕樣式</li>
+                  <li><code>.search-btn</code> - 搜尋按鈕樣式</li>
+                  <li><code>.close-btn</code> - 關閉按鈕樣式</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div class="footer" id="footer">
-          Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+            Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
         </div>
-      </div>
     </div>
 
     <!-- 將下拉選單移到這裡 -->
@@ -493,11 +330,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 返回按鈕功能
-        const backBtn = document.querySelector(".back-btn");
-        backBtn.addEventListener("click", function () {
-          window.history.back();
-        });
 
         // 更新頁尾年份
         const currentYear = new Date().getFullYear();
