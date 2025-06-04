@@ -119,6 +119,10 @@
   --sys-size-text-lg: 18px;
   --sys-size-text-xl: 20px;
   --sys-size-text-2xl: 24px;
+  --sys-size-text-3xl: 30px;
+  --sys-size-text-4xl: 36px;
+  --sys-size-text-5xl: 48px;
+  --sys-size-text-6xl: 60px;
 
   /* Line Height - 行高 */
   --sys-size-line-height-tight: 1.2;
@@ -2224,4 +2228,105 @@ code {
   font-size: var(--sys-size-text-md);
   font-weight: bold;
   width: 100%;
+}
+
+/* ========================================
+     FORM SECTIONS AND ITEMS - 表單區塊與項目
+     ======================================== */
+
+.form-section {
+  margin-bottom: var(--sys-size-spacing-2xl); /* Adjust spacing as needed */
+}
+
+.form-section h3 {
+  font-size: var(--sys-size-text-xl);
+  font-weight: 600;
+  margin-bottom: 0; /* 移除 h3 的底部 margin */
+  padding-bottom: var(--sys-size-spacing-sm);
+  border-bottom: 2px solid var(--sys-color-primary-500);
+  color: var(--sys-color-text-primary);
+  display: inline-block;
+}
+
+.form-section-header {
+  margin-bottom: var(--sys-size-spacing-lg); /* 間距 */
+  border-bottom: 1px solid var(--sys-color-border-primary); /* 中性色底線 */
+}
+
+.form-items-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); /* Responsive grid */
+  gap: var(--sys-size-spacing-lg); /* Spacing between items */
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  text-align: center;
+  /* 取消按鈕預設樣式 */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.form-item:focus {
+  outline: none;
+}
+
+.form-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sys-size-component-md); /* Adjust size as needed */
+  height: var(--sys-size-component-md); /* Adjust size as needed */
+  padding: var(--sys-size-spacing-2xl);
+  border: 1px solid var(--sys-color-border-primary);
+  border-radius: var(--sys-size-radius-md);
+  background-color: var(--sys-color-surface-primary);
+  margin-bottom: var(
+    --sys-size-spacing-sm
+  ); /* Space between icon block and text */
+  transition: all 0.1s ease-in-out;
+}
+
+.form-item-icon i {
+  font-size: var(--sys-size-text-3xl);
+  color: var(--sys-color-text-primary); /* Default icon color */
+  transition: color 0.1s ease-in-out;
+}
+
+.form-item span {
+  font-size: var(--sys-size-text-md);
+  font-weight: 500;
+  color: var(--sys-color-text-secondary); /* Default text color */
+  transition: color 0.1s ease-in-out;
+  white-space: nowrap;
+}
+
+.form-item:hover .form-item-icon {
+  border-color: var(--sys-color-primary-500);
+  background-color: var(--sys-color-primary-100);
+}
+
+.form-item:hover .form-item-icon i {
+  color: var(--sys-color-primary-700);
+}
+
+.form-item:hover span {
+  color: var(--sys-color-primary-700);
 }

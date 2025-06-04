@@ -192,445 +192,449 @@
       <div class="main-content">
         <div class="header-container">
           <div class="header">
-            <h1 class="page-title">收案列表</h1>
+            <h1 class="page-title">小美【002】</h1>
             <div class="header-actions">
-              <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜尋" />
-                <button class="search-btn" title="搜尋">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
               <div class="select-wrapper">
+                <span>選擇個案：</span>
                 <select class="region-select">
-                  <option>全部區域</option>
+                  <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
               </div>
-              <button class="btn btn-secondary">
-                <i class="fa-solid fa-list"></i> 區域管理
-              </button>
-              <button class="btn btn-primary">
-                <i class="fas fa-plus"></i> 新增個案
-              </button>
             </div>
           </div>
         </div>
 
         <div class="sub-content">
-          <div class="tabs">
-            <div class="tab active">全部</div>
-            <div class="tab">一般居護</div>
-            <div class="tab">四階 (IDS)</div>
-            <div class="tab">安寧照護</div>
-            <div class="tab">居整</div>
-            <div class="tab">居整(呼吸器)</div>
-            <div class="tab">居整(安寧)</div>
-            <div class="tab">HAH</div>
-            <div class="tab">自費</div>
-            <div class="tab">長照2.0</div>
+          <!-- 基本表單 -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <h3>基本表單</h3>
+            </div>
+            <div class="form-items-container">
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <span>基本資料</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-book-medical"></i>
+                </div>
+                <span>病理紀錄</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-clipboard-list"></i>
+                </div>
+                <span>身體健康評估表 (A表)</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <span>居家環境安全評估單</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <span>醫師防視評估單</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-notes-medical"></i>
+                </div>
+                <span>醫師出診紀錄單</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <span>緊急事件</span>
+              </button>
+            </div>
           </div>
 
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>
-                    <span>區域</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>案號</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>姓名</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>性別</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>年齡</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>類型</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>收案日</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>主責人員</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>功能</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>全區</td>
-                  <td>0002</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小美
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>70歲0個月</td>
-                  <td>
-                    <span class="status-badge status-general">一般居護</span>
-                  </td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>全區</td>
-                  <td>0003</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小名
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>85歲4個月</td>
-                  <td>
-                    <span class="status-badge status-residential">居整</span>
-                  </td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>新北</td>
-                  <td>0004</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小帥
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>46歲7個月</td>
-                  <td><span class="status-badge status-hah">HAH</span></td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台北</td>
-                  <td>0005</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小華
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>65歲2個月</td>
-                  <td>
-                    <span class="status-badge status-ids">四階 (IDS)</span>
-                  </td>
-                  <td>2025-04-29</td>
-                  <td>
-                    林護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>桃園</td>
-                  <td>0006</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小明
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>78歲9個月</td>
-                  <td>
-                    <span class="status-badge status-hospice">安寧照護</span>
-                  </td>
-                  <td>2025-04-28</td>
-                  <td>
-                    王護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台中</td>
-                  <td>0007</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小芳
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>82歲3個月</td>
-                  <td>
-                    <span class="status-badge status-residential"
-                      >居整(呼吸器)</span
-                    >
-                  </td>
-                  <td>2025-04-27</td>
-                  <td>
-                    張護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>高雄</td>
-                  <td>0008</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小強
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>75歲6個月</td>
-                  <td>
-                    <span class="status-badge status-hospice">居整(安寧)</span>
-                  </td>
-                  <td>2025-04-26</td>
-                  <td>
-                    李護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台南</td>
-                  <td>0009</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小玲
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>68歲1個月</td>
-                  <td>
-                    <span class="status-badge status-self-pay">自費</span>
-                  </td>
-                  <td>2025-04-25</td>
-                  <td>
-                    陳護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>新竹</td>
-                  <td>0010</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小偉
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>72歲8個月</td>
-                  <td><span class="status-badge status-ltc">長照2.0</span></td>
-                  <td>2025-04-24</td>
-                  <td>
-                    吳護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <!-- 評估表單 -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <h3>評估表單</h3>
+            </div>
+            <div class="form-items-container">
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-heartbeat"></i>
+                </div>
+                <span>健康紀錄</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <span>疾病史</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-pills"></i>
+                </div>
+                <span>藥物安全性評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-male"></i>
+                </div>
+                <span>身體評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-exclamation"></i>
+                </div>
+                <span>壓力性損傷危險評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fa-solid fa-person-falling-burst"></i>
+                </div>
+                <span>跌倒危險性評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-clipboard-check"></i>
+                </div>
+                <span>ADL</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-shopping-basket"></i>
+                </div>
+                <span>IADL</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <span>認知功能評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-smile"></i>
+                </div>
+                <span>情緒問題評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-drumstick-bite"></i>
+                </div>
+                <span>簡易營養評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <span>疼痛評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-clipboard"></i>
+                </div>
+                <span>表單評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <span>需求摘要</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-notes-medical"></i>
+                </div>
+                <span>照護紀錄</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <span>共照紀錄</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <span>護理計畫/照護計畫</span>
+              </button>
+            </div>
+          </div>
 
-            <div class="pagination">
-              <div>顯示第 1 至 3 筆結果，共 3 筆</div>
-              <div class="pagination-nav">
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-left"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-btn">5</button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-right"></i>
-                </button>
-              </div>
+          <!-- 家庭照護技能 -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <h3>家庭照護技能</h3>
+            </div>
+            <div class="form-items-container">
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-shower"></i>
+                </div>
+                <span>身體清潔</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-running"></i>
+                </div>
+                <span>身體活動</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-lungs"></i>
+                </div>
+                <span>呼吸道</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <span>皮膚護理</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <span>營養</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <span>生活品質</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-toilet"></i>
+                </div>
+                <span>排泄</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-hospital-alt"></i>
+                </div>
+                <span>緊急退院</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-bed"></i>
+                </div>
+                <span>臨終照顧</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-comment-dots"></i>
+                </div>
+                <span>其他</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 四個月評估表 -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <h3>四個月評估表</h3>
+            </div>
+            <div class="form-items-container">
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <span>認知能力</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <span>知覺溝通</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-clipboard-list"></i>
+                </div>
+                <span>巴氏量表</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-dumbbell"></i>
+                </div>
+                <span>肢體活動</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <span>環境安全</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <span>家庭功能評估</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-clipboard-list"></i>
+                </div>
+                <span>柯氏量表</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 呼吸表單 -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <h3>呼吸表單</h3>
+            </div>
+            <div class="form-items-container">
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <span>RT計畫表</span>
+              </button>
+              <button
+                onclick="window.location.href='table.html'"
+                class="form-item"
+              >
+                <div class="form-item-icon">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <span>RT紀錄表</span>
+              </button>
             </div>
           </div>
         </div>
@@ -739,26 +743,6 @@
         const navSections = document.querySelectorAll(".nav-section");
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
-
-        // 搜尋功能
-        const searchBtn = document.querySelector(".search-btn");
-        const searchInput = document.querySelector(".search-input");
-
-        searchBtn.addEventListener("click", function () {
-          const searchTerm = searchInput.value.trim();
-          if (searchTerm) {
-            // 這裡可以添加搜尋邏輯
-            console.log("搜尋:", searchTerm);
-            // TODO: 實作搜尋功能
-          }
-        });
-
-        // 按下 Enter 鍵也可以搜尋
-        searchInput.addEventListener("keypress", function (e) {
-          if (e.key === "Enter") {
-            searchBtn.click();
-          }
-        });
 
         // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
