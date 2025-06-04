@@ -266,6 +266,10 @@
   --type-self-pay-bg: rgba(16, 185, 129, 0.1);
   --type-ltc-color: #f59e0b;
   --type-ltc-bg: rgba(245, 158, 11, 0.1);
+
+  /* Tooltip Token */
+  --comp-tooltip-bg: rgba(0, 0, 0, 0.6);
+  --comp-tooltip-text: var(--sys-color-text-inverse);
 }
 
 /* 基礎樣式 */
@@ -601,7 +605,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: var(--sys-color-surface-primary);
-  padding: var(--sys-size-spacing-lg);
+  padding: var(--sys-size-spacing-md) var(--sys-size-spacing-lg);
   box-shadow: var(--sys-shadow-xs);
 }
 
@@ -623,6 +627,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: var(--sys-size-radius-md);
+  position: relative;
 }
 
 .back-btn i {
@@ -637,6 +642,50 @@ body {
 
 .back-btn:hover i {
   transform: translateX(-2px);
+}
+
+/* Tooltip 樣式 */
+.back-btn::after {
+  content: "回上一頁";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: var(--comp-tooltip-bg);
+  color: var(--comp-tooltip-text);
+  font-size: var(--sys-size-text-xs);
+  border-radius: var(--sys-size-radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.back-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 添加小三角形 */
+.back-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent transparent var(--comp-tooltip-bg) transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
 }
 
 .page-title {
@@ -1025,8 +1074,8 @@ body {
   left: 50%;
   transform: translateX(-50%);
   padding: 4px 8px;
-  background-color: var(--sys-color-neutral-800);
-  color: var(--sys-color-text-inverse);
+  background-color: var(--comp-tooltip-bg);
+  color: var(--comp-tooltip-text);
   font-size: var(--sys-size-text-xs);
   border-radius: var(--sys-size-radius-sm);
   white-space: nowrap;
@@ -1050,7 +1099,7 @@ body {
   transform: translateX(-50%);
   border-width: 4px;
   border-style: solid;
-  border-color: transparent transparent var(--sys-color-neutral-800) transparent;
+  border-color: transparent transparent var(--comp-tooltip-bg) transparent;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
@@ -1709,6 +1758,7 @@ body {
 }
 
 .form-textarea[readonly] {
+  color: var(--sys-color-text-quaternary);
   outline: none;
   background-color: var(--sys-color-surface-tertiary);
   cursor: default;
