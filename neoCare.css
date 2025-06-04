@@ -2030,13 +2030,13 @@ body {
 .time-input-wrapper {
   position: relative;
   width: 100%;
-  max-width: 160px;
+  max-width: 140px;
 }
 
 .form-time {
   width: 100%;
   padding: var(--sys-size-spacing-sm);
-  padding-right: calc(var(--sys-size-spacing-md) * 2 + 20px);
+  padding-right: calc(var(--sys-size-spacing-md) * 2);
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background-color: var(--sys-color-surface-primary);
