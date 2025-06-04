@@ -229,279 +229,14 @@
               </button>
             </div>
           </div>
-  
-          <!-- 個案資料表格 -->
-          <div class="case-data-table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>區域</th>
-                  <th>居字號</th>
-                  <th>個案</th>
-                  <th>性別</th>
-                  <th>年齡</th>
-                  <th>生日</th>
-                  <th>收案日</th>
-                  <th>診斷</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>中壢區</td>
-                  <td>0002</td>
-                  <td>小美</td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>72歲8個月</td>
-                  <td>2025-04-30</td>
-                  <td>2025-04-30</td>
-                  <td>161789</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
-        <div class="sub-content" style="margin-top: 152px;">
+        <div class="sub-content">
           <div class="form-sections">
-
-            <!-- 評估人員欄位 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">指導日期</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper" style="max-width: 240px">
-                      <input
-                        type="date"
-                        id="guidanceDate"
-                        class="form-date"
-                        value="2025-05-16"
-                        required
-                      />
-                      <i class="fa-regular fa-calendar date-icon"></i>
-                    </div>
-                  </td>
-                  <td class="main-label-column">評估日期</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper" style="max-width: 240px">
-                      <input
-                        type="date"
-                        id="guidanceDate"
-                        class="form-date"
-                        value="2025-05-16"
-                        required
-                      />
-                      <i class="fa-regular fa-calendar date-icon"></i>
-                    </div>
-                  </td>
-                  <td class="main-label-column">評估人員</td>
-                  <td class="content-column">
-                    <div class="select-wrapper" style="max-width: 240px">
-                      <select id="staffSelect" class="staffSelect">
-                        <option value="">請選擇評估人員</option>
-                        <option value="1">黃護師</option>
-                        <option value="2">林護師</option>
-                        <option value="3">王護師</option>
-                        <option value="4">張護師</option>
-                        <option value="5">李護師</option>
-                        <option value="6">陳護師</option>
-                        <option value="7">吳護師</option>
-                      </select>
-                      <i class="fa-solid fa-chevron-down select-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 主要表單內容 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td
-                    rowspan="7"
-                    class="main-label-column vertical merged-cell"
-                  >
-                    表頭一
-                  </td>
-                  <td class="sub-label-column">輸入框</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <input
-                        class="form-textarea"
-                        placeholder="請輸入內容..."
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">文字區塊</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        placeholder="請輸入內容..."
-                      ></textarea>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">文字區塊（唯讀）</td>
-                  <td class="content-column" colspan="2">
-                    <div class="input-group">
-                      <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        readonly
-                      >這是唯讀的文字內容</textarea>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">數字選擇</td>
-                  <td class="third-label-column">數字選擇</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input type="number" class="year-input" placeholder="" />
-                      <span
-                        >年
-                        (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">單選radio-btn</td>
-                  <td class="third-label-column">單選radio-btn</td>
-                  <td class="content-column">
-                    <div class="radio-group">
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="no-drinking"
-                          name="drinking-status"
-                          value="不喝酒"
-                          checked
-                        />
-                        <label for="no-drinking">不喝酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="quit-drinking"
-                          name="drinking-status"
-                          value="已戒酒"
-                        />
-                        <label for="quit-drinking">已戒酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input
-                          type="radio"
-                          id="drinking"
-                          name="drinking-status"
-                          value="喝酒"
-                        />
-                        <label for="drinking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">多選checkbox</td>
-                  <td class="third-label-column">多選checkbox</td>
-                  <td class="content-column">
-                    <div class="checkbox-group">
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="no-smoking"
-                          name="smoking-status"
-                          value="不吸菸"
-                          checked
-                        />
-                        <label for="no-smoking">不吸菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="quit-smoking"
-                          name="smoking-status"
-                          value="已戒菸"
-                        />
-                        <label for="quit-smoking">已戒酒</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input
-                          type="checkbox"
-                          id="smoking"
-                          name="smoking-status"
-                          value="喝酒"
-                        />
-                        <label for="smoking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="sub-label-column">互動式</td>
-                  <td class="third-label-column">互動式</td>
-                  <td class="content-column">
-                    <div class="vaccine-container">
-                      <div class="radio-group">
-                        <div class="radio-option">
-                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
-                          <label for="pneumococcal-vaccine-no">無</label>
-                        </div>
-                        <div class="radio-option yes-option">
-                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
-                          <label for="pneumococcal-vaccine-yes">有</label>
-                        </div>
-                      </div>
-                      <!-- 施打西元年及不記得選項，預設隱藏並套用 CSS 變數 -->
-                      <div id="vaccination-details" class="hidden vaccination-details-fields">
-                        <div class="vaccination-year-label">施打西元年:</div>
-                        <div class="vaccination-year-input-group">
-                          <div class="input-group vaccination-year-input">
-                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
-                          </div>
-                          <div class="checkbox-option vaccination-unknown-checkbox">
-                            <input type="checkbox" id="vaccination-year-unknown">
-                            <label for="vaccination-year-unknown">不記得</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
             <!-- 新增的區塊 -->
-            <button class="form-container form-container-add" type="button">
-              <i class="fas fa-plus"></i> 新增目前使用中藥物
-            </button>
-          </div>
-
-          <!-- 儲存按鈕 -->
-          <div
-            style="
-              text-align: center;
-              margin-top: var(--sys-size-spacing-xl);
-              display: flex;
-              justify-content: center;
-            "
-          >
-            <button
-              class="btn btn-primary"
-              style="
-                width: 100%;
-                max-width: 120px;
-                font-size: var(--sys-size-text-md);
-              "
-            >
-              儲存
-            </button>
+            <div class="form-container form-container-empty">
+              <i class="fas fa-info-circle"></i> 目前沒有任何資料
+            </div>
           </div>
         </div>
 
@@ -591,81 +326,90 @@
         });
 
         // 新增肺炎雙球菌疫苗邏輯
-        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
-        const vaccinationDetails = document.getElementById('vaccination-details');
-        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
-        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]'); // 獲取不記得勾選框
+        const vaccineRadios = document.querySelectorAll(
+          'input[name="pneumococcal-vaccine"]'
+        );
+        const vaccinationDetails = document.getElementById(
+          "vaccination-details"
+        );
+        const vaccinationYearInput =
+          vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector(
+          'input[type="checkbox"]'
+        ); // 獲取不記得勾選框
 
-        vaccineRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    vaccinationDetails.classList.remove('hidden'); // 移除 hidden class
-                    // 檢查初始狀態並設定互斥邏輯
-                    updateVaccinationFieldStates();
-                } else {
-                    vaccinationDetails.classList.add('hidden'); // 添加 hidden class
-                    // 可選：當隱藏時，清空輸入框和取消勾選
-                    vaccinationYearInput.value = '';
-                    vaccinationUnknownCheckbox.checked = false;
-                     // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
-                    vaccinationYearInput.disabled = false;
-                    vaccinationUnknownCheckbox.disabled = false;
-                }
-            });
+        vaccineRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.value === "yes") {
+              vaccinationDetails.classList.remove("hidden"); // 移除 hidden class
+              // 檢查初始狀態並設定互斥邏輯
+              updateVaccinationFieldStates();
+            } else {
+              vaccinationDetails.classList.add("hidden"); // 添加 hidden class
+              // 可選：當隱藏時，清空輸入框和取消勾選
+              vaccinationYearInput.value = "";
+              vaccinationUnknownCheckbox.checked = false;
+              // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
+              vaccinationYearInput.disabled = false;
+              vaccinationUnknownCheckbox.disabled = false;
+            }
+          });
         });
 
         // 互斥邏輯函數
         function updateVaccinationFieldStates() {
-            if (vaccinationYearInput.value.trim() !== '') {
-                // 如果輸入框有值，停用並取消勾選不記得
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false;
-            } else if (vaccinationUnknownCheckbox.checked) {
-                // 如果不記得被勾選，停用並清空輸入框
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
-            } else {
-                // 都沒有值或沒有勾選，都啟用
-                vaccinationYearInput.disabled = false;
-                vaccinationUnknownCheckbox.disabled = false;
-            }
+          if (vaccinationYearInput.value.trim() !== "") {
+            // 如果輸入框有值，停用並取消勾選不記得
+            vaccinationUnknownCheckbox.disabled = true;
+            vaccinationUnknownCheckbox.checked = false;
+          } else if (vaccinationUnknownCheckbox.checked) {
+            // 如果不記得被勾選，停用並清空輸入框
+            vaccinationYearInput.disabled = true;
+            vaccinationYearInput.value = ""; // 清空輸入框的值
+          } else {
+            // 都沒有值或沒有勾選，都啟用
+            vaccinationYearInput.disabled = false;
+            vaccinationUnknownCheckbox.disabled = false;
+          }
         }
 
         // 為輸入框新增事件監聽器
-        vaccinationYearInput.addEventListener('input', function() {
-            // 當輸入框有輸入時，停用不記得勾選框
-            if (this.value.trim() !== '') {
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
-            } else {
-                // 當輸入框清空時，啟用不記得勾選框
-                vaccinationUnknownCheckbox.disabled = false;
-            }
+        vaccinationYearInput.addEventListener("input", function () {
+          // 當輸入框有輸入時，停用不記得勾選框
+          if (this.value.trim() !== "") {
+            vaccinationUnknownCheckbox.disabled = true;
+            vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
+          } else {
+            // 當輸入框清空時，啟用不記得勾選框
+            vaccinationUnknownCheckbox.disabled = false;
+          }
         });
 
         // 為不記得勾選框新增事件監聽器
-        vaccinationUnknownCheckbox.addEventListener('change', function() {
-            // 當不記得被勾選時，停用並清空輸入框
-            if (this.checked) {
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
-            } else {
-                // 當不記得取消勾選時，啟用輸入框
-                vaccinationYearInput.disabled = false;
-            }
+        vaccinationUnknownCheckbox.addEventListener("change", function () {
+          // 當不記得被勾選時，停用並清空輸入框
+          if (this.checked) {
+            vaccinationYearInput.disabled = true;
+            vaccinationYearInput.value = ""; // 清空輸入框的值
+          } else {
+            // 當不記得取消勾選時，啟用輸入框
+            vaccinationYearInput.disabled = false;
+          }
         });
 
         // 初始檢查，確保頁面載入時狀態正確
-        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
-        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
-            vaccinationDetails.classList.add('hidden');
-        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
-             vaccinationDetails.classList.remove('hidden');
-             // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
-             updateVaccinationFieldStates();
+        const initialCheckedRadio = document.querySelector(
+          'input[name="pneumococcal-vaccine"]:checked'
+        );
+        if (initialCheckedRadio && initialCheckedRadio.value === "no") {
+          vaccinationDetails.classList.add("hidden");
+        } else if (initialCheckedRadio && initialCheckedRadio.value === "yes") {
+          vaccinationDetails.classList.remove("hidden");
+          // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
+          updateVaccinationFieldStates();
         } else {
-             // 如果沒有預設選中，也隱藏
-             vaccinationDetails.classList.add('hidden');
+          // 如果沒有預設選中，也隱藏
+          vaccinationDetails.classList.add("hidden");
         }
 
         // 結束新增肺炎雙球菌疫苗邏輯

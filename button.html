@@ -190,8 +190,10 @@
 
       <!-- 主內容區 -->
       <div class="main-content">
-        <div class="header">
-          <h1 class="page-title">按鈕展示</h1>
+        <div class="header-container">
+          <div class="header">
+            <h1 class="page-title">按鈕展示</h1>
+          </div>
         </div>
 
         <div class="sub-content">
@@ -222,6 +224,9 @@
                 <button class="btn btn-dark">
                   <i class="fas fa-print"></i> 列印
                 </button>
+                <button class="btn back-btn back-btn">
+                  <i class="fas fa-arrow-left"></i> 返回
+                </button>
               </div>
             </div>
 
@@ -248,7 +253,7 @@
             <div class="button-section">
               <h3>導航按鈕</h3>
               <div class="button-group">
-                <button class="sidebar-toggle" title="縮小側邊欄">
+                <button class="sidebar-toggle" title="縮小側邊欄" style="position: relative; z-index: 0;">
                   <i class="fa-solid fa-angles-left"></i>
                 </button>
                 <button class="more-btn">
