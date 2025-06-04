@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neova - 收案列表</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom styles for this template-->
+    <link href="./neoCare.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 側邊欄 -->
+      <div class="sidebar">
+        <button class="sidebar-toggle" title="縮小側邊欄">
+          <i class="fa-solid fa-angles-left"></i>
+        </button>
+        <div class="sidebar-content">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.85807 2C5.07072 2 2 5.07071 2 8.85807C2 12.6454 5.07072 15.7161 8.85807 15.7161C12.6454 15.7161 15.7161 12.6454 15.7161 8.85807"
+                  stroke="#CC20FF"
+                  stroke-width="3.33321"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M17.1519 15.7495C20.9392 15.7495 24.0099 12.6788 24.0099 8.89143C24.0099 5.10408 20.9392 2.03336 17.1519 2.03336C13.3645 2.03336 10.2938 5.10408 10.2938 8.89143"
+                  stroke="#CC20FF"
+                  stroke-width="3.33321"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <svg
+                width="72"
+                height="14"
+                viewBox="0 0 72 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.902893 6.83296C0.902893 5.09677 1.31751 3.67227 2.14601 2.55872C2.97523 1.44589 4.1622 0.888763 5.70835 0.888763H8.56457C10.11 0.888763 11.2977 1.44517 12.1269 2.55872C12.9561 3.67227 13.37 5.09677 13.37 6.83296V12.3359C13.37 12.6296 13.2527 12.7771 13.0173 12.7771C12.7819 12.7771 12.6646 12.6303 12.6646 12.3359V6.83296C12.6646 5.33503 12.3061 4.10992 11.5892 3.15761C10.8723 2.2053 9.85303 1.7295 8.53146 1.7295H5.7422C4.42062 1.7295 3.40136 2.2053 2.68442 3.15761C1.96749 4.10992 1.60903 5.33503 1.60903 6.83296V12.3359C1.60903 12.6296 1.49171 12.7771 1.25633 12.7771C1.02095 12.7771 0.903614 12.6303 0.903614 12.3359V6.83296H0.902893Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M17.5291 3.03165C16.818 3.89974 16.4285 5.02697 16.3616 6.41332H26.2244C26.4483 6.41332 26.5606 6.55368 26.5606 6.83369C26.5606 7.1137 26.4483 7.25406 26.2244 7.25406H16.3616C16.4285 8.64041 16.818 9.76763 17.5291 10.6357C18.2403 11.5038 19.2293 11.9379 20.4948 11.9379H27.2833C27.5072 11.9379 27.6194 12.0782 27.6194 12.3575C27.6194 12.6368 27.5072 12.7779 27.2833 12.7779H20.4616C18.9155 12.7779 17.7285 12.2215 16.8993 11.1079C16.0701 9.9951 15.6562 8.56987 15.6562 6.83369C15.6562 5.09751 16.0708 3.673 16.8993 2.55945C17.7285 1.44663 18.9155 0.889496 20.4616 0.889496H27.2833C27.5072 0.889496 27.6194 1.02986 27.6194 1.30914C27.6194 1.58843 27.5072 1.72951 27.2833 1.72951H20.4948C19.2293 1.72951 18.2403 2.16356 17.5291 3.03165Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M41.3124 2.55872C42.1416 3.67155 42.5555 5.09677 42.5555 6.83296C42.5555 8.56914 42.1409 9.99365 41.3124 11.1072C40.4832 12.22 39.2962 12.7771 37.7501 12.7771H34.4231C32.8769 12.7771 31.69 12.2207 30.8608 11.1072C30.0315 9.99437 29.6176 8.56914 29.6176 6.83296C29.6176 5.09677 30.0323 3.67227 30.8608 2.55872C31.69 1.44589 32.8769 0.888763 34.4231 0.888763H37.7501C39.2962 0.888763 40.4832 1.44517 41.3124 2.55872ZM34.4569 1.7295C33.1354 1.7295 32.1161 2.2053 31.3992 3.15761C30.6822 4.10992 30.3238 5.33503 30.3238 6.83296C30.3238 8.33088 30.6822 9.53873 31.3992 10.4982C32.1161 11.4577 33.1354 11.9371 34.4569 11.9371H37.717C39.0385 11.9371 40.0578 11.4577 40.7747 10.4982C41.4916 9.53945 41.8501 8.31721 41.8501 6.83296C41.8501 5.34871 41.4916 4.10992 40.7747 3.15761C40.0578 2.2053 39.0385 1.7295 37.717 1.7295H34.4569Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M50.9406 12.5663C50.8621 12.7066 50.7614 12.7764 50.6383 12.7764C50.5152 12.7764 50.4144 12.7066 50.3359 12.5663L44.052 1.62369C43.9959 1.53947 43.9678 1.44158 43.9678 1.33001C43.9678 1.03632 44.0851 0.888763 44.3205 0.888763C44.4436 0.888763 44.5443 0.96578 44.6228 1.11982L50.6548 11.6629L56.7034 1.11982C56.7934 0.96578 56.8884 0.888763 56.9892 0.888763C57.213 0.888763 57.3253 1.02912 57.3253 1.30841C57.3253 1.4207 57.2972 1.51859 57.2411 1.60209L50.9399 12.5655L50.9406 12.5663Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M61.3238 12.7764C60.5061 12.7764 59.8734 12.4756 59.425 11.8731C58.9765 11.2706 58.7527 10.5083 58.7527 9.58407C58.7527 8.65983 58.9737 7.90044 59.4163 7.30516C59.859 6.70987 60.4946 6.41259 61.3231 6.41259H70.161C70.094 5.02623 69.7075 3.89901 69.0013 3.03092C68.2959 2.16283 67.3098 1.72878 66.0444 1.72878H59.407C59.1831 1.72878 59.0708 1.58842 59.0708 1.30841C59.0708 1.0284 59.1831 0.888763 59.407 0.888763H66.0775C67.6236 0.888763 68.8106 1.44517 69.6398 2.55872C70.469 3.67227 70.8829 5.09677 70.8829 6.83296V7.71472C70.8829 9.19897 70.5302 10.4133 69.8241 11.3584C69.1187 12.3035 68.1045 12.7764 66.7829 12.7764H61.3224H61.3238ZM69.2634 10.7185C69.8738 9.90655 70.179 8.86354 70.179 7.58948V7.25332H61.3411C60.7365 7.25332 60.2715 7.47359 59.9461 7.91483C59.6215 8.35608 59.4588 8.91969 59.4588 9.60567C59.4588 10.2916 59.6215 10.8517 59.9461 11.2857C60.2708 11.7198 60.7358 11.9364 61.3411 11.9364H66.6504C67.782 11.9364 68.653 11.5304 69.2634 10.7185Z"
+                  fill="#00103F"
+                  stroke="#00103F"
+                  stroke-width="1.1517"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="demo-badge-container">
+            <div class="demo-badge">
+              <div class="user-info-header">
+                <div class="user-info-left">
+                  <i class="fa-solid fa-circle-user"></i>
+                  <span>Demo測試帳號</span>
+                </div>
+                <button class="more-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+              <span class="expiry-time"
+                >自動登出時間：<span class="number">3000</span> 秒</span
+              >
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-clipboard-list"></i></span>
+                <span>個案列表</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item active">收案</div>
+              <div class="nav-item">轉案</div>
+              <div class="nav-item">清冊</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-users"></i></span>
+                <span>個案</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">基本表單</div>
+              <div class="nav-item">評估表單</div>
+              <div class="nav-item">家庭照護技能</div>
+              <div class="nav-item">四個月評估表</div>
+              <div class="nav-item">呼吸表單</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-user"></i></span>
+                <span>人事</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">人事列表</div>
+              <div class="nav-item">人事管理</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-hospital"></i></span>
+                <span>健保</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">健保作業</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-header">
+              <div class="nav-header-left">
+                <span><i class="fas fa-chart-bar"></i></span>
+                <span>行政</span>
+              </div>
+              <i class="fa-solid fa-chevron-right nav-header-chevron"></i>
+            </div>
+            <div class="nav-items">
+              <div class="nav-item">一般設定</div>
+              <div class="nav-item">一般行政</div>
+              <div class="nav-item">統計報表</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主內容區 -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">輸入元素展示</h1>
+        </div>
+
+        <div class="sub-content">
+          <div class="form-sections">
+            <!-- 日期輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期輸入框</td>
+                  <td class="content-column">
+                    <div class="date-input-wrapper">
+                      <input type="date" class="form-date" value="2025-05-16" required />
+                      <i class="fa-regular fa-calendar date-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 日期範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="date-range-wrapper">
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                      <span class="date-range-separator">至</span>
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 單一時間輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單一時間輸入框</td>
+                  <td class="content-column">
+                    <div class="time-input-wrapper">
+                      <input type="time" class="form-time" />
+                      <i class="fa-regular fa-clock time-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 時間範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">時間範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="time-range-wrapper">
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                      <span class="time-range-separator">至</span>
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input class="form-textarea" placeholder="請輸入內容..."></input>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <textarea class="form-textarea readonly" rows="3" placeholder="請輸入內容..."></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域（唯讀） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域（唯讀）</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                        <textarea
+                        class="form-textarea readonly"
+                        rows="3"
+                        readonly
+                      >這是唯讀的文字內容</textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 數字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">數字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input type="number" class="year-input" placeholder="" />
+                      <span>年 (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 單選按鈕 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單選按鈕</td>
+                  <td class="content-column">
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input type="radio" id="no-drinking" name="drinking-status" value="不喝酒" checked />
+                        <label for="no-drinking">不喝酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="quit-drinking" name="drinking-status" value="已戒酒" />
+                        <label for="quit-drinking">已戒酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="drinking" name="drinking-status" value="喝酒" />
+                        <label for="drinking">喝酒</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 複選框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">複選框</td>
+                  <td class="content-column">
+                    <div class="checkbox-group">
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="no-smoking" name="smoking-status" value="不吸菸" checked />
+                        <label for="no-smoking">不吸菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="quit-smoking" name="smoking-status" value="已戒菸" />
+                        <label for="quit-smoking">已戒菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="smoking" name="smoking-status" value="吸菸" />
+                        <label for="smoking">吸菸</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 互動式輸入組合 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">互動式輸入組合</td>
+                  <td class="content-column">
+                    <div class="vaccine-container">
+                      <div class="radio-group">
+                        <div class="radio-option">
+                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
+                          <label for="pneumococcal-vaccine-no">無</label>
+                        </div>
+                        <div class="radio-option yes-option">
+                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
+                          <label for="pneumococcal-vaccine-yes">有</label>
+                        </div>
+                      </div>
+                      <div id="vaccination-details" class="hidden vaccination-details-fields">
+                        <div class="vaccination-year-label">施打西元年:</div>
+                        <div class="vaccination-year-input-group">
+                          <div class="input-group vaccination-year-input">
+                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
+                          </div>
+                          <div class="checkbox-option vaccination-unknown-checkbox">
+                            <input type="checkbox" id="vaccination-year-unknown">
+                            <label for="vaccination-year-unknown">不記得</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer" id="footer">
+            Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+        </div>
+    </div>
+
+    <!-- 將下拉選單移到這裡 -->
+    <div class="more-options-dropdown">
+      <a href="#" class="dropdown-item">
+        <i class="fas fa-lock"></i>
+        <span>變更密碼</span>
+      </a>
+      <a href="#" class="dropdown-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>登出</span>
+      </a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+
+        // 更新頁尾年份
+        const currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+
+        // 獲取所有導航區塊
+        const navSections = document.querySelectorAll(".nav-section");
+        const sidebar = document.querySelector(".sidebar");
+        const sidebarToggle = document.querySelector(".sidebar-toggle");
+
+        // 為每個導航區塊添加點擊事件
+        navSections.forEach((section) => {
+          const header = section.querySelector(".nav-header");
+
+          header.addEventListener("click", () => {
+            // 如果側邊欄是收合狀態，先展開側邊欄
+            if (sidebar.classList.contains("minimal")) {
+              sidebar.classList.remove("minimal");
+            }
+            // 切換收合狀態
+            section.classList.toggle("collapsed");
+          });
+        });
+
+        // 側邊欄縮小功能
+        sidebarToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("minimal");
+        });
+
+        // 下拉選單功能
+        const moreBtn = document.querySelector(".more-btn");
+        const dropdown = document.querySelector(".more-options-dropdown");
+        const demoBadgeContainer = document.querySelector(
+          ".demo-badge-container"
+        );
+
+        moreBtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+
+          // 計算下拉選單的位置
+          const containerRect = demoBadgeContainer.getBoundingClientRect();
+          const btnRect = moreBtn.getBoundingClientRect();
+
+          // 設置下拉選單的位置
+          dropdown.style.top = `${btnRect.top}px`;
+          dropdown.style.left = `${containerRect.right + 8}px`;
+
+          dropdown.classList.toggle("show");
+        });
+
+        // 點擊其他地方時關閉下拉選單
+        document.addEventListener("click", function (event) {
+          if (
+            !dropdown.contains(event.target) &&
+            !moreBtn.contains(event.target)
+          ) {
+            dropdown.classList.remove("show");
+          }
+        });
+
+        // 新增肺炎雙球菌疫苗邏輯
+        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
+        const vaccinationDetails = document.getElementById('vaccination-details');
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]'); // 獲取不記得勾選框
+
+        vaccineRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    vaccinationDetails.classList.remove('hidden'); // 移除 hidden class
+                    // 檢查初始狀態並設定互斥邏輯
+                    updateVaccinationFieldStates();
+                } else {
+                    vaccinationDetails.classList.add('hidden'); // 添加 hidden class
+                    // 可選：當隱藏時，清空輸入框和取消勾選
+                    vaccinationYearInput.value = '';
+                    vaccinationUnknownCheckbox.checked = false;
+                     // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
+                    vaccinationYearInput.disabled = false;
+                    vaccinationUnknownCheckbox.disabled = false;
+                }
+            });
+        });
+
+        // 互斥邏輯函數
+        function updateVaccinationFieldStates() {
+            if (vaccinationYearInput.value.trim() !== '') {
+                // 如果輸入框有值，停用並取消勾選不記得
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else if (vaccinationUnknownCheckbox.checked) {
+                // 如果不記得被勾選，停用並清空輸入框
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; // 清空輸入框的值
+            } else {
+                // 都沒有值或沒有勾選，都啟用
+                vaccinationYearInput.disabled = false;
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        }
+
+        // 為輸入框新增事件監聽器
+        vaccinationYearInput.addEventListener('input', function() {
+            // 當輸入框有輸入時，停用不記得勾選框
+            if (this.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
+            } else {
+                // 當輸入框清空時，啟用不記得勾選框
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        });
+
+        // 為不記得勾選框新增事件監聽器
+        vaccinationUnknownCheckbox.addEventListener('change', function() {
+            // 當不記得被勾選時，停用並清空輸入框
+            if (this.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; // 清空輸入框的值
+            } else {
+                // 當不記得取消勾選時，啟用輸入框
+                vaccinationYearInput.disabled = false;
+            }
+        });
+
+        // 初始檢查，確保頁面載入時狀態正確
+        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
+        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
+            vaccinationDetails.classList.add('hidden');
+        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
+             vaccinationDetails.classList.remove('hidden');
+             // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
+             updateVaccinationFieldStates();
+        } else {
+             // 如果沒有預設選中，也隱藏
+             vaccinationDetails.classList.add('hidden');
+        }
+
+        // 結束新增肺炎雙球菌疫苗邏輯
+      });
+    </script>
+
+    <!-- 編輯主責人員彈出視窗 -->
+    <div class="modal" id="editStaffModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>編輯主責人員</h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="staffSelect">選擇主責人員</label>
+            <div class="select-wrapper">
+              <select id="staffSelect" class="staffSelect">
+                <option value="">請選擇主責人員</option>
+                <option value="1">黃護師</option>
+                <option value="2">林護師</option>
+                <option value="3">王護師</option>
+                <option value="4">張護師</option>
+                <option value="5">李護師</option>
+                <option value="6">陳護師</option>
+                <option value="7">吳護師</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 結案確認彈出視窗 -->
+    <div class="modal" id="closeCaseModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>
+            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
+          </h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="closeReason">結案原因</label>
+            <div class="select-wrapper">
+              <select id="closeReason" class="staffSelect">
+                <option value="">請選擇結案原因</option>
+                <option value="1">個案已康復</option>
+                <option value="2">個案轉院</option>
+                <option value="3">個案拒絕服務</option>
+                <option value="4">個案過世</option>
+                <option value="5">其他原因</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="closeDate">結案日期</label>
+            <div class="date-input-wrapper">
+              <input type="date" id="closeDate" class="form-date" required />
+              <i class="fa-regular fa-calendar date-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認結案</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

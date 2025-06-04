@@ -1783,6 +1783,7 @@ body {
 .date-input-wrapper {
   position: relative;
   width: 100%;
+  max-width: 240px;
 }
 
 .form-date {
@@ -2010,4 +2011,141 @@ body {
   color: var(--sys-color-text-tertiary); /* 文字顏色變淡 */
   cursor: not-allowed; /* 顯示禁止游標 */
   opacity: 0.7; /* 可選：降低透明度 */
+}
+
+/* 日期範圍輸入框樣式 */
+.date-range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--sys-size-spacing-sm);
+}
+
+.date-range-separator {
+  color: var(--sys-color-text-tertiary);
+  font-size: var(--sys-size-text-sm);
+  margin: 0 var(--sys-size-spacing-xs);
+}
+
+/* 時間輸入框樣式 */
+.time-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 160px;
+}
+
+.form-time {
+  width: 100%;
+  padding: var(--sys-size-spacing-sm);
+  padding-right: calc(var(--sys-size-spacing-md) * 2 + 20px);
+  border: 1.5px solid var(--sys-color-border-primary);
+  border-radius: var(--sys-size-radius-md);
+  background-color: var(--sys-color-surface-primary);
+  font-size: var(--sys-size-text-md);
+  color: var(--sys-color-text-primary);
+  transition: all 0.2s;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 隱藏預設的時間選擇器圖示 */
+.form-time::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.form-time::-webkit-calendar-picker-indicator:focus {
+  outline: none;
+}
+
+/* 確保時間選擇器的文字樣式正確 */
+.form-time::-webkit-datetime-edit {
+  padding: 0;
+  cursor: pointer;
+}
+
+.form-time::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+  cursor: pointer;
+}
+
+.form-time::-webkit-datetime-edit-text,
+.form-time::-webkit-datetime-edit-hour-field,
+.form-time::-webkit-datetime-edit-minute-field,
+.form-time::-webkit-datetime-edit-ampm-field {
+  padding: 0;
+  cursor: pointer;
+}
+
+.time-icon {
+  position: absolute;
+  right: var(--sys-size-spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--sys-color-text-tertiary);
+  font-size: var(--sys-size-text-md);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.form-time:focus,
+.form-time:focus-within {
+  outline: 2px solid var(--sys-color-primary-200);
+  border-color: var(--sys-color-primary-500);
+  box-shadow: var(--sys-shadow-inner);
+}
+
+.form-time:focus + .time-icon,
+.form-time:focus-within + .time-icon {
+  color: var(--sys-color-primary-500);
+}
+
+.form-time:in-range {
+  border-color: var(--sys-color-border-primary);
+}
+
+.form-time:in-range:focus,
+.form-time:in-range:focus-within {
+  outline: 2px solid var(--sys-color-primary-200);
+  border-color: var(--sys-color-primary-500);
+  box-shadow: var(--sys-shadow-inner);
+}
+
+.form-time:in-range:focus + .time-icon {
+  color: var(--sys-color-primary-500);
+}
+
+/* 時間範圍輸入框樣式 */
+.time-range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--sys-size-spacing-sm);
+}
+
+.time-range-separator {
+  color: var(--sys-color-text-tertiary);
+  font-size: var(--sys-size-text-sm);
+  margin: 0 var(--sys-size-spacing-xs);
+}
+
+/* 停用狀態的時間輸入框樣式 */
+.form-time:disabled {
+  background-color: var(--sys-color-surface-tertiary);
+  color: var(--sys-color-text-tertiary);
+  border-color: var(--sys-color-border-primary);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-time:disabled:focus {
+  border-color: var(--sys-color-border-primary);
+  box-shadow: none;
 }
