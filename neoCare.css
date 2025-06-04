@@ -55,6 +55,7 @@
   --sys-color-border-primary: var(--sys-color-neutral-200);
   --sys-color-border-secondary: var(--sys-color-neutral-300);
   --sys-color-border-focus: var(--sys-color-primary-500);
+  --sys-color-border-white: var(--sys-color-neutral-0);
 
   /* Gender Colors - 性別顏色 */
   --sys-color-gender-female: #f472b6;
@@ -1210,6 +1211,7 @@ body {
   color: var(--sys-color-text-primary);
   writing-mode: horizontal-tb;
   text-orientation: mixed;
+  border-right: 1px solid var(--sys-color-border-primary);
 }
 
 /* 直式顯示的主標題欄樣式 */
@@ -1217,6 +1219,7 @@ body {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   width: 80px;
+  border-right: 1px solid var(--sys-color-border-primary);
 }
 
 /* 橫式顯示的主標題欄樣式 */
@@ -1225,6 +1228,7 @@ body {
   text-orientation: mixed;
   transform: none;
   width: 120px;
+  border-right: 1px solid var(--sys-color-border-primary);
 }
 
 /* 左側次標題欄樣式 */
@@ -1237,10 +1241,11 @@ body {
   color: var(--sys-color-text-primary);
   white-space: nowrap;
   padding-right: var(--sys-size-spacing-md);
+  border-right: 1px solid var(--sys-color-border-primary);
 }
 
-/* 中間標題欄樣式（紫色） */
-.header-column {
+/* 第三層標題欄樣式（紫色） */
+.third-label-column {
   background-color: var(--sys-color-primary-200);
   font-weight: bold;
   text-align: left;
@@ -1249,6 +1254,7 @@ body {
   color: var(--sys-color-text-primary);
   white-space: nowrap;
   padding-right: var(--sys-size-spacing-md);
+  border-right: 1px solid var(--sys-color-border-primary);
 }
 
 /* 內容欄樣式 */
