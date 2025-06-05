@@ -1071,7 +1071,6 @@ body {
   padding: var(--sys-size-spacing-xs) var(--sys-size-spacing-md);
   border-radius: var(--sys-size-radius-full);
   font-size: var(--sys-size-text-sm);
-  font-weight: var(--sys-weight-semibold);
 }
 
 .status-general {
