@@ -18,7 +18,7 @@
   <body>
     <div class="login-container">
       <div class="login-form-section">
-        <div class="logo">
+        <div class="logo" style="cursor: default;">
           <div class="">
             <svg
               width="26"
@@ -150,12 +150,49 @@
           </button>
         </div>
       </div>
-      <div class="banner"></div>
+      <div class="banner">
+        <img src="./img/t1.png" alt="Banner Image 1" class="banner-img" />
+        <img src="./img/t2.png" alt="Banner Image 2" class="banner-img" />
+        <img src="./img/t3.png" alt="Banner Image 3" class="banner-img" />
+      </div>
     </div>
   </body>
   <script>
     let countdown = 25;
     let timer = null;
+
+    // 滑鼠移動效果
+    const banner = document.querySelector(".banner");
+    const images = document.querySelectorAll(".banner-img");
+
+    document.addEventListener("mousemove", (e) => {
+      const rect = banner.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // 計算滑鼠相對於 banner 的位置（0-1）
+      const xPercent = x / rect.width;
+      const yPercent = y / rect.height;
+
+      // 計算位移量（最大 20px）
+      const moveX = (xPercent - 0.5) * 20;
+      const moveY = (yPercent - 0.5) * 20;
+
+      // 為每個圖片設置不同的位移效果
+      images.forEach((img, index) => {
+        const factor = (index + 1) * 0.5; // 每張圖片的位移係數不同
+        img.style.transform = `translate(${moveX * factor}px, ${
+          moveY * factor
+        }px)`;
+      });
+    });
+
+    // 滑鼠離開頁面時重置位置
+    document.addEventListener("mouseleave", () => {
+      images.forEach((img) => {
+        img.style.transform = "translate(0, 0)";
+      });
+    });
 
     function refreshCaptcha() {
       // 這裡應該調用後端 API 來獲取新的驗證碼圖片
