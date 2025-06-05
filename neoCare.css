@@ -2382,6 +2382,7 @@ code {
 }
 
 .banner {
+  position: relative;
   width: 50%;
   background-color: var(--sys-color-surface-secondary);
   background-image: url("./img/banner.png");
@@ -2389,6 +2390,40 @@ code {
   background-position: center;
   border-radius: var(--sys-size-radius-xl);
   margin: var(--sys-size-spacing-lg);
+  overflow: hidden;
+}
+
+.banner-img {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  transform: translate(0, 0);
+}
+
+.banner-img:nth-child(1) {
+  opacity: 1;
+  z-index: 1;
+  top: -15%;
+  left: -15%;
+  width: 50%;
+}
+
+.banner-img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+  top: 40%;
+  right: -20%;
+  width: 40%;
+}
+
+.banner-img:nth-child(3) {
+  opacity: 1;
+  z-index: 3;
+  top: 65%;
+  left: 20%;
+  width: 20%;
 }
 
 .login-title {
