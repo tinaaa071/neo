@@ -743,7 +743,7 @@
         const navSections = document.querySelectorAll(".nav-section");
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
-
+        
         // 搜尋功能
         const searchBtn = document.querySelector(".search-btn");
         const searchInput = document.querySelector(".search-input");
@@ -764,6 +764,11 @@
           }
         });
 
+        // 設定所有導航區塊預設為收合狀態
+        navSections.forEach((section) => {
+          section.classList.add("collapsed");
+        });
+        
         // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");

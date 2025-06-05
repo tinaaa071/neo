@@ -349,6 +349,11 @@
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
 
+        // 設定所有導航區塊預設為收合狀態
+        navSections.forEach((section) => {
+          section.classList.add("collapsed");
+        });
+        
         // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
