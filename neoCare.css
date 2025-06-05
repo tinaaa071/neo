@@ -286,6 +286,20 @@
   /* Tooltip Token */
   --comp-tooltip-bg: rgba(0, 0, 0, 0.6);
   --comp-tooltip-text: var(--sys-color-text-inverse);
+
+  /* Transition - 過渡 */
+  --sys-transition-fast: 0.2s;
+  --sys-transition-medium: 0.3s;
+  --sys-transition-slow: 0.4s;
+
+  /* Icon Sizes - 圖標尺寸 */
+  --sys-size-icon-sm: 16px;
+  --sys-size-icon-md: 24px;
+  --sys-size-icon-lg: 32px;
+
+  /* Background Colors - 背景色 */
+  --sys-color-background: #f0f0f0;
+  --sys-color-border: #ccc;
 }
 
 /* 基礎樣式 */
@@ -440,6 +454,11 @@ body {
   display: flex;
   align-items: center;
   gap: var(--sys-size-spacing-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 .logo-icon {
@@ -479,9 +498,13 @@ body {
   transition: color 0.2s ease;
 }
 
-.nav-header:hover,
+.nav-header:hover {
+  color: var(--sys-color-primary-500);
+}
+
 .nav-section:not(.collapsed) .nav-header {
   color: var(--sys-color-primary-500);
+  font-weight: var(--sys-weight-semibold);
 }
 
 .nav-header-left {
@@ -576,6 +599,7 @@ body {
   transition: width 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
+  font-weight: var(--sys-weight-semibold);
 }
 
 .expiry-time {
@@ -591,7 +615,7 @@ body {
 
 .expiry-time .number {
   color: var(--sys-color-error-500);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
 }
 
 /* 主內容區 */
@@ -735,7 +759,7 @@ body {
 
 .page-title {
   font-size: var(--sys-size-text-2xl);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   color: var(--sys-color-text-primary);
   margin: 0;
 }
@@ -947,6 +971,7 @@ body {
 .tab.active {
   color: var(--sys-color-primary-500);
   border-bottom-color: var(--sys-color-primary-500);
+  font-weight: var(--sys-weight-semibold);
 }
 
 /* 表格 */
@@ -967,7 +992,7 @@ body {
   background: var(--sys-color-surface-quaternary);
   padding: var(--sys-size-spacing-md) var(--sys-size-spacing-lg);
   text-align: left;
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   color: var(--sys-color-text-primary);
   font-size: var(--sys-size-text-md);
   border-bottom: 1px solid var(--sys-color-border-primary);
@@ -1046,7 +1071,7 @@ body {
   padding: var(--sys-size-spacing-xs) var(--sys-size-spacing-md);
   border-radius: var(--sys-size-radius-full);
   font-size: var(--sys-size-text-sm);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
 }
 
 .status-general {
@@ -1216,7 +1241,7 @@ body {
   padding: var(--sys-size-spacing-md);
   cursor: pointer;
   font-size: var(--sys-size-text-md);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   width: 100%;
 }
 
@@ -1242,7 +1267,7 @@ body {
 /* 左側主標題欄樣式 */
 .main-label-column {
   background-color: var(--sys-color-surface-quaternary);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   text-align: center;
   width: 120px;
   color: var(--sys-color-text-primary);
@@ -1271,7 +1296,7 @@ body {
 /* 左側次標題欄樣式 */
 .sub-label-column {
   background-color: var(--sys-color-surface-tertiary);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   text-align: left;
   min-width: 120px;
   width: auto;
@@ -1284,7 +1309,7 @@ body {
 /* 第三層標題欄樣式（紫色） */
 .third-label-column {
   background-color: var(--sys-color-primary-200);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   text-align: left;
   min-width: 120px;
   width: auto;
@@ -1719,7 +1744,7 @@ body {
   display: block;
   margin-bottom: var(--sys-size-spacing-sm);
   color: var(--sys-color-text-primary);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-medium);
 }
 
 .form-select {
@@ -1929,13 +1954,13 @@ body {
 
 .name-btn:hover {
   color: var(--comp-color-button-primary-bg-hover);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
 }
 
 .name-btn:focus {
   outline: none;
   color: var(--comp-color-button-primary-bg-active);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
 }
 
 /* 自定義滾動條樣式 */
@@ -2371,7 +2396,6 @@ code {
   text-align: center;
   margin: 0;
   padding-bottom: var(--sys-size-spacing-xl);
-  font-size: var(--sys-size-text-xl);
   font-weight: var(--sys-weight-bold);
   color: var(--sys-color-text-primary);
   line-height: 1.4;
@@ -2390,7 +2414,6 @@ code {
   display: block;
   margin-bottom: var(--sys-size-spacing-sm);
   color: var(--sys-color-text-primary);
-  font-weight: var(--sys-weight-bold);
 }
 
 .login-form-section .form-input {
@@ -2463,10 +2486,9 @@ code {
 }
 
 .login-content {
-  padding: 0 var(--sys-size-spacing-2xl);
   display: flex;
   flex-direction: column;
-  gap: var(--sys-size-spacing-lg);
+  gap: var(--sys-size-spacing-sm);
 }
 
 .login-title {
@@ -2520,10 +2542,10 @@ code {
   right: 10px;
   background: none;
   border: none;
-  padding: 5px;
+  padding: var(--sys-spacing-sm);
   cursor: pointer;
   color: var(--sys-color-text-tertiary);
-  transition: color 0.1s ease;
+  transition: color var(--sys-transition-fast);
 }
 
 .password-toggle-btn:hover {
@@ -2532,13 +2554,66 @@ code {
 
 .password-toggle-btn i {
   font-size: var(--sys-size-text-md);
-  width: 16px;
-  height: 16px;
+  width: var(--sys-size-icon-sm);
+  height: var(--sys-size-icon-sm);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .password-input-group .form-input {
-  padding-right: 40px;
+  padding-right: var(--sys-spacing-xl);
+}
+
+.function-blocks {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sys-size-spacing-md);
+  background-color: var(--sys-color-surface-primary);
+  padding: var(--sys-size-spacing-md);
+  border: 1.5px solid var(--sys-color-border-primary);
+  border-radius: var(--sys-size-radius-md);
+  box-shadow: var(--sys-shadow-xs);
+}
+
+.function-blocks .form-container {
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
+/* 功能區塊樣式 */
+.function-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sys-size-spacing-md);
+}
+
+.function-blocks .form-container {
+  width: fit-content;
+}
+
+.form-table {
+  height: 100%;
+}
+
+.form-table-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-table-cell-with-gap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sys-size-spacing-md);
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  min-width: max-content;
+  height: 100%;
+}
+
+.button-group {
+  flex-shrink: 0;
 }

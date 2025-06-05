@@ -23,7 +23,11 @@
           <i class="fa-solid fa-angles-left"></i>
         </button>
         <div class="sidebar-content">
-          <div class="logo">
+          <button
+            class="logo"
+            onclick="window.location.href='index.html'"
+            type="button"
+          >
             <div class="logo-icon">
               <svg
                 width="26"
@@ -93,7 +97,7 @@
                 />
               </svg>
             </div>
-          </div>
+          </button>
 
           <div class="demo-badge-container">
             <div class="demo-badge">
@@ -189,233 +193,206 @@
       </div>
 
       <!-- 主內容區 -->
-      <div class="main-content">
-        <div class="header-container">
+      <div class="main-content" style="gap: var(--sys-size-spacing-xl);">
+        <!-- 基本 -->
+        <div class="">
           <div class="header">
-            <h1 class="page-title">輸入元素展示</h1>
+            <h1 class="page-title">基本</h1>
           </div>
         </div>
 
-        <div class="sub-content">
-          <div class="form-sections">
-            <!-- 日期輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">日期輸入框</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper">
-                      <input type="date" class="form-date" value="2025-05-16" required />
-                      <i class="fa-regular fa-calendar date-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 回上頁 -->
+        <div class="">
+          <div class="header">
+            <div class="title-container">
+              <button class="back-btn" title="返回">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h1 class="page-title">回上頁</h1>
             </div>
+          </div>
+        </div>
 
-            <!-- 日期範圍輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">日期範圍輸入框</td>
-                  <td class="content-column">
-                    <div class="date-range-wrapper">
-                      <div class="date-input-wrapper">
-                        <input type="date" class="form-date" value="2025-05-16" required />
-                        <i class="fa-regular fa-calendar date-icon"></i>
-                      </div>
-                      <span class="date-range-separator">至</span>
-                      <div class="date-input-wrapper">
-                        <input type="date" class="form-date" value="2025-05-16" required />
-                        <i class="fa-regular fa-calendar date-icon"></i>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 個案選擇 -->
+        <div class="">
+          <div class="header">
+            <h1 class="page-title">個案選擇</h1>
+            <div class="header-actions">
+              <div class="select-wrapper">
+                <span>選擇個案：</span>
+                <select class="region-select">
+                  <option>小美【002】</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- 單一時間輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">單一時間輸入框</td>
-                  <td class="content-column">
-                    <div class="time-input-wrapper">
-                      <input type="time" class="form-time" />
-                      <i class="fa-regular fa-clock time-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 收案列表 -->
+        <div class="">
+          <div class="header">
+            <h1 class="page-title">收案列表</h1>
+            <div class="header-actions">
+              <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜尋" />
+                <button class="search-btn" title="搜尋">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <div class="select-wrapper">
+                <select class="region-select">
+                  <option>全部區域</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+              </div>
+              <button class="btn btn-secondary">
+                <i class="fa-solid fa-list"></i> 區域管理
+              </button>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i> 新增個案
+              </button>
             </div>
+          </div>
+        </div>
 
-            <!-- 時間範圍輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">時間範圍輸入框</td>
-                  <td class="content-column">
-                    <div class="time-range-wrapper">
-                      <div class="time-input-wrapper">
-                        <input type="time" class="form-time" />
-                        <i class="fa-regular fa-clock time-icon"></i>
-                      </div>
-                      <span class="time-range-separator">至</span>
-                      <div class="time-input-wrapper">
-                        <input type="time" class="form-time" />
-                        <i class="fa-regular fa-clock time-icon"></i>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 健康紀錄 -->
+        <div class="">
+          <div class="header">
+            <div class="title-container">
+              <button class="back-btn" title="返回">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h1 class="page-title">健康紀錄</h1>
             </div>
-
-            <!-- 文字輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字輸入框</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input class="form-textarea" placeholder="請輸入內容..."></input>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <div class="header-actions">
+              <div class="select-wrapper">
+                <span>選擇個案：</span>
+                <select class="region-select">
+                  <option>小美【002】</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+              </div>
+              <div class="select-wrapper">
+                <span style="white-space: nowrap">選擇日期：</span>
+                <div class="date-input-wrapper">
+                  <input
+                    type="date"
+                    class="form-date"
+                    value="2025-05-16"
+                    required
+                  />
+                  <i class="fa-regular fa-calendar date-icon"></i>
+                </div>
+              </div>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i> 刪除個案
+              </button>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i> 新增個案
+              </button>
+              <button class="btn btn-dark">
+                <i class="fa-solid fa-print"></i> 列印
+              </button>
             </div>
+          </div>
+        </div>
 
-            <!-- 文字區域 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字區域</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <textarea class="form-textarea readonly" rows="3" placeholder="請輸入內容..."></textarea>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 掛號/看診列表 -->
+        <div class="">
+          <div class="header">
+            <div class="title-container">
+              <button class="back-btn" title="返回">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h1 class="page-title">掛號/看診列表</h1>
             </div>
-
-            <!-- 文字區域（唯讀） -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字區域（唯讀）</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                        <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        readonly
-                      >這是唯讀的文字內容</textarea>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <div class="header-actions">
+              <div class="select-wrapper">
+                <span style="white-space: nowrap">日期區間：</span>
+                <div class="date-range-wrapper">
+                  <div class="date-input-wrapper">
+                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <i class="fa-regular fa-calendar date-icon"></i>
+                  </div>
+                  <span class="date-range-separator">至</span>
+                  <div class="date-input-wrapper">
+                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <i class="fa-regular fa-calendar date-icon"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="select-wrapper">
+                <span style="white-space: nowrap">掛號作業：</span>
+                <div style="display: flex; gap: var(--sys-size-spacing-md);">
+                  <button class="btn btn-secondary">
+                    <i class="fa-solid fa-ban"></i> 無卡掛號
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="fa-solid fa-address-card"></i> 讀卡掛號
+                  </button>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- 數字輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">數字輸入框</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input type="number" class="year-input" placeholder="" />
-                      <span>年 (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 健保收據列表 -->
+        <div class="">
+          <div class="header">
+            <div class="title-container">
+              <button class="back-btn" title="返回">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h1 class="page-title">健保收據列表</h1>
             </div>
-
-            <!-- 單選按鈕 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">單選按鈕</td>
-                  <td class="content-column">
-                    <div class="radio-group">
-                      <div class="radio-option">
-                        <input type="radio" id="no-drinking" name="drinking-status" value="不喝酒" checked />
-                        <label for="no-drinking">不喝酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input type="radio" id="quit-drinking" name="drinking-status" value="已戒酒" />
-                        <label for="quit-drinking">已戒酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input type="radio" id="drinking" name="drinking-status" value="喝酒" />
-                        <label for="drinking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <div class="header-actions">
+              <div class="select-wrapper">
+                <span style="white-space: nowrap">日期區間：</span>
+                <div class="date-range-wrapper">
+                  <div class="date-input-wrapper">
+                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <i class="fa-regular fa-calendar date-icon"></i>
+                  </div>
+                  <span class="date-range-separator">至</span>
+                  <div class="date-input-wrapper">
+                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <i class="fa-regular fa-calendar date-icon"></i>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-dark">
+                <i class="fa-solid fa-print"></i> 列印
+              </button>
             </div>
+          </div>
+        </div>
 
-            <!-- 複選框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">複選框</td>
-                  <td class="content-column">
-                    <div class="checkbox-group">
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="no-smoking" name="smoking-status" value="不吸菸" checked />
-                        <label for="no-smoking">不吸菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="quit-smoking" name="smoking-status" value="已戒菸" />
-                        <label for="quit-smoking">已戒菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="smoking" name="smoking-status" value="吸菸" />
-                        <label for="smoking">吸菸</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 互動式輸入組合 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">互動式輸入組合</td>
-                  <td class="content-column">
-                    <div class="vaccine-container">
-                      <div class="radio-group">
-                        <div class="radio-option">
-                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
-                          <label for="pneumococcal-vaccine-no">無</label>
-                        </div>
-                        <div class="radio-option yes-option">
-                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
-                          <label for="pneumococcal-vaccine-yes">有</label>
-                        </div>
-                      </div>
-                      <div id="vaccination-details" class="hidden vaccination-details-fields">
-                        <div class="vaccination-year-label">施打西元年:</div>
-                        <div class="vaccination-year-input-group">
-                          <div class="input-group vaccination-year-input">
-                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
-                          </div>
-                          <div class="checkbox-option vaccination-unknown-checkbox">
-                            <input type="checkbox" id="vaccination-year-unknown">
-                            <label for="vaccination-year-unknown">不記得</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+        <!-- 統計報表 -->
+        <div class="">
+          <div class="header">
+            <h1 class="page-title">統計報表</h1>
+            <div class="header-actions">
+              <div class="select-wrapper">
+                <span style="white-space: nowrap">選擇查詢類別：</span>
+                <div style="display: flex; gap: var(--sys-size-spacing-md);">
+                  <button class="action-btn" data-tooltip="案件分類">
+                    <i class="fa-solid fa-list"></i>
+                  </button>
+                  <button class="action-btn" data-tooltip="科別">
+                    <i class="fa-solid fa-user-group"></i>
+                  </button>
+                  <button class="action-btn" data-tooltip="異常卡號">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                  </button>
+                  <button class="action-btn" data-tooltip="醫令項目">
+                    <i class="fa-solid fa-hand-holding-medical"></i>
+                  </button>
+                  <button class="action-btn" data-tooltip="醫療項目">
+                    <i class="fa-solid fa-briefcase-medical"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

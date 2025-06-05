@@ -196,58 +196,237 @@
       <div class="main-content">
         <div class="header-container">
           <div class="header">
-            <div class="title-container">
-              <button class="back-btn" title="返回">
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              <h1 class="page-title">健康紀錄</h1>
-            </div>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="region-select">
-                  <option>小美【002】</option>
-                </select>
-                <i class="fa-solid fa-chevron-down select-icon"></i>
-              </div>
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">選擇日期：</span>
-                <div class="date-input-wrapper">
-                  <input
-                    type="date"
-                    class="form-date"
-                    value="2025-05-16"
-                    required
-                  />
-                  <i class="fa-regular fa-calendar date-icon"></i>
-                </div>
-              </div>
-              <button class="btn btn-danger">
-                <i class="fa-solid fa-trash"></i> 刪除個案
-              </button>
-              <button class="btn btn-primary">
-                <i class="fas fa-plus"></i> 新增個案
-              </button>
-              <button class="btn btn-dark">
-                <i class="fa-solid fa-print"></i> 列印
-              </button>
-            </div>
+            <h1 class="page-title">輸入元素展示</h1>
           </div>
         </div>
 
         <div class="sub-content">
           <div class="form-sections">
-            <!-- 新增的區塊 -->
-            <div class="form-container form-container-empty">
-              <i class="fas fa-info-circle"></i> 目前沒有任何資料
+            <!-- 日期輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期輸入框</td>
+                  <td class="content-column">
+                    <div class="date-input-wrapper">
+                      <input type="date" class="form-date" value="2025-05-16" required />
+                      <i class="fa-regular fa-calendar date-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 日期範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="date-range-wrapper">
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                      <span class="date-range-separator">至</span>
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 單一時間輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單一時間輸入框</td>
+                  <td class="content-column">
+                    <div class="time-input-wrapper">
+                      <input type="time" class="form-time" />
+                      <i class="fa-regular fa-clock time-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 時間範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">時間範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="time-range-wrapper">
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                      <span class="time-range-separator">至</span>
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input class="form-textarea" placeholder="請輸入內容..."></input>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <textarea class="form-textarea readonly" rows="3" placeholder="請輸入內容..."></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域（唯讀） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域（唯讀）</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                        <textarea
+                        class="form-textarea readonly"
+                        rows="3"
+                        readonly
+                      >這是唯讀的文字內容</textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 數字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">數字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input type="number" class="year-input" placeholder="" />
+                      <span>年 (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 單選按鈕 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單選按鈕</td>
+                  <td class="content-column">
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input type="radio" id="no-drinking" name="drinking-status" value="不喝酒" checked />
+                        <label for="no-drinking">不喝酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="quit-drinking" name="drinking-status" value="已戒酒" />
+                        <label for="quit-drinking">已戒酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="drinking" name="drinking-status" value="喝酒" />
+                        <label for="drinking">喝酒</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 複選框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">複選框</td>
+                  <td class="content-column">
+                    <div class="checkbox-group">
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="no-smoking" name="smoking-status" value="不吸菸" checked />
+                        <label for="no-smoking">不吸菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="quit-smoking" name="smoking-status" value="已戒菸" />
+                        <label for="quit-smoking">已戒菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="smoking" name="smoking-status" value="吸菸" />
+                        <label for="smoking">吸菸</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 互動式輸入組合 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">互動式輸入組合</td>
+                  <td class="content-column">
+                    <div class="vaccine-container">
+                      <div class="radio-group">
+                        <div class="radio-option">
+                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
+                          <label for="pneumococcal-vaccine-no">無</label>
+                        </div>
+                        <div class="radio-option yes-option">
+                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
+                          <label for="pneumococcal-vaccine-yes">有</label>
+                        </div>
+                      </div>
+                      <div id="vaccination-details" class="hidden vaccination-details-fields">
+                        <div class="vaccination-year-label">施打西元年:</div>
+                        <div class="vaccination-year-input-group">
+                          <div class="input-group vaccination-year-input">
+                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
+                          </div>
+                          <div class="checkbox-option vaccination-unknown-checkbox">
+                            <input type="checkbox" id="vaccination-year-unknown">
+                            <label for="vaccination-year-unknown">不記得</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
 
         <div class="footer" id="footer">
-          Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+            Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
         </div>
-      </div>
     </div>
 
     <!-- 將下拉選單移到這裡 -->
@@ -264,11 +443,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 返回按鈕功能
-        const backBtn = document.querySelector(".back-btn");
-        backBtn.addEventListener("click", function () {
-          window.history.back();
-        });
 
         // 更新頁尾年份
         const currentYear = new Date().getFullYear();
@@ -330,90 +504,81 @@
         });
 
         // 新增肺炎雙球菌疫苗邏輯
-        const vaccineRadios = document.querySelectorAll(
-          'input[name="pneumococcal-vaccine"]'
-        );
-        const vaccinationDetails = document.getElementById(
-          "vaccination-details"
-        );
-        const vaccinationYearInput =
-          vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
-        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector(
-          'input[type="checkbox"]'
-        ); // 獲取不記得勾選框
+        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
+        const vaccinationDetails = document.getElementById('vaccination-details');
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]'); // 獲取不記得勾選框
 
-        vaccineRadios.forEach((radio) => {
-          radio.addEventListener("change", function () {
-            if (this.value === "yes") {
-              vaccinationDetails.classList.remove("hidden"); // 移除 hidden class
-              // 檢查初始狀態並設定互斥邏輯
-              updateVaccinationFieldStates();
-            } else {
-              vaccinationDetails.classList.add("hidden"); // 添加 hidden class
-              // 可選：當隱藏時，清空輸入框和取消勾選
-              vaccinationYearInput.value = "";
-              vaccinationUnknownCheckbox.checked = false;
-              // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
-              vaccinationYearInput.disabled = false;
-              vaccinationUnknownCheckbox.disabled = false;
-            }
-          });
+        vaccineRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    vaccinationDetails.classList.remove('hidden'); // 移除 hidden class
+                    // 檢查初始狀態並設定互斥邏輯
+                    updateVaccinationFieldStates();
+                } else {
+                    vaccinationDetails.classList.add('hidden'); // 添加 hidden class
+                    // 可選：當隱藏時，清空輸入框和取消勾選
+                    vaccinationYearInput.value = '';
+                    vaccinationUnknownCheckbox.checked = false;
+                     // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
+                    vaccinationYearInput.disabled = false;
+                    vaccinationUnknownCheckbox.disabled = false;
+                }
+            });
         });
 
         // 互斥邏輯函數
         function updateVaccinationFieldStates() {
-          if (vaccinationYearInput.value.trim() !== "") {
-            // 如果輸入框有值，停用並取消勾選不記得
-            vaccinationUnknownCheckbox.disabled = true;
-            vaccinationUnknownCheckbox.checked = false;
-          } else if (vaccinationUnknownCheckbox.checked) {
-            // 如果不記得被勾選，停用並清空輸入框
-            vaccinationYearInput.disabled = true;
-            vaccinationYearInput.value = ""; // 清空輸入框的值
-          } else {
-            // 都沒有值或沒有勾選，都啟用
-            vaccinationYearInput.disabled = false;
-            vaccinationUnknownCheckbox.disabled = false;
-          }
+            if (vaccinationYearInput.value.trim() !== '') {
+                // 如果輸入框有值，停用並取消勾選不記得
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else if (vaccinationUnknownCheckbox.checked) {
+                // 如果不記得被勾選，停用並清空輸入框
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; // 清空輸入框的值
+            } else {
+                // 都沒有值或沒有勾選，都啟用
+                vaccinationYearInput.disabled = false;
+                vaccinationUnknownCheckbox.disabled = false;
+            }
         }
 
         // 為輸入框新增事件監聽器
-        vaccinationYearInput.addEventListener("input", function () {
-          // 當輸入框有輸入時，停用不記得勾選框
-          if (this.value.trim() !== "") {
-            vaccinationUnknownCheckbox.disabled = true;
-            vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
-          } else {
-            // 當輸入框清空時，啟用不記得勾選框
-            vaccinationUnknownCheckbox.disabled = false;
-          }
+        vaccinationYearInput.addEventListener('input', function() {
+            // 當輸入框有輸入時，停用不記得勾選框
+            if (this.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
+            } else {
+                // 當輸入框清空時，啟用不記得勾選框
+                vaccinationUnknownCheckbox.disabled = false;
+            }
         });
 
         // 為不記得勾選框新增事件監聽器
-        vaccinationUnknownCheckbox.addEventListener("change", function () {
-          // 當不記得被勾選時，停用並清空輸入框
-          if (this.checked) {
-            vaccinationYearInput.disabled = true;
-            vaccinationYearInput.value = ""; // 清空輸入框的值
-          } else {
-            // 當不記得取消勾選時，啟用輸入框
-            vaccinationYearInput.disabled = false;
-          }
+        vaccinationUnknownCheckbox.addEventListener('change', function() {
+            // 當不記得被勾選時，停用並清空輸入框
+            if (this.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; // 清空輸入框的值
+            } else {
+                // 當不記得取消勾選時，啟用輸入框
+                vaccinationYearInput.disabled = false;
+            }
         });
 
         // 初始檢查，確保頁面載入時狀態正確
-        const initialCheckedRadio = document.querySelector(
-          'input[name="pneumococcal-vaccine"]:checked'
-        );
-        if (initialCheckedRadio && initialCheckedRadio.value === "no") {
-          vaccinationDetails.classList.add("hidden");
-        } else if (initialCheckedRadio && initialCheckedRadio.value === "yes") {
-          vaccinationDetails.classList.remove("hidden");
-          // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
-          updateVaccinationFieldStates();
+        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
+        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
+            vaccinationDetails.classList.add('hidden');
+        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
+             vaccinationDetails.classList.remove('hidden');
+             // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
+             updateVaccinationFieldStates();
         } else {
-          // 如果沒有預設選中，也隱藏
-          vaccinationDetails.classList.add("hidden");
+             // 如果沒有預設選中，也隱藏
+             vaccinationDetails.classList.add('hidden');
         }
 
         // 結束新增肺炎雙球菌疫苗邏輯

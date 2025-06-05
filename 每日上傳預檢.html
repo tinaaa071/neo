@@ -23,7 +23,11 @@
           <i class="fa-solid fa-angles-left"></i>
         </button>
         <div class="sidebar-content">
-          <div class="logo">
+          <button
+            class="logo"
+            onclick="window.location.href='index.html'"
+            type="button"
+          >
             <div class="logo-icon">
               <svg
                 width="26"
@@ -93,7 +97,7 @@
                 />
               </svg>
             </div>
-          </div>
+          </button>
 
           <div class="demo-badge-container">
             <div class="demo-badge">
@@ -192,133 +196,158 @@
       <div class="main-content">
         <div class="header-container">
           <div class="header">
-            <h1 class="page-title">按鈕展示</h1>
+            <div class="title-container">
+              <button class="back-btn" title="返回">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h1 class="page-title">每日上傳預檢</h1>
+            </div>
           </div>
         </div>
 
         <div class="sub-content">
-          <div class="form-sections">
-            <!-- 基本按鈕 -->
-            <div class="button-section">
-              <h3>基本按鈕</h3>
-              <div class="button-group">
-                <button class="btn btn-primary">主要按鈕</button>
-                <button class="btn btn-secondary">次要按鈕</button>
-                <button class="btn btn-secondary cancel-btn">取消</button>
-              </div>
+          <div class="function-blocks">
+            <!-- 上傳格式 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">上傳格式</td>
+                </tr>
+                <tr>
+                  <td class="form-table-cell">
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="uploadFormatNormal"
+                          name="uploadFormat"
+                          value="normal"
+                          checked
+                        />
+                        <label for="uploadFormatNormal">正常</label>
+                      </div>
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="uploadFormatCorrection"
+                          name="uploadFormat"
+                          value="correction"
+                        />
+                        <label for="uploadFormatCorrection">補正</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
 
-            <!-- 圖示按鈕 -->
-            <div class="button-section">
-              <h3>圖示按鈕</h3>
-              <div class="button-group">
-                <button class="btn btn-primary">
-                  <i class="fas fa-plus"></i> 新增個案
-                </button>
-                <button class="btn btn-secondary">
-                  <i class="fa-solid fa-list"></i> 區域管理
-                </button>
-                <button class="btn btn-danger">
-                  <i class="fas fa-trash-alt"></i> 刪除
-                </button>
-                <button class="btn btn-dark">
-                  <i class="fas fa-print"></i> 列印
-                </button>
-                <button class="back-btn">
-                  <i class="fas fa-arrow-left"></i>
-                </button>
-              </div>
+            <!-- 找補卡 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">找補卡</td>
+                </tr>
+                <tr>
+                  <td class="form-table-cell">
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="findCardNo"
+                          name="findCard"
+                          value="no"
+                          checked
+                        />
+                        <label for="findCardNo">否</label>
+                      </div>
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="findCardYes"
+                          name="findCard"
+                          value="yes"
+                        />
+                        <label for="findCardYes">是</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
 
-            <!-- 功能按鈕 -->
-            <div class="button-section">
-              <h3>功能按鈕</h3>
-              <div class="button-group">
-                <button class="action-btn" data-tooltip="編輯主責人員">
-                  <i class="fa-solid fa-user-pen"></i>
-                </button>
-                <button class="action-btn" data-tooltip="修改案號、類型">
-                  <i class="fas fa-edit"></i>
-                </button>
-                <button class="action-btn" data-tooltip="變更區域">
-                  <i class="fas fa-map-marker-alt"></i>
-                </button>
-                <button class="action-btn" data-tooltip="結案">
-                  <i class="fas fa-user-slash"></i>
-                </button>
-              </div>
+            <!-- 日期與操作 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期</td>
+                </tr>
+                <tr>
+                  <td class="form-table-cell-with-gap">
+                    <div class="date-input-wrapper">
+                      <input
+                        type="date"
+                        id="guidanceDate"
+                        class="form-date"
+                        value="2025-05-16"
+                        required
+                      />
+                      <i class="fa-regular fa-calendar date-icon"></i>
+                    </div>
+                    <!-- 操作按鈕 -->
+                    <div class="button-group">
+                      <button class="btn btn-dark">
+                        <i class="fas fa-search"></i> 搜尋
+                      </button>
+                      <button class="btn btn-secondary">
+                        <i class="fas fa-check"></i> 檢核
+                      </button>
+                      <button class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> 解除儲存
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
 
-            <!-- 導航按鈕 -->
-            <div class="button-section">
-              <h3>導航按鈕</h3>
-              <div class="button-group">
-                <button class="sidebar-toggle" title="縮小側邊欄" style="position: relative; z-index: 0;">
-                  <i class="fa-solid fa-angles-left"></i>
-                </button>
-                <button class="more-btn">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-              </div>
+            <!-- 2.0 上傳 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">2.0 上傳</td>
+                </tr>
+                <tr>
+                  <td class="form-table-cell">
+                    <button class="btn btn-primary">
+                      <i class="fas fa-upload"></i> 上傳
+                    </button>
+                  </td>
+                </tr>
+              </table>
             </div>
 
-            <!-- 分頁按鈕 -->
-            <div class="button-section">
-              <h3>分頁按鈕</h3>
-              <div class="button-group">
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-left"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-right"></i>
-                </button>
-              </div>
+            <!-- 2.0 上傳結果 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">2.0 上傳結果</td>
+                </tr>
+                <tr>
+                  <td class="form-table-cell">
+                    <button class="btn btn-dark">
+                      <i class="fas fa-search"></i> 前往查詢
+                    </button>
+                  </td>
+                </tr>
+              </table>
             </div>
-
-            <!-- 彈出視窗按鈕 -->
-            <div class="button-section">
-              <h3>彈出視窗按鈕</h3>
-              <div class="button-group">
-                <button class="close-btn">
-                  <i class="fas fa-times"></i>
-                </button>
-                <button class="btn btn-secondary cancel-btn">取消</button>
-                <button class="btn btn-primary confirm-btn">確認</button>
-              </div>
-            </div>
-
-            <!-- 按鈕樣式說明 -->
-            <div class="button-section">
-              <h3>按鈕樣式說明</h3>
-              <div class="style-description">
-                <ul>
-                  <li><code>.btn</code> - 基本按鈕樣式</li>
-                  <li><code>.btn-primary</code> - 主要按鈕樣式</li>
-                  <li><code>.btn-secondary</code> - 次要按鈕樣式</li>
-                  <li><code>.action-btn</code> - 功能按鈕樣式</li>
-                  <li><code>.page-btn</code> - 分頁按鈕樣式</li>
-                  <li><code>.sort-btn</code> - 排序按鈕樣式</li>
-                  <li><code>.search-btn</code> - 搜尋按鈕樣式</li>
-                  <li><code>.close-btn</code> - 關閉按鈕樣式</li>
-                </ul>
-              </div>
-            </div>
-
           </div>
         </div>
 
         <div class="footer" id="footer">
-            Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+          Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
         </div>
+      </div>
     </div>
 
     <!-- 將下拉選單移到這裡 -->
@@ -335,6 +364,11 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // 返回按鈕功能
+        const backBtn = document.querySelector(".back-btn");
+        backBtn.addEventListener("click", function () {
+          window.history.back();
+        });
 
         // 更新頁尾年份
         const currentYear = new Date().getFullYear();
@@ -396,81 +430,90 @@
         });
 
         // 新增肺炎雙球菌疫苗邏輯
-        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
-        const vaccinationDetails = document.getElementById('vaccination-details');
-        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
-        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]'); // 獲取不記得勾選框
+        const vaccineRadios = document.querySelectorAll(
+          'input[name="pneumococcal-vaccine"]'
+        );
+        const vaccinationDetails = document.getElementById(
+          "vaccination-details"
+        );
+        const vaccinationYearInput =
+          vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector(
+          'input[type="checkbox"]'
+        ); // 獲取不記得勾選框
 
-        vaccineRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    vaccinationDetails.classList.remove('hidden'); // 移除 hidden class
-                    // 檢查初始狀態並設定互斥邏輯
-                    updateVaccinationFieldStates();
-                } else {
-                    vaccinationDetails.classList.add('hidden'); // 添加 hidden class
-                    // 可選：當隱藏時，清空輸入框和取消勾選
-                    vaccinationYearInput.value = '';
-                    vaccinationUnknownCheckbox.checked = false;
-                     // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
-                    vaccinationYearInput.disabled = false;
-                    vaccinationUnknownCheckbox.disabled = false;
-                }
-            });
+        vaccineRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.value === "yes") {
+              vaccinationDetails.classList.remove("hidden"); // 移除 hidden class
+              // 檢查初始狀態並設定互斥邏輯
+              updateVaccinationFieldStates();
+            } else {
+              vaccinationDetails.classList.add("hidden"); // 添加 hidden class
+              // 可選：當隱藏時，清空輸入框和取消勾選
+              vaccinationYearInput.value = "";
+              vaccinationUnknownCheckbox.checked = false;
+              // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
+              vaccinationYearInput.disabled = false;
+              vaccinationUnknownCheckbox.disabled = false;
+            }
+          });
         });
 
         // 互斥邏輯函數
         function updateVaccinationFieldStates() {
-            if (vaccinationYearInput.value.trim() !== '') {
-                // 如果輸入框有值，停用並取消勾選不記得
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false;
-            } else if (vaccinationUnknownCheckbox.checked) {
-                // 如果不記得被勾選，停用並清空輸入框
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
-            } else {
-                // 都沒有值或沒有勾選，都啟用
-                vaccinationYearInput.disabled = false;
-                vaccinationUnknownCheckbox.disabled = false;
-            }
+          if (vaccinationYearInput.value.trim() !== "") {
+            // 如果輸入框有值，停用並取消勾選不記得
+            vaccinationUnknownCheckbox.disabled = true;
+            vaccinationUnknownCheckbox.checked = false;
+          } else if (vaccinationUnknownCheckbox.checked) {
+            // 如果不記得被勾選，停用並清空輸入框
+            vaccinationYearInput.disabled = true;
+            vaccinationYearInput.value = ""; // 清空輸入框的值
+          } else {
+            // 都沒有值或沒有勾選，都啟用
+            vaccinationYearInput.disabled = false;
+            vaccinationUnknownCheckbox.disabled = false;
+          }
         }
 
         // 為輸入框新增事件監聽器
-        vaccinationYearInput.addEventListener('input', function() {
-            // 當輸入框有輸入時，停用不記得勾選框
-            if (this.value.trim() !== '') {
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
-            } else {
-                // 當輸入框清空時，啟用不記得勾選框
-                vaccinationUnknownCheckbox.disabled = false;
-            }
+        vaccinationYearInput.addEventListener("input", function () {
+          // 當輸入框有輸入時，停用不記得勾選框
+          if (this.value.trim() !== "") {
+            vaccinationUnknownCheckbox.disabled = true;
+            vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
+          } else {
+            // 當輸入框清空時，啟用不記得勾選框
+            vaccinationUnknownCheckbox.disabled = false;
+          }
         });
 
         // 為不記得勾選框新增事件監聽器
-        vaccinationUnknownCheckbox.addEventListener('change', function() {
-            // 當不記得被勾選時，停用並清空輸入框
-            if (this.checked) {
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
-            } else {
-                // 當不記得取消勾選時，啟用輸入框
-                vaccinationYearInput.disabled = false;
-            }
+        vaccinationUnknownCheckbox.addEventListener("change", function () {
+          // 當不記得被勾選時，停用並清空輸入框
+          if (this.checked) {
+            vaccinationYearInput.disabled = true;
+            vaccinationYearInput.value = ""; // 清空輸入框的值
+          } else {
+            // 當不記得取消勾選時，啟用輸入框
+            vaccinationYearInput.disabled = false;
+          }
         });
 
         // 初始檢查，確保頁面載入時狀態正確
-        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
-        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
-            vaccinationDetails.classList.add('hidden');
-        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
-             vaccinationDetails.classList.remove('hidden');
-             // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
-             updateVaccinationFieldStates();
+        const initialCheckedRadio = document.querySelector(
+          'input[name="pneumococcal-vaccine"]:checked'
+        );
+        if (initialCheckedRadio && initialCheckedRadio.value === "no") {
+          vaccinationDetails.classList.add("hidden");
+        } else if (initialCheckedRadio && initialCheckedRadio.value === "yes") {
+          vaccinationDetails.classList.remove("hidden");
+          // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
+          updateVaccinationFieldStates();
         } else {
-             // 如果沒有預設選中，也隱藏
-             vaccinationDetails.classList.add('hidden');
+          // 如果沒有預設選中，也隱藏
+          vaccinationDetails.classList.add("hidden");
         }
 
         // 結束新增肺炎雙球菌疫苗邏輯
