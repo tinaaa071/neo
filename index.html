@@ -928,6 +928,13 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
+            <label for="closeDate">結案日期</label>
+            <div class="date-input-wrapper" style="max-width: 100%">
+              <input type="date" id="closeDate" class="form-date" required />
+              <i class="fa-regular fa-calendar date-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="closeReason">結案原因</label>
             <div class="select-wrapper">
               <select id="closeReason" class="staffSelect">
@@ -939,13 +946,6 @@
                 <option value="5">其他原因</option>
               </select>
               <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="closeDate">結案日期</label>
-            <div class="date-input-wrapper" style="max-width: 100%">
-              <input type="date" id="closeDate" class="form-date" required />
-              <i class="fa-regular fa-calendar date-icon"></i>
             </div>
           </div>
         </div>

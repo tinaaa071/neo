@@ -167,7 +167,7 @@
   --comp-color-button-tertiary-bg: var(--sys-color-secondary-500);
   --comp-color-button-tertiary-text: var(--sys-color-text-inverse);
   --comp-color-button-tertiary-border: var(--sys-color-secondary-500);
-  --comp-color-button-tertiary-bg-hover: #00b8e6;
+  --comp-color-button-tertiary-bg-hover: var(--sys-color-secondary-600);
 
   --comp-color-button-danger-bg: var(--sys-color-error-500);
   --comp-color-button-danger-text: var(--sys-color-text-inverse);
