@@ -1751,11 +1751,13 @@ body {
   cursor: pointer;
   padding: var(--sys-size-spacing-xs);
   font-size: var(--sys-size-text-lg);
-  transition: color 0.2s;
+  transition: all 0.2s ease;
+  transform: rotate(0deg);
 }
 
 .close-btn:hover {
   color: var(--sys-color-primary-500);
+  transform: rotate(90deg);
 }
 
 .modal-body {
