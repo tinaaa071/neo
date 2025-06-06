@@ -1205,7 +1205,6 @@ body {
   background: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-quaternary);
-  border-top: 1.5px solid var(--sys-color-border-primary);
 }
 
 .pagination-nav {
