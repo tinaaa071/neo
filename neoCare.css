@@ -1635,6 +1635,7 @@ body {
 .sort-btn {
   background: none;
   border: none;
+  border-radius: var(--sys-size-radius-full);
   padding: var(--sys-size-spacing-xs);
   cursor: pointer;
   color: var(--sys-color-text-tertiary);
@@ -1651,6 +1652,7 @@ body {
 
 .sort-btn:hover {
   color: var(--sys-color-primary-500);
+  background-color: var(--sys-color-surface-tertiary);
 }
 
 .sort-btn i {
