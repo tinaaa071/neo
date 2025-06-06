@@ -515,6 +515,67 @@
           }
         });
 
+        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
+        const vaccinationDetails = document.getElementById('vaccination-details');
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]');
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]');
+
+        vaccineRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    vaccinationDetails.classList.remove('hidden');
+                    updateVaccinationFieldStates();
+                } else {
+                    vaccinationDetails.classList.add('hidden');
+                    vaccinationYearInput.value = '';
+                    vaccinationUnknownCheckbox.checked = false;
+                    vaccinationYearInput.disabled = false;
+                    vaccinationUnknownCheckbox.disabled = false;
+                }
+            });
+        });
+
+        function updateVaccinationFieldStates() {
+            if (vaccinationYearInput.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else if (vaccinationUnknownCheckbox.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; 
+            } else {
+                vaccinationYearInput.disabled = false;
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        }
+
+        vaccinationYearInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else {
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        });
+
+        vaccinationUnknownCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = '';
+            } else {
+                vaccinationYearInput.disabled = false;
+            }
+        });
+
+        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
+        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
+            vaccinationDetails.classList.add('hidden');
+        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
+             vaccinationDetails.classList.remove('hidden');
+             updateVaccinationFieldStates();
+        } else {
+             vaccinationDetails.classList.add('hidden');
+        }
+
         const editStaffBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="編輯主責人員"]'
         );
