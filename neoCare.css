@@ -282,6 +282,10 @@
   --type-self-pay-bg: rgba(16, 185, 129, 0.1);
   --type-ltc-color: #f59e0b;
   --type-ltc-bg: rgba(245, 158, 11, 0.1);
+  --type-respirator-color: #3b82f6;
+  --type-respirator-bg: rgba(59, 130, 246, 0.1);
+  --type-peaceful-color: #f97316;
+  --type-peaceful-bg: rgba(249, 115, 22, 0.1);
 
   /* Tooltip Token */
   --comp-tooltip-bg: rgba(0, 0, 0, 0.6);
@@ -1113,6 +1117,16 @@ body {
 .status-ltc {
   background: var(--type-ltc-bg);
   color: var(--type-ltc-color);
+}
+
+.status-respirator {
+  background: var(--type-respirator-bg);
+  color: var(--type-respirator-color);
+}
+
+.status-peaceful {
+  background: var(--type-peaceful-bg);
+  color: var(--type-peaceful-color);
 }
 
 .action-btn {
@@ -2228,7 +2242,7 @@ body {
 
 .button-group {
   display: flex;
-  gap: var(--sys-size-spacing-md);
+  gap: var(--sys-size-spacing-sm);
   flex-wrap: wrap;
   align-items: center;
 }
