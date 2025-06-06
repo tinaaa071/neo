@@ -2534,7 +2534,6 @@ code {
   width: 100%;
   padding: var(--sys-size-spacing-sm);
   font-size: var(--sys-size-text-md);
-  font-weight: var(--sys-weight-bold);
 }
 
 .login-content {
@@ -2547,7 +2546,7 @@ code {
   text-align: center;
   margin: 0;
   font-size: var(--sys-size-text-xl);
-  font-weight: var(--sys-weight-bold);
+  font-weight: var(--sys-weight-semibold);
   color: var(--sys-color-text-primary);
   line-height: 1.4;
 }
@@ -2596,7 +2595,7 @@ code {
   border: none;
   padding: var(--sys-spacing-sm);
   cursor: pointer;
-  color: var(--sys-color-text-tertiary);
+  color: var(--sys-color-text-quaternary);
   transition: color var(--sys-transition-fast);
 }
 
