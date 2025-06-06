@@ -619,7 +619,6 @@ body {
 
 .expiry-time .number {
   color: var(--sys-color-error-500);
-  font-weight: var(--sys-weight-semibold);
 }
 
 /* 主內容區 */
