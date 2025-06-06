@@ -372,7 +372,7 @@ body {
 
 .sidebar.minimal .sidebar-content {
   padding: var(--sys-size-spacing-md) var(--sys-size-spacing-lg);
-  padding-top: calc(var(--sys-size-spacing-sm) + 24px); /* 保持一致性 */
+  padding-top: calc(var(--sys-size-spacing-sm) + 24px);
 }
 
 .sidebar.minimal .logo {
@@ -1035,7 +1035,7 @@ body {
 
 /* 取消個案資料表格的 hover 效果 */
 .case-data-table-container .table tbody tr:hover {
-  background: var(--sys-color-surface-primary); /* 或 transparent */
+  background: var(--sys-color-surface-primary);
 }
 
 /* 個案資料表格 th 樣式調整 */
@@ -1475,13 +1475,13 @@ body {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .form-table {
-    font-size: 14px;
+    font-size: var(--sys-size-text-sm);
   }
 
   .radio-group {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: var(--sys-size-spacing-md);
   }
 
   .input-group {
@@ -1889,7 +1889,6 @@ body {
   outline: none;
 }
 
-/* 確保日期選擇器的文字樣式正確 */
 .form-date::-webkit-datetime-edit {
   padding: 0;
   cursor: pointer;
@@ -1940,9 +1939,9 @@ body {
 
 /* 確保日期表格內部的 td 樣式正確應用 */
 .form-container.guidance-date-table .main-label-column {
-  width: 120px; /* 設定寬度 */
-  writing-mode: initial; /* 恢復預設的橫向書寫模式 */
-  text-orientation: initial; /* 恢復預設的文字方向 */
+  width: 120px;
+  writing-mode: initial;
+  text-orientation: initial;
 }
 
 /* 表單區塊樣式 */
