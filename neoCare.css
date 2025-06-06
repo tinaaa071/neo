@@ -33,9 +33,11 @@
   /* Semantic Colors - 語意色 */
   --sys-color-error-500: #ef4444;
   --sys-color-error-600: #dc2626;
-  --sys-color-warning-500: #ef4444;
+  --sys-color-warning-500: #f59e0b;
+  --sys-color-warning-600: #d97706;
   --sys-color-success-500: #10b981;
   --sys-color-info-500: #3b82f6;
+
 
   /* Surface Colors - 表面色 */
   --sys-color-surface-primary: var(--sys-color-neutral-0);
