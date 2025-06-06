@@ -170,24 +170,20 @@
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      // 計算滑鼠相對於 banner 的位置（0-1）
       const xPercent = x / rect.width;
       const yPercent = y / rect.height;
 
-      // 計算位移量（最大 20px）
       const moveX = (xPercent - 0.5) * 20;
       const moveY = (yPercent - 0.5) * 20;
 
-      // 為每個圖片設置不同的位移效果
       images.forEach((img, index) => {
-        const factor = (index + 1) * 0.5; // 每張圖片的位移係數不同
+        const factor = (index + 1) * 0.5;
         img.style.transform = `translate(${moveX * factor}px, ${
           moveY * factor
         }px)`;
       });
     });
 
-    // 滑鼠離開頁面時重置位置
     document.addEventListener("mouseleave", () => {
       images.forEach((img) => {
         img.style.transform = "translate(0, 0)";
@@ -196,7 +192,6 @@
 
     function refreshCaptcha() {
       // 這裡應該調用後端 API 來獲取新的驗證碼圖片
-      // 目前只是模擬更新
       const captchaImg = document.querySelector(".captcha-image img");
       captchaImg.src = "./img/captcha.png?" + new Date().getTime();
 

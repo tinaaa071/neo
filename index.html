@@ -111,7 +111,7 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number">3000</span> 秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
               >
             </div>
           </div>
@@ -661,6 +661,20 @@
     </div>
 
     <script>
+      // 倒計時
+      let countdown = 3000;
+      const countdownEl = document.getElementById('countdown');
+
+      const timer = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(timer);
+          alert("自動登出");
+        }
+      }, 1000);
+
       document.addEventListener("DOMContentLoaded", function () {
         const moreBtn = document.querySelector(".more-btn");
         const dropdown = document.querySelector(".more-options-dropdown");
@@ -689,8 +703,7 @@
           }
         });
       });
-    </script>
-    <script>
+      
       document.addEventListener("DOMContentLoaded", function () {
         const currentYear = new Date().getFullYear();
         document.getElementById("currentYear").textContent = currentYear;
