@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Custom styles for this template-->
+    <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
   </head>
   <body>
@@ -671,18 +671,15 @@
         moreBtn.addEventListener("click", function (event) {
           event.stopPropagation();
 
-          // 計算下拉選單的位置
           const containerRect = demoBadgeContainer.getBoundingClientRect();
           const btnRect = moreBtn.getBoundingClientRect();
 
-          // 設置下拉選單的位置
           dropdown.style.top = `${btnRect.top}px`;
           dropdown.style.left = `${containerRect.right + 8}px`;
 
           dropdown.classList.toggle("show");
         });
 
-        // 點擊其他地方時關閉下拉選單
         document.addEventListener("click", function (event) {
           if (
             !dropdown.contains(event.target) &&
@@ -695,11 +692,9 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 更新頁尾年份
         const currentYear = new Date().getFullYear();
         document.getElementById("currentYear").textContent = currentYear;
 
-        // 編輯主責人員彈出視窗功能
         const editStaffBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="編輯主責人員"]'
         );
@@ -708,90 +703,72 @@
         const cancelBtn = modal.querySelector(".cancel-btn");
         const confirmBtn = modal.querySelector(".confirm-btn");
 
-        // 打開彈出視窗
         editStaffBtns.forEach((btn) => {
           btn.addEventListener("click", function () {
             modal.classList.add("show");
           });
         });
 
-        // 關閉彈出視窗的函數
         function closeModal() {
           modal.classList.remove("show");
         }
 
-        // 點擊關閉按鈕
         closeBtn.addEventListener("click", closeModal);
 
-        // 點擊取消按鈕
         cancelBtn.addEventListener("click", closeModal);
 
-        // 點擊確認按鈕
         confirmBtn.addEventListener("click", function () {
           const selectedStaff = document.getElementById("staffSelect").value;
           if (selectedStaff) {
-            // TODO: 處理確認邏輯
             closeModal();
           }
         });
 
-        // 點擊彈出視窗外部關閉
         modal.addEventListener("click", function (e) {
           if (e.target === modal) {
             closeModal();
           }
         });
 
-        // 獲取所有導航區塊
         const navSections = document.querySelectorAll(".nav-section");
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
 
-        // 搜尋功能
         const searchBtn = document.querySelector(".search-btn");
         const searchInput = document.querySelector(".search-input");
 
         searchBtn.addEventListener("click", function () {
           const searchTerm = searchInput.value.trim();
           if (searchTerm) {
-            // 這裡可以添加搜尋邏輯
             console.log("搜尋:", searchTerm);
-            // TODO: 實作搜尋功能
           }
         });
 
-        // 按下 Enter 鍵也可以搜尋
         searchInput.addEventListener("keypress", function (e) {
           if (e.key === "Enter") {
             searchBtn.click();
           }
         });
 
-        // 設定所有導航區塊預設為收合狀態
         navSections.forEach((section) => {
           section.classList.add("collapsed");
         });
 
-        // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
 
           header.addEventListener("click", () => {
-            // 如果側邊欄是收合狀態，先展開側邊欄
             if (sidebar.classList.contains("minimal")) {
               sidebar.classList.remove("minimal");
             }
-            // 切換收合狀態
             section.classList.toggle("collapsed");
           });
         });
 
-        // 側邊欄縮小功能
         sidebarToggle.addEventListener("click", () => {
           sidebar.classList.toggle("minimal");
         });
 
-        // 排序按鈕功能
         const sortButtons = document.querySelectorAll(".sort-btn");
         const tableBody = document.querySelector(".table tbody");
 
@@ -802,12 +779,10 @@
             const aValue = a.cells[columnIndex].textContent.trim();
             const bValue = b.cells[columnIndex].textContent.trim();
 
-            // 處理數字類型
             if (!isNaN(aValue) && !isNaN(bValue)) {
               return direction === "asc" ? aValue - bValue : bValue - aValue;
             }
 
-            // 處理日期類型
             if (
               aValue.match(/^\d{4}-\d{2}-\d{2}$/) &&
               bValue.match(/^\d{4}-\d{2}-\d{2}$/)
@@ -817,47 +792,38 @@
                 : new Date(bValue) - new Date(aValue);
             }
 
-            // 處理文字類型
             return direction === "asc"
               ? aValue.localeCompare(bValue, "zh-TW")
               : bValue.localeCompare(aValue, "zh-TW");
           });
 
-          // 清空表格並重新添加排序後的行
           tableBody.innerHTML = "";
           rows.forEach((row) => tableBody.appendChild(row));
         }
 
         sortButtons.forEach((button, index) => {
           button.addEventListener("click", function () {
-            // 移除其他按鈕的狀態
             sortButtons.forEach((btn) => {
               if (btn !== this) {
                 btn.classList.remove("active", "asc", "desc");
               }
             });
 
-            // 切換當前按鈕的狀態並執行排序
             if (!this.classList.contains("active")) {
-              // 第一次點擊：升序
               this.classList.add("active", "asc");
               this.classList.remove("desc");
               sortTable(index, "asc");
             } else if (this.classList.contains("asc")) {
-              // 第二次點擊：降序
               this.classList.remove("asc");
               this.classList.add("desc");
               sortTable(index, "desc");
             } else {
-              // 第三次點擊：恢復預設
               this.classList.remove("active", "desc");
-              // 恢復原始順序（可以根據需要實現）
               sortTable(index, "default");
             }
           });
         });
 
-        // 結案按鈕功能
         const closeCaseBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="結案"]'
         );
@@ -869,46 +835,36 @@
         const caseNameSpan = document.getElementById("caseName");
         const caseIdSpan = document.getElementById("caseId");
 
-        // 打開結案彈出視窗
         closeCaseBtns.forEach((btn) => {
           btn.addEventListener("click", function () {
-            // 獲取當前行的個案資料
             const row = this.closest("tr");
             const name = row.cells[2].textContent;
             const id = row.cells[1].textContent;
 
-            // 更新彈出視窗標題
             caseNameSpan.textContent = name;
             caseIdSpan.textContent = id;
 
-            // 設置預設日期為今天
             document.getElementById("closeDate").valueAsDate = new Date();
 
             closeCaseModal.classList.add("show");
           });
         });
 
-        // 關閉結案彈出視窗的函數
         function closeCloseCaseModal() {
           closeCaseModal.classList.remove("show");
-          // 重置表單
           document.getElementById("closeReason").value = "";
           document.getElementById("closeDate").value = "";
         }
 
-        // 點擊關閉按鈕
         closeCaseCloseBtn.addEventListener("click", closeCloseCaseModal);
 
-        // 點擊取消按鈕
         closeCaseCancelBtn.addEventListener("click", closeCloseCaseModal);
 
-        // 點擊確認按鈕
         closeCaseConfirmBtn.addEventListener("click", function () {
           const closeReason = document.getElementById("closeReason").value;
           const closeDate = document.getElementById("closeDate").value;
 
           if (closeReason && closeDate) {
-            // TODO: 處理結案確認邏輯
             console.log("結案原因:", closeReason);
             console.log("結案日期:", closeDate);
             closeCloseCaseModal();
@@ -917,7 +873,6 @@
           }
         });
 
-        // 點擊彈出視窗外部關閉
         closeCaseModal.addEventListener("click", function (e) {
           if (e.target === closeCaseModal) {
             closeCloseCaseModal();
@@ -1006,10 +961,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 原有的程式碼保持不變
-        // ... existing code ...
-
-        // 移動端側邊欄控制
         const mobileSidebarToggle = document.querySelector(
           ".mobile-sidebar-toggle"
         );
@@ -1024,7 +975,6 @@
         mobileSidebarToggle.addEventListener("click", toggleSidebar);
         sidebarOverlay.addEventListener("click", toggleSidebar);
 
-        // 監聽視窗大小變化
         window.addEventListener("resize", function () {
           if (window.innerWidth > 1024) {
             sidebar.classList.remove("show");

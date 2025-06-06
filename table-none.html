@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Custom styles for this template-->
+    <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
   </head>
   <body>
@@ -261,46 +261,37 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 返回按鈕功能
         const backBtn = document.querySelector(".back-btn");
         backBtn.addEventListener("click", function () {
           window.history.back();
         });
 
-        // 更新頁尾年份
         const currentYear = new Date().getFullYear();
         document.getElementById("currentYear").textContent = currentYear;
 
-        // 獲取所有導航區塊
         const navSections = document.querySelectorAll(".nav-section");
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
 
-        // 設定所有導航區塊預設為收合狀態
         navSections.forEach((section) => {
           section.classList.add("collapsed");
         });
         
-        // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
 
           header.addEventListener("click", () => {
-            // 如果側邊欄是收合狀態，先展開側邊欄
             if (sidebar.classList.contains("minimal")) {
               sidebar.classList.remove("minimal");
             }
-            // 切換收合狀態
             section.classList.toggle("collapsed");
           });
         });
 
-        // 側邊欄縮小功能
         sidebarToggle.addEventListener("click", () => {
           sidebar.classList.toggle("minimal");
         });
 
-        // 下拉選單功能
         const moreBtn = document.querySelector(".more-btn");
         const dropdown = document.querySelector(".more-options-dropdown");
         const demoBadgeContainer = document.querySelector(
@@ -310,18 +301,15 @@
         moreBtn.addEventListener("click", function (event) {
           event.stopPropagation();
 
-          // 計算下拉選單的位置
           const containerRect = demoBadgeContainer.getBoundingClientRect();
           const btnRect = moreBtn.getBoundingClientRect();
 
-          // 設置下拉選單的位置
           dropdown.style.top = `${btnRect.top}px`;
           dropdown.style.left = `${containerRect.right + 8}px`;
 
           dropdown.classList.toggle("show");
         });
 
-        // 點擊其他地方時關閉下拉選單
         document.addEventListener("click", function (event) {
           if (
             !dropdown.contains(event.target) &&
@@ -331,7 +319,6 @@
           }
         });
 
-        // 移動端側邊欄控制
         const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
         const sidebarOverlay = document.querySelector(".sidebar-overlay");
 
@@ -343,7 +330,6 @@
         mobileSidebarToggle.addEventListener("click", toggleSidebar);
         sidebarOverlay.addEventListener("click", toggleSidebar);
 
-        // 監聽視窗大小變化
         window.addEventListener("resize", function() {
           if (window.innerWidth > 1024) {
             sidebar.classList.remove("show");

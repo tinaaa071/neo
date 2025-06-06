@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Custom styles for this template-->
+    <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
   </head>
   <body>
@@ -526,46 +526,37 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 返回按鈕功能
         const backBtn = document.querySelector(".back-btn");
         backBtn.addEventListener("click", function () {
           window.history.back();
         });
 
-        // 更新頁尾年份
         const currentYear = new Date().getFullYear();
         document.getElementById("currentYear").textContent = currentYear;
 
-        // 獲取所有導航區塊
         const navSections = document.querySelectorAll(".nav-section");
         const sidebar = document.querySelector(".sidebar");
         const sidebarToggle = document.querySelector(".sidebar-toggle");
 
-        // 設定所有導航區塊預設為收合狀態
         navSections.forEach((section) => {
           section.classList.add("collapsed");
         });
         
-        // 為每個導航區塊添加點擊事件
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
 
           header.addEventListener("click", () => {
-            // 如果側邊欄是收合狀態，先展開側邊欄
             if (sidebar.classList.contains("minimal")) {
               sidebar.classList.remove("minimal");
             }
-            // 切換收合狀態
             section.classList.toggle("collapsed");
           });
         });
 
-        // 側邊欄縮小功能
         sidebarToggle.addEventListener("click", () => {
           sidebar.classList.toggle("minimal");
         });
 
-        // 下拉選單功能
         const moreBtn = document.querySelector(".more-btn");
         const dropdown = document.querySelector(".more-options-dropdown");
         const demoBadgeContainer = document.querySelector(
@@ -575,18 +566,15 @@
         moreBtn.addEventListener("click", function (event) {
           event.stopPropagation();
 
-          // 計算下拉選單的位置
           const containerRect = demoBadgeContainer.getBoundingClientRect();
           const btnRect = moreBtn.getBoundingClientRect();
 
-          // 設置下拉選單的位置
           dropdown.style.top = `${btnRect.top}px`;
           dropdown.style.left = `${containerRect.right + 8}px`;
 
           dropdown.classList.toggle("show");
         });
 
-        // 點擊其他地方時關閉下拉選單
         document.addEventListener("click", function (event) {
           if (
             !dropdown.contains(event.target) &&
@@ -596,87 +584,66 @@
           }
         });
 
-        // 新增肺炎雙球菌疫苗邏輯
         const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
         const vaccinationDetails = document.getElementById('vaccination-details');
-        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]'); // 獲取施打西元年輸入框
-        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]'); // 獲取不記得勾選框
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]');
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]');
 
         vaccineRadios.forEach(radio => {
             radio.addEventListener('change', function() {
                 if (this.value === 'yes') {
-                    vaccinationDetails.classList.remove('hidden'); // 移除 hidden class
-                    // 檢查初始狀態並設定互斥邏輯
+                    vaccinationDetails.classList.remove('hidden');
                     updateVaccinationFieldStates();
                 } else {
-                    vaccinationDetails.classList.add('hidden'); // 添加 hidden class
-                    // 可選：當隱藏時，清空輸入框和取消勾選
+                    vaccinationDetails.classList.add('hidden');
                     vaccinationYearInput.value = '';
                     vaccinationUnknownCheckbox.checked = false;
-                     // 確保隱藏時是啟用狀態，以便下次顯示時正確互動
                     vaccinationYearInput.disabled = false;
                     vaccinationUnknownCheckbox.disabled = false;
                 }
             });
         });
 
-        // 互斥邏輯函數
         function updateVaccinationFieldStates() {
             if (vaccinationYearInput.value.trim() !== '') {
-                // 如果輸入框有值，停用並取消勾選不記得
                 vaccinationUnknownCheckbox.disabled = true;
                 vaccinationUnknownCheckbox.checked = false;
             } else if (vaccinationUnknownCheckbox.checked) {
-                // 如果不記得被勾選，停用並清空輸入框
                 vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
+                vaccinationYearInput.value = ''; 
             } else {
-                // 都沒有值或沒有勾選，都啟用
                 vaccinationYearInput.disabled = false;
                 vaccinationUnknownCheckbox.disabled = false;
             }
         }
 
-        // 為輸入框新增事件監聽器
         vaccinationYearInput.addEventListener('input', function() {
-            // 當輸入框有輸入時，停用不記得勾選框
             if (this.value.trim() !== '') {
                 vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false; // 確保取消勾選
+                vaccinationUnknownCheckbox.checked = false;
             } else {
-                // 當輸入框清空時，啟用不記得勾選框
                 vaccinationUnknownCheckbox.disabled = false;
             }
         });
 
-        // 為不記得勾選框新增事件監聽器
         vaccinationUnknownCheckbox.addEventListener('change', function() {
-            // 當不記得被勾選時，停用並清空輸入框
             if (this.checked) {
                 vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; // 清空輸入框的值
+                vaccinationYearInput.value = '';
             } else {
-                // 當不記得取消勾選時，啟用輸入框
                 vaccinationYearInput.disabled = false;
             }
         });
 
-        // 初始檢查，確保頁面載入時狀態正確
         const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
         if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
             vaccinationDetails.classList.add('hidden');
         } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
              vaccinationDetails.classList.remove('hidden');
-             // 頁面載入時，如果「有」被選中，也執行一次互斥邏輯檢查
              updateVaccinationFieldStates();
         } else {
-             // 如果沒有預設選中，也隱藏
              vaccinationDetails.classList.add('hidden');
         }
-
-        // 結束新增肺炎雙球菌疫苗邏輯
-
-        // 移動端側邊欄控制
         const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
         const sidebarOverlay = document.querySelector(".sidebar-overlay");
 
@@ -688,7 +655,6 @@
         mobileSidebarToggle.addEventListener("click", toggleSidebar);
         sidebarOverlay.addEventListener("click", toggleSidebar);
 
-        // 監聽視窗大小變化
         window.addEventListener("resize", function() {
           if (window.innerWidth > 1024) {
             sidebar.classList.remove("show");
