@@ -682,6 +682,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--sys-size-spacing-sm);
+  margin-right: auto;
 }
 
 .back-btn {
@@ -761,7 +762,7 @@ body {
   font-size: var(--sys-size-text-2xl);
   font-weight: var(--sys-weight-semibold);
   color: var(--sys-color-text-primary);
-  margin: 0;
+  margin-right: auto;
 }
 
 .header-actions {
@@ -976,11 +977,17 @@ body {
 
 /* 表格 */
 .table-container {
-  background: var(--sys-color-surface-primary);
-  border: 1.5px solid var(--sys-color-border-primary);
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
   border-radius: var(--sys-size-radius-md);
-  overflow: hidden;
-  box-shadow: var(--sys-shadow-xs);
+  border: 1.5px solid var(--sys-color-border-primary);
+  background: var(--sys-color-surface-primary);
+}
+
+.table-container .table {
+  min-width: 100%;
+  width: max-content;
 }
 
 .table {
@@ -1174,6 +1181,9 @@ body {
 
 /* 分頁 */
 .pagination {
+  position: sticky;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1181,6 +1191,7 @@ body {
   background: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-quaternary);
+  border-top: 1.5px solid var(--sys-color-border-primary);
 }
 
 .pagination-nav {
@@ -1500,11 +1511,11 @@ body {
 }
 
 .btn i {
-  font-size: 14px;
+  font-size: var(--sys-size-text-sm);
 }
 
 .action-btn i {
-  font-size: 14px;
+  font-size: var(--sys-size-text-sm);
   color: var(--sys-color-text-tertiary);
 }
 
@@ -1988,14 +1999,10 @@ body {
   scrollbar-color: var(--sys-color-neutral-200) var(--sys-color-neutral-100);
 }
 
-/* 新增的肺炎雙球菌疫苗相關樣式 */
-/* 修改 hidden class 以支援過渡 */
 .hidden {
-  /* display: none !important; */ /* 移除 display none */
-  max-height: 0 !important; /* 隱藏時高度為 0 */
-  opacity: 0 !important; /* 隱藏時透明度為 0 */
-  overflow: hidden !important; /* 隱藏溢出內容 */
-  /* 保持 visbility 為 hidden 以確保無法互動 */
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
   visibility: hidden !important;
 }
 
@@ -2012,8 +2019,7 @@ body {
   /* 新增過渡效果 */
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
     visibility 0.3s ease-out;
-  /* 設定一個足夠大的 max-height，確保內容能完全顯示 */
-  max-height: 300px; /* 設置一個預設的 max-height */
+  max-height: 300px;
   opacity: 1;
   visibility: visible;
 }
@@ -2042,32 +2048,32 @@ body {
 
 /* 停用狀態的文字輸入框樣式 */
 .form-textarea:disabled {
-  background-color: var(--sys-color-surface-tertiary); /* 使用較淺的背景色 */
-  color: var(--sys-color-text-tertiary); /* 使用較淺的文字顏色 */
-  border-color: var(--sys-color-border-primary); /* 保持邊框顏色或變淡 */
-  cursor: not-allowed; /* 顯示禁止游標 */
-  opacity: 0.7; /* 可選：降低透明度 */
+  background-color: var(--sys-color-surface-tertiary);
+  color: var(--sys-color-text-tertiary);
+  border-color: var(--sys-color-border-primary);
+  cursor: not-allowed;
+  opacity: 0.7; 
 }
 
 /* 停用狀態的 checkbox 輸入框樣式 */
 .checkbox-option input[type="checkbox"]:disabled {
-  border-color: var(--sys-color-border-primary); /* 邊框變淡 */
-  background-color: var(--sys-color-surface-tertiary); /* 背景變淡 */
-  cursor: not-allowed; /* 顯示禁止游標 */
-  opacity: 0.7; /* 可選：降低透明度 */
+  border-color: var(--sys-color-border-primary);
+  background-color: var(--sys-color-surface-tertiary);
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 /* 停用狀態的 checkbox 輸入框被選中時的樣式調整 */
 .checkbox-option input[type="checkbox"]:disabled:checked {
-  background-color: var(--sys-color-neutral-300); /* 被選中且停用時的背景色 */
-  border-color: var(--sys-color-neutral-300); /* 被選中且停用時的邊框色 */
+  background-color: var(--sys-color-neutral-300); 
+  border-color: var(--sys-color-neutral-300);
 }
 
 /* 停用狀態的 checkbox 標籤樣式 */
 .checkbox-option input[type="checkbox"]:disabled + label {
-  color: var(--sys-color-text-tertiary); /* 文字顏色變淡 */
-  cursor: not-allowed; /* 顯示禁止游標 */
-  opacity: 0.7; /* 可選：降低透明度 */
+  color: var(--sys-color-text-tertiary);
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 /* 日期範圍輸入框樣式 */
@@ -2232,7 +2238,6 @@ body {
   padding: var(--sys-size-spacing-md);
   border-radius: var(--sys-size-radius-sm);
 }
-
 .style-description ul,
 .js-description ul {
   list-style-type: none;
@@ -2270,13 +2275,13 @@ code {
      ======================================== */
 
 .form-section {
-  margin-bottom: var(--sys-size-spacing-2xl); /* Adjust spacing as needed */
+  margin-bottom: var(--sys-size-spacing-2xl); 
 }
 
 .form-section h3 {
   font-size: var(--sys-size-text-xl);
   font-weight: var(--sys-weight-bold);
-  margin-bottom: 0; /* 移除 h3 的底部 margin */
+  margin-bottom: 0;
   padding-bottom: var(--sys-size-spacing-sm);
   border-bottom: 2px solid var(--sys-color-primary-500);
   color: var(--sys-color-text-primary);
@@ -2284,8 +2289,8 @@ code {
 }
 
 .form-section-header {
-  margin-bottom: var(--sys-size-spacing-lg); /* 間距 */
-  border-bottom: 1px solid var(--sys-color-border-primary); /* 中性色底線 */
+  margin-bottom: var(--sys-size-spacing-lg);
+  border-bottom: 1px solid var(--sys-color-border-primary); 
 }
 
 .form-items-container {
@@ -2293,8 +2298,8 @@ code {
   grid-template-columns: repeat(
     auto-fill,
     minmax(150px, 1fr)
-  ); /* Responsive grid */
-  gap: var(--sys-size-spacing-lg); /* Spacing between items */
+  );
+  gap: var(--sys-size-spacing-lg); 
 }
 
 .form-item {
@@ -2305,7 +2310,6 @@ code {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   text-align: center;
-  /* 取消按鈕預設樣式 */
   background: none;
   border: none;
   padding: 0;
@@ -2327,28 +2331,28 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--sys-size-component-md); /* Adjust size as needed */
-  height: var(--sys-size-component-md); /* Adjust size as needed */
+  width: var(--sys-size-component-md);
+  height: var(--sys-size-component-md);
   padding: var(--sys-size-spacing-2xl);
   border: 1px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background-color: var(--sys-color-surface-primary);
   margin-bottom: var(
     --sys-size-spacing-sm
-  ); /* Space between icon block and text */
+  );
   transition: all 0.1s ease-in-out;
 }
 
 .form-item-icon i {
   font-size: var(--sys-size-text-3xl);
-  color: var(--sys-color-text-primary); /* Default icon color */
+  color: var(--sys-color-text-primary);
   transition: color 0.1s ease-in-out;
 }
 
 .form-item span {
   font-size: var(--sys-size-text-md);
   font-weight: var(--sys-weight-bold);
-  color: var(--sys-color-text-secondary); /* Default text color */
+  color: var(--sys-color-text-secondary); 
   transition: color 0.1s ease-in-out;
   white-space: nowrap;
 }
@@ -2434,7 +2438,6 @@ code {
   color: var(--sys-color-text-primary);
   line-height: 1.4;
 }
-
 .login-form-section .logo {
   margin-bottom: var(--sys-size-spacing-2xl);
 }
@@ -2650,4 +2653,78 @@ code {
 
 .button-group {
   flex-shrink: 0;
+}
+
+/* 移動端側邊欄控制按鈕 */
+.mobile-sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sys-color-neutral-900);
+  font-size: var(--sys-size-text-xl);
+  cursor: pointer;
+  padding: var(--sys-size-spacing-xs);
+  margin-right: var(--sys-size-spacing-sm);
+  transition: color 0.2s;
+}
+
+.mobile-sidebar-toggle:hover {
+  color: var(--comp-color-button-primary-bg);
+}
+
+/* 平板尺寸的 RWD 樣式 */
+@media (max-width: 1024px) {
+  .mobile-sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .header-container {
+    left: 0 !important;
+  }
+
+  .sidebar.minimal + .main-content .header-container {
+    left: 0 !important;
+  }
+
+  .page-title {
+    font-size: var(--sys-size-text-xl);
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
+  /* 當側邊欄開啟時的背景遮罩 */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--sys-color-overlay-primary);
+    z-index: 999;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+  }
 }

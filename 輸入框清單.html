@@ -196,6 +196,9 @@
       <div class="main-content">
         <div class="header-container">
           <div class="header">
+            <button class="mobile-sidebar-toggle" title="開啟側邊欄">
+              <i class="fa-solid fa-bars"></i>
+            </button>
             <h1 class="page-title">輸入元素展示</h1>
           </div>
         </div>
@@ -441,6 +444,9 @@
       </a>
     </div>
 
+    <!-- 側邊欄遮罩層 -->
+    <div class="sidebar-overlay"></div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
 
@@ -590,6 +596,26 @@
              // 如果沒有預設選中，也隱藏
              vaccinationDetails.classList.add('hidden');
         }
+
+        // 移動端側邊欄控制
+        const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
+        const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+        function toggleSidebar() {
+          sidebar.classList.toggle("show");
+          sidebarOverlay.classList.toggle("show");
+        }
+
+        mobileSidebarToggle.addEventListener("click", toggleSidebar);
+        sidebarOverlay.addEventListener("click", toggleSidebar);
+
+        // 監聽視窗大小變化
+        window.addEventListener("resize", function() {
+          if (window.innerWidth > 1024) {
+            sidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          }
+        });
 
         // 結束新增肺炎雙球菌疫苗邏輯
       });

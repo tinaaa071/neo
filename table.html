@@ -196,6 +196,9 @@
       <div class="main-content">
         <div class="header-container">
           <div class="header">
+            <button class="mobile-sidebar-toggle" title="開啟側邊欄">
+              <i class="fa-solid fa-bars"></i>
+            </button>
             <div class="title-container">
               <button class="back-btn" title="返回">
                 <i class="fas fa-arrow-left"></i>
@@ -222,15 +225,6 @@
                   <i class="fa-regular fa-calendar date-icon"></i>
                 </div>
               </div>
-              <button class="btn btn-danger">
-                <i class="fa-solid fa-trash"></i> 刪除個案
-              </button>
-              <button class="btn btn-primary">
-                <i class="fas fa-plus"></i> 新增個案
-              </button>
-              <button class="btn btn-dark">
-                <i class="fa-solid fa-print"></i> 列印
-              </button>
             </div>
           </div>
   
@@ -527,6 +521,9 @@
       </a>
     </div>
 
+    <!-- 側邊欄遮罩層 -->
+    <div class="sidebar-overlay"></div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // 返回按鈕功能
@@ -678,6 +675,26 @@
         }
 
         // 結束新增肺炎雙球菌疫苗邏輯
+
+        // 移動端側邊欄控制
+        const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
+        const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+        function toggleSidebar() {
+          sidebar.classList.toggle("show");
+          sidebarOverlay.classList.toggle("show");
+        }
+
+        mobileSidebarToggle.addEventListener("click", toggleSidebar);
+        sidebarOverlay.addEventListener("click", toggleSidebar);
+
+        // 監聽視窗大小變化
+        window.addEventListener("resize", function() {
+          if (window.innerWidth > 1024) {
+            sidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          }
+        });
       });
     </script>
 
