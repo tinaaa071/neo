@@ -191,20 +191,16 @@
     });
 
     function refreshCaptcha() {
-      // 這裡應該調用後端 API 來獲取新的驗證碼圖片
       const captchaImg = document.querySelector(".captcha-image img");
       captchaImg.src = "./img/captcha.png?" + new Date().getTime();
 
-      // 重置倒計時
       countdown = 60;
       updateCountdown();
 
-      // 清除舊的定時器
       if (timer) {
         clearInterval(timer);
       }
 
-      // 啟動新的定時器
       timer = setInterval(() => {
         countdown--;
         updateCountdown();
@@ -220,7 +216,6 @@
       refreshText.textContent = `${countdown}秒後自動更新`;
     }
 
-    // 頁面加載時啟動定時器
     window.addEventListener("load", () => {
       refreshCaptcha();
     });
@@ -236,8 +231,6 @@
         return;
       }
 
-      // 這裡應該調用後端 API 進行登入驗證
-      // 目前先模擬登入成功
       window.location.href = "./index.html";
     }
 
