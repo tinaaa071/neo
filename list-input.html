@@ -296,7 +296,7 @@
                   <td class="content-column">
                     <div class="select-wrapper" style="width: auto;">
                       <span>選擇個案：</span>
-                      <select class="region-select searchable">
+                      <select class="custom-select searchable">
                         <option>小美【002】</option>
                       </select>
                       <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -314,7 +314,7 @@
                   <td class="content-column">
                     <div class="select-wrapper" style="width: auto;">
                       <span>選擇個案：</span>
-                      <select class="region-select no-search">
+                      <select class="custom-select no-search">
                         <option>小美【002】</option>
                       </select>
                       <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -794,14 +794,14 @@
     <script>
       $(document).ready(function () {
         // 有搜尋框的
-        $('.region-select.searchable').select2({
+        $('.custom-select.searchable').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: 0 // 顯示搜尋欄
         });
     
         // 沒有搜尋框的
-        $('.region-select.no-search').select2({
+        $('.custom-select.no-search').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: Infinity // 隱藏搜尋欄

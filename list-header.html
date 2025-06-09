@@ -15,7 +15,10 @@
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
     <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
 
     <!-- jQuery (Select2 依賴 jQuery) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -119,7 +122,8 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span>
+                秒</span
               >
             </div>
           </div>
@@ -201,7 +205,7 @@
       </div>
 
       <!-- 主內容區 -->
-      <div class="main-content" style="gap: var(--sys-size-spacing-xl);">
+      <div class="main-content" style="gap: var(--sys-size-spacing-xl)">
         <!-- 基本 -->
         <div class="">
           <div class="header">
@@ -237,7 +241,7 @@
             <div class="header-actions">
               <div class="select-wrapper">
                 <span>選擇個案：</span>
-                <select class="region-select">
+                <select class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -261,7 +265,7 @@
                 </button>
               </div>
               <div class="select-wrapper">
-                <select class="region-select region">
+                <select class="custom-select region">
                   <option>全部區域</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -291,7 +295,7 @@
             <div class="header-actions">
               <div class="select-wrapper">
                 <span>選擇個案：</span>
-                <select class="region-select">
+                <select class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -329,19 +333,29 @@
                 <span style="white-space: nowrap">日期區間：</span>
                 <div class="date-range-wrapper">
                   <div class="date-input-wrapper">
-                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <input
+                      type="date"
+                      class="form-date"
+                      value="2025-05-16"
+                      required
+                    />
                     <i class="fa-regular fa-calendar date-icon"></i>
                   </div>
                   <span class="date-range-separator">至</span>
                   <div class="date-input-wrapper">
-                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <input
+                      type="date"
+                      class="form-date"
+                      value="2025-05-16"
+                      required
+                    />
                     <i class="fa-regular fa-calendar date-icon"></i>
                   </div>
                 </div>
               </div>
               <div class="select-wrapper">
                 <span style="white-space: nowrap">掛號作業：</span>
-                <div style="display: flex; gap: var(--sys-size-spacing-md);">
+                <div style="display: flex; gap: var(--sys-size-spacing-md)">
                   <button class="btn btn-secondary">
                     <i class="fa-solid fa-ban"></i> 無卡掛號
                   </button>
@@ -371,12 +385,22 @@
                 <span style="white-space: nowrap">日期區間：</span>
                 <div class="date-range-wrapper">
                   <div class="date-input-wrapper">
-                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <input
+                      type="date"
+                      class="form-date"
+                      value="2025-05-16"
+                      required
+                    />
                     <i class="fa-regular fa-calendar date-icon"></i>
                   </div>
                   <span class="date-range-separator">至</span>
                   <div class="date-input-wrapper">
-                    <input type="date" class="form-date" value="2025-05-16" required />
+                    <input
+                      type="date"
+                      class="form-date"
+                      value="2025-05-16"
+                      required
+                    />
                     <i class="fa-regular fa-calendar date-icon"></i>
                   </div>
                 </div>
@@ -398,7 +422,7 @@
             <div class="header-actions">
               <div class="select-wrapper">
                 <span style="white-space: nowrap">選擇查詢類別：</span>
-                <div style="display: flex; gap: var(--sys-size-spacing-md);">
+                <div style="display: flex; gap: var(--sys-size-spacing-md)">
                   <button class="action-btn" data-tooltip="案件分類">
                     <i class="fa-solid fa-list"></i>
                   </button>
@@ -421,9 +445,9 @@
         </div>
 
         <div class="footer" id="footer">
-            Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
+          Copyright © Neova Technology Co., Ltd. <span id="currentYear"></span>
         </div>
-    </div>
+      </div>
     </div>
 
     <!-- 將下拉選單移到這裡 -->
@@ -444,7 +468,7 @@
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById('countdown');
+      const countdownEl = document.getElementById("countdown");
 
       const timer = setInterval(() => {
         countdown--;
@@ -455,7 +479,7 @@
           alert("自動登出");
         }
       }, 1000);
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const mobileSidebarToggle = document.querySelector(
           ".mobile-sidebar-toggle"
@@ -680,16 +704,16 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $('.region-select').select2({
+        $(".custom-select").select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
-          minimumResultsForSearch: 0 // 顯示搜尋欄
+          minimumResultsForSearch: 0, // 顯示搜尋欄
         });
-    
-        $('.region-select.region').select2({
+
+        $(".custom-select.region").select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
-          minimumResultsForSearch: Infinity // 隱藏搜尋欄
+          minimumResultsForSearch: Infinity, // 隱藏搜尋欄
         });
       });
     </script>

@@ -15,7 +15,10 @@
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
     <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
 
     <!-- jQuery (Select2 依賴 jQuery) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -119,7 +122,8 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span>
+                秒</span
               >
             </div>
           </div>
@@ -216,7 +220,7 @@
             <div class="header-actions">
               <div class="select-wrapper">
                 <span>選擇個案：</span>
-                <select class="region-select">
+                <select class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -270,7 +274,7 @@
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById('countdown');
+      const countdownEl = document.getElementById("countdown");
 
       const timer = setInterval(() => {
         countdown--;
@@ -281,7 +285,7 @@
           alert("自動登出");
         }
       }, 1000);
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const backBtn = document.querySelector(".back-btn");
         backBtn.addEventListener("click", function () {
@@ -298,7 +302,7 @@
         navSections.forEach((section) => {
           section.classList.add("collapsed");
         });
-        
+
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
 
@@ -341,7 +345,9 @@
           }
         });
 
-        const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
+        const mobileSidebarToggle = document.querySelector(
+          ".mobile-sidebar-toggle"
+        );
         const sidebarOverlay = document.querySelector(".sidebar-overlay");
 
         function toggleSidebar() {
@@ -352,7 +358,7 @@
         mobileSidebarToggle.addEventListener("click", toggleSidebar);
         sidebarOverlay.addEventListener("click", toggleSidebar);
 
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
           if (window.innerWidth > 1024) {
             sidebar.classList.remove("show");
             sidebarOverlay.classList.remove("show");
@@ -364,10 +370,10 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $('.region-select').select2({
+        $(".custom-select").select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
-          minimumResultsForSearch: 0 // 顯示搜尋欄
+          minimumResultsForSearch: 0, // 顯示搜尋欄
         });
       });
     </script>

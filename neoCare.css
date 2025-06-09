@@ -38,7 +38,6 @@
   --sys-color-success-500: #10b981;
   --sys-color-info-500: #3b82f6;
 
-
   /* Surface Colors - 表面色 */
   --sys-color-surface-primary: var(--sys-color-neutral-0);
   --sys-color-surface-secondary: var(--sys-color-neutral-50);
@@ -828,11 +827,11 @@ body {
 
 /* Select2 */
 .select2-container--default .select2-selection--single {
-  height: auto!important;
+  height: auto !important;
   padding: var(--sys-size-spacing-sm);
   padding-right: calc(var(--sys-size-spacing-md) * 2 + 12px);
-  border: 1.5px solid var(--sys-color-border-primary)!important;
-  border-radius: var(--sys-size-radius-md)!important;
+  border: 1.5px solid var(--sys-color-border-primary) !important;
+  border-radius: var(--sys-size-radius-md) !important;
   background: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-primary);
@@ -841,18 +840,23 @@ body {
   cursor: pointer;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
   color: var(--sys-color-text-primary);
-  padding: 0!important;
-  line-height: 1.2!important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
   display: none; /* 隱藏 Select2 自帶箭頭 */
 }
-.select2-container--default.select2-container--focus .select2-selection--single {
+.select2-container--default.select2-container--focus
+  .select2-selection--single {
   outline: 2px solid var(--sys-color-primary-200);
-  border: 1.5px solid var(--sys-color-primary-500)!important;
+  border: 1.5px solid var(--sys-color-primary-500) !important;
 }
 
 .select2-container--default.select2-container--focus ~ .select-icon {
@@ -870,7 +874,7 @@ body {
 
 /* Search field */
 .select2-search__field {
-  border: 1.5px solid var(--sys-color-border-secondary)!important;
+  border: 1.5px solid var(--sys-color-border-secondary) !important;
   border-radius: var(--sys-size-radius-md);
   padding: var(--sys-size-spacing-sm);
   font-size: var(--sys-size-text-md);
@@ -881,7 +885,7 @@ body {
 }
 
 .select2-search__field:focus {
-  border-color: var(--sys-color-primary-500)!important;
+  border-color: var(--sys-color-primary-500) !important;
   box-shadow: 0 0 0 2px var(--sys-color-primary-200);
 }
 
@@ -903,7 +907,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-.region-select {
+.custom-select {
   padding: var(--sys-size-spacing-sm);
   padding-right: calc(var(--sys-size-spacing-md) * 2 + 12px);
   border: 1.5px solid var(--sys-color-border-primary);
@@ -917,12 +921,12 @@ body {
   cursor: pointer;
 }
 
-.region-select:focus {
+.custom-select:focus {
   outline: 2px solid var(--sys-color-primary-200);
   border: 1.5px solid var(--sys-color-primary-500);
 }
 
-.region-select:focus + .select-icon {
+.custom-select:focus + .select-icon {
   color: var(--sys-color-primary-500);
   transform: translateY(-50%) rotate(-180deg);
 }
@@ -2128,7 +2132,7 @@ body {
   color: var(--sys-color-text-tertiary);
   border-color: var(--sys-color-border-primary);
   cursor: not-allowed;
-  opacity: 0.7; 
+  opacity: 0.7;
 }
 
 /* 停用狀態的 checkbox 輸入框樣式 */
@@ -2141,7 +2145,7 @@ body {
 
 /* 停用狀態的 checkbox 輸入框被選中時的樣式調整 */
 .checkbox-option input[type="checkbox"]:disabled:checked {
-  background-color: var(--sys-color-neutral-300); 
+  background-color: var(--sys-color-neutral-300);
   border-color: var(--sys-color-neutral-300);
 }
 
@@ -2351,7 +2355,7 @@ code {
      ======================================== */
 
 .form-section {
-  margin-bottom: var(--sys-size-spacing-2xl); 
+  margin-bottom: var(--sys-size-spacing-2xl);
 }
 
 .form-section h3 {
@@ -2366,16 +2370,13 @@ code {
 
 .form-section-header {
   margin-bottom: var(--sys-size-spacing-lg);
-  border-bottom: 1px solid var(--sys-color-border-primary); 
+  border-bottom: 1px solid var(--sys-color-border-primary);
 }
 
 .form-items-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(150px, 1fr)
-  );
-  gap: var(--sys-size-spacing-lg); 
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--sys-size-spacing-lg);
 }
 
 .form-item {
@@ -2413,9 +2414,7 @@ code {
   border: 1px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background-color: var(--sys-color-surface-primary);
-  margin-bottom: var(
-    --sys-size-spacing-sm
-  );
+  margin-bottom: var(--sys-size-spacing-sm);
   transition: all 0.1s ease-in-out;
 }
 
@@ -2428,7 +2427,7 @@ code {
 .form-item span {
   font-size: var(--sys-size-text-md);
   font-weight: var(--sys-weight-bold);
-  color: var(--sys-color-text-secondary); 
+  color: var(--sys-color-text-secondary);
   transition: color 0.1s ease-in-out;
   white-space: nowrap;
 }
@@ -2752,7 +2751,7 @@ code {
   .login-form-section {
     width: 100%;
   }
-  
+
   .banner {
     display: none;
   }
