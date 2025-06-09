@@ -1340,6 +1340,7 @@ button {
   font-size: var(--sys-size-text-md);
   font-weight: var(--sys-weight-semibold);
   width: 100%;
+  transition: all 0.1s;
 }
 
 .form-container-add:hover {
