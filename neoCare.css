@@ -324,6 +324,16 @@ body {
   background-color: var(--sys-color-surface-secondary);
 }
 
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
 /* 容器 */
 .container {
   display: flex;
@@ -1891,7 +1901,6 @@ body {
   border-color: var(--sys-color-primary-700);
 }
 
-/* 結案彈出視窗樣式 */
 .form-textarea {
   width: 100%;
   padding: var(--sys-size-spacing-sm);
