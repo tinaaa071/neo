@@ -14,6 +14,15 @@
     />
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (Select2 依賴 jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -902,6 +911,25 @@
         });
       });
     </script>
+
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function () {
+        $('.region-select').select2({
+          minimumResultsForSearch: Infinity, // 隱藏搜尋欄
+          dropdownParent: $('.select-wrapper'), // dropdown 不要被 body 切出去
+          width: '100%' // 避免寬度問題
+        });
+      });
+
+      $(document).ready(function() {
+        $('.region-select').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false
+        });
+      });
+    </script>
+
 
     <!-- 編輯主責人員彈出視窗 -->
     <div class="modal" id="editStaffModal">

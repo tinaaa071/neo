@@ -826,6 +826,57 @@ body {
   color: var(--sys-color-primary-500);
 }
 
+/* Select2 */
+.select2-container--default .select2-selection--single {
+  height: auto!important;
+  padding: var(--sys-size-spacing-sm);
+  padding-right: calc(var(--sys-size-spacing-md) * 2 + 12px);
+  border: 1.5px solid var(--sys-color-border-primary)!important;
+  border-radius: var(--sys-size-radius-md)!important;
+  background: var(--sys-color-surface-primary);
+  font-size: var(--sys-size-text-md);
+  color: var(--sys-color-text-primary);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: var(--sys-color-text-primary);
+  padding: 0!important;
+  line-height: 1!important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none; /* 隱藏 Select2 自帶箭頭 */
+}
+.select2-container--default.select2-container--focus .select2-selection--single {
+  outline: 2px solid var(--sys-color-primary-200);
+  border: 1.5px solid var(--sys-color-primary-500)!important;
+}
+
+.select2-container--default.select2-container--focus ~ .select-icon {
+  color: var(--sys-color-primary-500);
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Search field */
+.select2-search__field {
+  border: 1.5px solid var(--sys-color-border-primary);
+  border-radius: var(--sys-size-radius-md);
+  padding: var(--sys-size-spacing-sm);
+  font-size: var(--sys-size-text-md);
+  color: var(--sys-color-text-primary);
+  outline: none;
+  background: var(--sys-color-surface-primary);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select2-search__field:focus {
+  border-color: var(--sys-color-primary-500)!important;
+  box-shadow: 0 0 0 2px var(--sys-color-primary-200);
+}
+
 .select-wrapper {
   position: relative;
   display: flex;
