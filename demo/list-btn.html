@@ -13,16 +13,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- CSS -->
-    <link href="./neoCare.css" rel="stylesheet" />
-
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    <!-- jQuery (Select2 依賴 jQuery) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="../neoCare.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
@@ -120,7 +111,8 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span>
+                秒</span
               >
             </div>
           </div>
@@ -208,266 +200,129 @@
             <button class="mobile-sidebar-toggle" title="開啟側邊欄">
               <i class="fa-solid fa-bars"></i>
             </button>
-            <h1 class="page-title">輸入元素展示</h1>
+            <h1 class="page-title">按鈕展示</h1>
           </div>
         </div>
 
         <div class="sub-content">
           <div class="form-sections">
-            <!-- 日期輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">日期輸入框</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper">
-                      <input type="date" class="form-date" value="2025-05-16" required />
-                      <i class="fa-regular fa-calendar date-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 基本按鈕 -->
+            <div class="button-section">
+              <h3>基本按鈕</h3>
+              <div class="button-group">
+                <button class="btn btn-primary">主要按鈕</button>
+                <button class="btn btn-secondary">次要按鈕</button>
+                <button class="btn btn-secondary cancel-btn">取消</button>
+              </div>
             </div>
 
-            <!-- 日期範圍輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">日期範圍輸入框</td>
-                  <td class="content-column">
-                    <div class="date-range-wrapper">
-                      <div class="date-input-wrapper">
-                        <input type="date" class="form-date" value="2025-05-16" required />
-                        <i class="fa-regular fa-calendar date-icon"></i>
-                      </div>
-                      <span class="date-range-separator">至</span>
-                      <div class="date-input-wrapper">
-                        <input type="date" class="form-date" value="2025-05-16" required />
-                        <i class="fa-regular fa-calendar date-icon"></i>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 圖示按鈕 -->
+            <div class="button-section">
+              <h3>圖示按鈕</h3>
+              <div class="button-group">
+                <button class="btn btn-primary">
+                  <i class="fas fa-plus"></i> 新增個案
+                </button>
+                <button class="btn btn-secondary">
+                  <i class="fa-solid fa-list"></i> 區域管理
+                </button>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i> 刪除
+                </button>
+                <button class="btn btn-dark">
+                  <i class="fas fa-print"></i> 列印
+                </button>
+                <button class="back-btn">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- 單一時間輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">單一時間輸入框</td>
-                  <td class="content-column">
-                    <div class="time-input-wrapper">
-                      <input type="time" class="form-time" />
-                      <i class="fa-regular fa-clock time-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 功能按鈕 -->
+            <div class="button-section">
+              <h3>功能按鈕</h3>
+              <div class="button-group">
+                <button class="action-btn" data-tooltip="編輯主責人員">
+                  <i class="fa-solid fa-user-pen"></i>
+                </button>
+                <button class="action-btn" data-tooltip="修改案號、類型">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn" data-tooltip="變更區域">
+                  <i class="fas fa-map-marker-alt"></i>
+                </button>
+                <button class="action-btn" data-tooltip="結案">
+                  <i class="fas fa-user-slash"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- 時間範圍輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">時間範圍輸入框</td>
-                  <td class="content-column">
-                    <div class="time-range-wrapper">
-                      <div class="time-input-wrapper">
-                        <input type="time" class="form-time" />
-                        <i class="fa-regular fa-clock time-icon"></i>
-                      </div>
-                      <span class="time-range-separator">至</span>
-                      <div class="time-input-wrapper">
-                        <input type="time" class="form-time" />
-                        <i class="fa-regular fa-clock time-icon"></i>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 導航按鈕 -->
+            <div class="button-section">
+              <h3>導航按鈕</h3>
+              <div class="button-group">
+                <button
+                  class="sidebar-toggle"
+                  title="縮小側邊欄"
+                  style="position: relative; z-index: 0"
+                >
+                  <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="more-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- 下拉選單（有搜尋框） -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">下拉選單（有搜尋）</td>
-                  <td class="content-column">
-                    <div class="select-wrapper" style="width: auto;">
-                      <span>選擇個案：</span>
-                      <select class="custom-select searchable">
-                        <option>小美【002】</option>
-                      </select>
-                      <i class="fa-solid fa-chevron-down select-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 分頁按鈕 -->
+            <div class="button-section">
+              <h3>分頁按鈕</h3>
+              <div class="button-group">
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="page-btn">
+                  <i class="fa-solid fa-angles-right"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- 下拉選單（無搜尋框） -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">下拉選單（無搜尋）</td>
-                  <td class="content-column">
-                    <div class="select-wrapper" style="width: auto;">
-                      <span>選擇個案：</span>
-                      <select class="custom-select no-search">
-                        <option>小美【002】</option>
-                      </select>
-                      <i class="fa-solid fa-chevron-down select-icon"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 彈出視窗按鈕 -->
+            <div class="button-section">
+              <h3>彈出視窗按鈕</h3>
+              <div class="button-group">
+                <button class="close-btn">
+                  <i class="fas fa-times"></i>
+                </button>
+                <button class="btn btn-secondary cancel-btn">取消</button>
+                <button class="btn btn-primary confirm-btn">確認</button>
+              </div>
             </div>
 
-            <!-- 文字輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字輸入框</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input class="form-textarea" placeholder="請輸入內容..."></input>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 文字區域 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字區域</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <textarea class="form-textarea readonly" rows="3" placeholder="請輸入內容..."></textarea>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 文字區域（唯讀） -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">文字區域（唯讀）</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                        <textarea
-                        class="form-textarea readonly"
-                        rows="3"
-                        readonly
-                      >這是唯讀的文字內容</textarea>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 數字輸入框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">數字輸入框</td>
-                  <td class="content-column">
-                    <div class="input-group">
-                      <input type="number" class="year-input" placeholder="" />
-                      <span>年 (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 單選按鈕 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">單選按鈕</td>
-                  <td class="content-column">
-                    <div class="radio-group">
-                      <div class="radio-option">
-                        <input type="radio" id="no-drinking" name="drinking-status" value="不喝酒" checked />
-                        <label for="no-drinking">不喝酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input type="radio" id="quit-drinking" name="drinking-status" value="已戒酒" />
-                        <label for="quit-drinking">已戒酒</label>
-                      </div>
-                      <div class="radio-option">
-                        <input type="radio" id="drinking" name="drinking-status" value="喝酒" />
-                        <label for="drinking">喝酒</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 複選框 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">複選框</td>
-                  <td class="content-column">
-                    <div class="checkbox-group">
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="no-smoking" name="smoking-status" value="不吸菸" checked />
-                        <label for="no-smoking">不吸菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="quit-smoking" name="smoking-status" value="已戒菸" />
-                        <label for="quit-smoking">已戒菸</label>
-                      </div>
-                      <div class="checkbox-option">
-                        <input type="checkbox" id="smoking" name="smoking-status" value="吸菸" />
-                        <label for="smoking">吸菸</label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- 互動式輸入組合 -->
-            <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">互動式輸入組合</td>
-                  <td class="content-column">
-                    <div class="vaccine-container">
-                      <div class="radio-group">
-                        <div class="radio-option">
-                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
-                          <label for="pneumococcal-vaccine-no">無</label>
-                        </div>
-                        <div class="radio-option yes-option">
-                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
-                          <label for="pneumococcal-vaccine-yes">有</label>
-                        </div>
-                      </div>
-                      <div id="vaccination-details" class="hidden vaccination-details-fields">
-                        <div class="vaccination-year-label">施打西元年:</div>
-                        <div class="vaccination-year-input-group">
-                          <div class="input-group vaccination-year-input">
-                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
-                          </div>
-                          <div class="checkbox-option vaccination-unknown-checkbox">
-                            <input type="checkbox" id="vaccination-year-unknown">
-                            <label for="vaccination-year-unknown">不記得</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- 按鈕樣式說明 -->
+            <div class="button-section">
+              <h3>按鈕樣式說明</h3>
+              <div class="style-description">
+                <ul>
+                  <li><code>.btn</code> - 基本按鈕樣式</li>
+                  <li><code>.btn-primary</code> - 主要按鈕樣式</li>
+                  <li><code>.btn-secondary</code> - 次要按鈕樣式</li>
+                  <li><code>.action-btn</code> - 功能按鈕樣式</li>
+                  <li><code>.page-btn</code> - 分頁按鈕樣式</li>
+                  <li><code>.sort-btn</code> - 排序按鈕樣式</li>
+                  <li><code>.search-btn</code> - 搜尋按鈕樣式</li>
+                  <li><code>.close-btn</code> - 關閉按鈕樣式</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -496,7 +351,7 @@
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById('countdown');
+      const countdownEl = document.getElementById("countdown");
 
       const timer = setInterval(() => {
         countdown--;
@@ -507,7 +362,7 @@
           alert("自動登出");
         }
       }, 1000);
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const mobileSidebarToggle = document.querySelector(
           ".mobile-sidebar-toggle"
@@ -559,67 +414,6 @@
             dropdown.classList.remove("show");
           }
         });
-
-        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
-        const vaccinationDetails = document.getElementById('vaccination-details');
-        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]');
-        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]');
-
-        vaccineRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    vaccinationDetails.classList.remove('hidden');
-                    updateVaccinationFieldStates();
-                } else {
-                    vaccinationDetails.classList.add('hidden');
-                    vaccinationYearInput.value = '';
-                    vaccinationUnknownCheckbox.checked = false;
-                    vaccinationYearInput.disabled = false;
-                    vaccinationUnknownCheckbox.disabled = false;
-                }
-            });
-        });
-
-        function updateVaccinationFieldStates() {
-            if (vaccinationYearInput.value.trim() !== '') {
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false;
-            } else if (vaccinationUnknownCheckbox.checked) {
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = ''; 
-            } else {
-                vaccinationYearInput.disabled = false;
-                vaccinationUnknownCheckbox.disabled = false;
-            }
-        }
-
-        vaccinationYearInput.addEventListener('input', function() {
-            if (this.value.trim() !== '') {
-                vaccinationUnknownCheckbox.disabled = true;
-                vaccinationUnknownCheckbox.checked = false;
-            } else {
-                vaccinationUnknownCheckbox.disabled = false;
-            }
-        });
-
-        vaccinationUnknownCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                vaccinationYearInput.disabled = true;
-                vaccinationYearInput.value = '';
-            } else {
-                vaccinationYearInput.disabled = false;
-            }
-        });
-
-        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
-        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
-            vaccinationDetails.classList.add('hidden');
-        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
-             vaccinationDetails.classList.remove('hidden');
-             updateVaccinationFieldStates();
-        } else {
-             vaccinationDetails.classList.add('hidden');
-        }
 
         const editStaffBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="編輯主責人員"]'
@@ -789,25 +583,6 @@
         });
       });
     </script>
-
-    <!-- Select2 -->
-    <script>
-      $(document).ready(function () {
-        // 有搜尋框的
-        $('.custom-select.searchable').select2({
-          placeholder: "請選擇一個選項",
-          allowClear: false,
-          minimumResultsForSearch: 0 // 顯示搜尋欄
-        });
-    
-        // 沒有搜尋框的
-        $('.custom-select.no-search').select2({
-          placeholder: "請選擇一個選項",
-          allowClear: false,
-          minimumResultsForSearch: Infinity // 隱藏搜尋欄
-        });
-      });
-    </script>    
 
     <!-- 編輯主責人員彈出視窗 -->
     <div class="modal" id="editStaffModal">

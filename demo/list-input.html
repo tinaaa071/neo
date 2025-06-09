@@ -13,12 +13,10 @@
       referrerpolicy="no-referrer"
     />
     <!-- CSS -->
-    <link href="./neoCare.css" rel="stylesheet" />
+    <link href="../neoCare.css" rel="stylesheet" />
+
     <!-- Select2 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- jQuery (Select2 依賴 jQuery) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -122,8 +120,7 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number" id="countdown">3000</span>
-                秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
               >
             </div>
           </div>
@@ -205,241 +202,272 @@
       </div>
 
       <!-- 主內容區 -->
-      <div class="main-content" style="gap: var(--sys-size-spacing-xl)">
-        <!-- 基本 -->
-        <div class="">
+      <div class="main-content">
+        <div class="header-container">
           <div class="header">
             <button class="mobile-sidebar-toggle" title="開啟側邊欄">
               <i class="fa-solid fa-bars"></i>
             </button>
-            <h1 class="page-title">基本</h1>
+            <h1 class="page-title">輸入元素展示</h1>
           </div>
         </div>
 
-        <!-- 回上頁 -->
-        <div class="">
-          <div class="header">
-            <div class="title-container">
-              <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <button class="back-btn" title="返回">
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              <h1 class="page-title">回上頁</h1>
+        <div class="sub-content">
+          <div class="form-sections">
+            <!-- 日期輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期輸入框</td>
+                  <td class="content-column">
+                    <div class="date-input-wrapper">
+                      <input type="date" class="form-date" value="2025-05-16" required />
+                      <i class="fa-regular fa-calendar date-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-          </div>
-        </div>
 
-        <!-- 個案選擇 -->
-        <div class="">
-          <div class="header">
-            <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-            <h1 class="page-title">個案選擇</h1>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
-                  <option>小美【002】</option>
-                </select>
-                <i class="fa-solid fa-chevron-down select-icon"></i>
-              </div>
+            <!-- 日期範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">日期範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="date-range-wrapper">
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                      <span class="date-range-separator">至</span>
+                      <div class="date-input-wrapper">
+                        <input type="date" class="form-date" value="2025-05-16" required />
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-          </div>
-        </div>
 
-        <!-- 收案列表 -->
-        <div class="">
-          <div class="header">
-            <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-            <h1 class="page-title">收案列表</h1>
-            <div class="header-actions">
-              <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜尋" />
-                <button class="search-btn" title="搜尋">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-              <div class="select-wrapper">
-                <select class="custom-select region">
-                  <option>全部區域</option>
-                </select>
-                <i class="fa-solid fa-chevron-down select-icon"></i>
-              </div>
-              <button class="btn btn-secondary">
-                <i class="fa-solid fa-list"></i> 區域管理
-              </button>
-              <button class="btn btn-primary">
-                <i class="fas fa-plus"></i> 新增個案
-              </button>
+            <!-- 單一時間輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單一時間輸入框</td>
+                  <td class="content-column">
+                    <div class="time-input-wrapper">
+                      <input type="time" class="form-time" />
+                      <i class="fa-regular fa-clock time-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-          </div>
-        </div>
 
-        <!-- 健康紀錄 -->
-        <div class="">
-          <div class="header">
-            <div class="title-container">
-              <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <button class="back-btn" title="返回">
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              <h1 class="page-title">健康紀錄</h1>
+            <!-- 時間範圍輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">時間範圍輸入框</td>
+                  <td class="content-column">
+                    <div class="time-range-wrapper">
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                      <span class="time-range-separator">至</span>
+                      <div class="time-input-wrapper">
+                        <input type="time" class="form-time" />
+                        <i class="fa-regular fa-clock time-icon"></i>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
-                  <option>小美【002】</option>
-                </select>
-                <i class="fa-solid fa-chevron-down select-icon"></i>
-              </div>
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">選擇日期：</span>
-                <div class="date-input-wrapper">
-                  <input
-                    type="date"
-                    class="form-date"
-                    value="2025-05-16"
-                    required
-                  />
-                  <i class="fa-regular fa-calendar date-icon"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- 掛號/看診列表 -->
-        <div class="">
-          <div class="header">
-            <div class="title-container">
-              <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <button class="back-btn" title="返回">
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              <h1 class="page-title">掛號/看診列表</h1>
+            <!-- 下拉選單（有搜尋框） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">下拉選單（有搜尋）</td>
+                  <td class="content-column">
+                    <div class="select-wrapper" style="width: auto;">
+                      <span>選擇個案：</span>
+                      <select class="custom-select searchable">
+                        <option>小美【002】</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">日期區間：</span>
-                <div class="date-range-wrapper">
-                  <div class="date-input-wrapper">
-                    <input
-                      type="date"
-                      class="form-date"
-                      value="2025-05-16"
-                      required
-                    />
-                    <i class="fa-regular fa-calendar date-icon"></i>
-                  </div>
-                  <span class="date-range-separator">至</span>
-                  <div class="date-input-wrapper">
-                    <input
-                      type="date"
-                      class="form-date"
-                      value="2025-05-16"
-                      required
-                    />
-                    <i class="fa-regular fa-calendar date-icon"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">掛號作業：</span>
-                <div style="display: flex; gap: var(--sys-size-spacing-md)">
-                  <button class="btn btn-secondary">
-                    <i class="fa-solid fa-ban"></i> 無卡掛號
-                  </button>
-                  <button class="btn btn-primary">
-                    <i class="fa-solid fa-address-card"></i> 讀卡掛號
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- 健保收據列表 -->
-        <div class="">
-          <div class="header">
-            <div class="title-container">
-              <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <button class="back-btn" title="返回">
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              <h1 class="page-title">健保收據列表</h1>
+            <!-- 下拉選單（無搜尋框） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">下拉選單（無搜尋）</td>
+                  <td class="content-column">
+                    <div class="select-wrapper" style="width: auto;">
+                      <span>選擇個案：</span>
+                      <select class="custom-select no-search">
+                        <option>小美【002】</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">日期區間：</span>
-                <div class="date-range-wrapper">
-                  <div class="date-input-wrapper">
-                    <input
-                      type="date"
-                      class="form-date"
-                      value="2025-05-16"
-                      required
-                    />
-                    <i class="fa-regular fa-calendar date-icon"></i>
-                  </div>
-                  <span class="date-range-separator">至</span>
-                  <div class="date-input-wrapper">
-                    <input
-                      type="date"
-                      class="form-date"
-                      value="2025-05-16"
-                      required
-                    />
-                    <i class="fa-regular fa-calendar date-icon"></i>
-                  </div>
-                </div>
-              </div>
-              <button class="btn btn-dark">
-                <i class="fa-solid fa-print"></i> 列印
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- 統計報表 -->
-        <div class="">
-          <div class="header">
-            <button class="mobile-sidebar-toggle" title="開啟側邊欄">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-            <h1 class="page-title">統計報表</h1>
-            <div class="header-actions">
-              <div class="select-wrapper">
-                <span style="white-space: nowrap">選擇查詢類別：</span>
-                <div style="display: flex; gap: var(--sys-size-spacing-md)">
-                  <button class="action-btn" data-tooltip="案件分類">
-                    <i class="fa-solid fa-list"></i>
-                  </button>
-                  <button class="action-btn" data-tooltip="科別">
-                    <i class="fa-solid fa-user-group"></i>
-                  </button>
-                  <button class="action-btn" data-tooltip="異常卡號">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                  </button>
-                  <button class="action-btn" data-tooltip="醫令項目">
-                    <i class="fa-solid fa-hand-holding-medical"></i>
-                  </button>
-                  <button class="action-btn" data-tooltip="醫療項目">
-                    <i class="fa-solid fa-briefcase-medical"></i>
-                  </button>
-                </div>
-              </div>
+            <!-- 文字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input class="form-textarea" placeholder="請輸入內容..."></input>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <textarea class="form-textarea readonly" rows="3" placeholder="請輸入內容..."></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 文字區域（唯讀） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">文字區域（唯讀）</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                        <textarea
+                        class="form-textarea readonly"
+                        rows="3"
+                        readonly
+                      >這是唯讀的文字內容</textarea>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 數字輸入框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">數字輸入框</td>
+                  <td class="content-column">
+                    <div class="input-group">
+                      <input type="number" class="year-input" placeholder="" />
+                      <span>年 (吸菸狀態填已戒菸必填，請輸入數字，最多小數點一位)</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 單選按鈕 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">單選按鈕</td>
+                  <td class="content-column">
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input type="radio" id="no-drinking" name="drinking-status" value="不喝酒" checked />
+                        <label for="no-drinking">不喝酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="quit-drinking" name="drinking-status" value="已戒酒" />
+                        <label for="quit-drinking">已戒酒</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="drinking" name="drinking-status" value="喝酒" />
+                        <label for="drinking">喝酒</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 複選框 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">複選框</td>
+                  <td class="content-column">
+                    <div class="checkbox-group">
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="no-smoking" name="smoking-status" value="不吸菸" checked />
+                        <label for="no-smoking">不吸菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="quit-smoking" name="smoking-status" value="已戒菸" />
+                        <label for="quit-smoking">已戒菸</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="smoking" name="smoking-status" value="吸菸" />
+                        <label for="smoking">吸菸</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 互動式輸入組合 -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">互動式輸入組合</td>
+                  <td class="content-column">
+                    <div class="vaccine-container">
+                      <div class="radio-group">
+                        <div class="radio-option">
+                          <input type="radio" id="pneumococcal-vaccine-no" name="pneumococcal-vaccine" value="no" checked>
+                          <label for="pneumococcal-vaccine-no">無</label>
+                        </div>
+                        <div class="radio-option yes-option">
+                          <input type="radio" id="pneumococcal-vaccine-yes" name="pneumococcal-vaccine" value="yes">
+                          <label for="pneumococcal-vaccine-yes">有</label>
+                        </div>
+                      </div>
+                      <div id="vaccination-details" class="hidden vaccination-details-fields">
+                        <div class="vaccination-year-label">施打西元年:</div>
+                        <div class="vaccination-year-input-group">
+                          <div class="input-group vaccination-year-input">
+                            <input type="text" class="form-textarea" placeholder="請輸入西元年">
+                          </div>
+                          <div class="checkbox-option vaccination-unknown-checkbox">
+                            <input type="checkbox" id="vaccination-year-unknown">
+                            <label for="vaccination-year-unknown">不記得</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -465,85 +493,10 @@
     <!-- 側邊欄遮罩層 -->
     <div class="sidebar-overlay"></div>
 
-    <!-- 編輯主責人員彈出視窗 -->
-    <div class="modal" id="editStaffModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>編輯主責人員</h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="staff-select">選擇主責人員</label>
-            <div class="select-wrapper">
-              <select id="staff-select" class="staff-select">
-                <option value="">請選擇主責人員</option>
-                <option value="1">黃護師</option>
-                <option value="2">林護師</option>
-                <option value="3">王護師</option>
-                <option value="4">張護師</option>
-                <option value="5">李護師</option>
-                <option value="6">陳護師</option>
-                <option value="7">吳護師</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 結案確認彈出視窗 -->
-    <div class="modal" id="closeCaseModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>
-            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
-          </h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="closeReason">結案原因</label>
-            <div class="select-wrapper">
-              <select id="closeReason" class="staff-select">
-                <option value="">請選擇結案原因</option>
-                <option value="1">個案已康復</option>
-                <option value="2">個案轉院</option>
-                <option value="3">個案拒絕服務</option>
-                <option value="4">個案過世</option>
-                <option value="5">其他原因</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="closeDate">結案日期</label>
-            <div class="date-input-wrapper" style="max-width: 100%">
-              <input type="date" id="closeDate" class="form-date" required />
-              <i class="fa-regular fa-calendar date-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認結案</button>
-        </div>
-      </div>
-    </div>
-
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById("countdown");
+      const countdownEl = document.getElementById('countdown');
 
       const timer = setInterval(() => {
         countdown--;
@@ -554,7 +507,7 @@
           alert("自動登出");
         }
       }, 1000);
-
+      
       document.addEventListener("DOMContentLoaded", function () {
         const mobileSidebarToggle = document.querySelector(
           ".mobile-sidebar-toggle"
@@ -606,6 +559,67 @@
             dropdown.classList.remove("show");
           }
         });
+
+        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
+        const vaccinationDetails = document.getElementById('vaccination-details');
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]');
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]');
+
+        vaccineRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    vaccinationDetails.classList.remove('hidden');
+                    updateVaccinationFieldStates();
+                } else {
+                    vaccinationDetails.classList.add('hidden');
+                    vaccinationYearInput.value = '';
+                    vaccinationUnknownCheckbox.checked = false;
+                    vaccinationYearInput.disabled = false;
+                    vaccinationUnknownCheckbox.disabled = false;
+                }
+            });
+        });
+
+        function updateVaccinationFieldStates() {
+            if (vaccinationYearInput.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else if (vaccinationUnknownCheckbox.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; 
+            } else {
+                vaccinationYearInput.disabled = false;
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        }
+
+        vaccinationYearInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else {
+                vaccinationUnknownCheckbox.disabled = false;
+            }
+        });
+
+        vaccinationUnknownCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = '';
+            } else {
+                vaccinationYearInput.disabled = false;
+            }
+        });
+
+        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
+        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
+            vaccinationDetails.classList.add('hidden');
+        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
+             vaccinationDetails.classList.remove('hidden');
+             updateVaccinationFieldStates();
+        } else {
+             vaccinationDetails.classList.add('hidden');
+        }
 
         const editStaffBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="編輯主責人員"]'
@@ -779,18 +793,95 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $(".custom-select").select2({
+        // 有搜尋框的
+        $('.custom-select.searchable').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
-          minimumResultsForSearch: 0, // 顯示搜尋欄
+          minimumResultsForSearch: 0 // 顯示搜尋欄
         });
-
-        $(".custom-select.region").select2({
+    
+        // 沒有搜尋框的
+        $('.custom-select.no-search').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
-          minimumResultsForSearch: Infinity, // 隱藏搜尋欄
+          minimumResultsForSearch: Infinity // 隱藏搜尋欄
         });
       });
-    </script>
+    </script>    
+
+    <!-- 編輯主責人員彈出視窗 -->
+    <div class="modal" id="editStaffModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>編輯主責人員</h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="staff-select">選擇主責人員</label>
+            <div class="select-wrapper">
+              <select id="staff-select" class="staff-select">
+                <option value="">請選擇主責人員</option>
+                <option value="1">黃護師</option>
+                <option value="2">林護師</option>
+                <option value="3">王護師</option>
+                <option value="4">張護師</option>
+                <option value="5">李護師</option>
+                <option value="6">陳護師</option>
+                <option value="7">吳護師</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 結案確認彈出視窗 -->
+    <div class="modal" id="closeCaseModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>
+            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
+          </h3>
+          <button class="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="closeReason">結案原因</label>
+            <div class="select-wrapper">
+              <select id="closeReason" class="staff-select">
+                <option value="">請選擇結案原因</option>
+                <option value="1">個案已康復</option>
+                <option value="2">個案轉院</option>
+                <option value="3">個案拒絕服務</option>
+                <option value="4">個案過世</option>
+                <option value="5">其他原因</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="closeDate">結案日期</label>
+            <div class="date-input-wrapper" style="max-width: 100%">
+              <input type="date" id="closeDate" class="form-date" required />
+              <i class="fa-regular fa-calendar date-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary cancel-btn">取消</button>
+          <button class="btn btn-primary confirm-btn">確認結案</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
