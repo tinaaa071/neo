@@ -14,6 +14,14 @@
     />
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (Select2 依賴 jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -906,8 +914,8 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="staffSelect">選擇主責人員</label>
-            <div class="select-wrapper">
-              <select id="staffSelect" class="staffSelect">
+            <div class="select-wrapper" style="width: 100%;">
+              <select id="staffSelect" class="staffSelect" style="width: 100%;">
                 <option value="">請選擇主責人員</option>
                 <option value="1">黃護師</option>
                 <option value="2">林護師</option>
@@ -949,8 +957,8 @@
           </div>
           <div class="form-group">
             <label for="closeReason">結案原因</label>
-            <div class="select-wrapper">
-              <select id="closeReason" class="staffSelect">
+            <div class="select-wrapper" style="width: 100%;">
+              <select id="closeReason" class="staffSelect" style="width: 100%;">
                 <option value="">請選擇結案原因</option>
                 <option value="1">個案已康復</option>
                 <option value="2">個案轉院</option>
@@ -993,6 +1001,22 @@
             sidebar.classList.remove("show");
             sidebarOverlay.classList.remove("show");
           }
+        });
+      });
+    </script>
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function () {
+        $('.region-select').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: Infinity // 顯示搜尋欄
+        });
+    
+        $('.staffSelect').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: Infinity // 隱藏搜尋欄
         });
       });
     </script>

@@ -14,6 +14,14 @@
     />
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (Select2 依賴 jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -253,7 +261,7 @@
                 </button>
               </div>
               <div class="select-wrapper">
-                <select class="region-select">
+                <select class="region-select region">
                   <option>全部區域</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -669,79 +677,21 @@
       });
     </script>
 
-    <!-- 編輯主責人員彈出視窗 -->
-    <div class="modal" id="editStaffModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>編輯主責人員</h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="staffSelect">選擇主責人員</label>
-            <div class="select-wrapper">
-              <select id="staffSelect" class="staffSelect">
-                <option value="">請選擇主責人員</option>
-                <option value="1">黃護師</option>
-                <option value="2">林護師</option>
-                <option value="3">王護師</option>
-                <option value="4">張護師</option>
-                <option value="5">李護師</option>
-                <option value="6">陳護師</option>
-                <option value="7">吳護師</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 結案確認彈出視窗 -->
-    <div class="modal" id="closeCaseModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>
-            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
-          </h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="closeReason">結案原因</label>
-            <div class="select-wrapper">
-              <select id="closeReason" class="staffSelect">
-                <option value="">請選擇結案原因</option>
-                <option value="1">個案已康復</option>
-                <option value="2">個案轉院</option>
-                <option value="3">個案拒絕服務</option>
-                <option value="4">個案過世</option>
-                <option value="5">其他原因</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="closeDate">結案日期</label>
-            <div class="date-input-wrapper" style="max-width: 100%">
-              <input type="date" id="closeDate" class="form-date" required />
-              <i class="fa-regular fa-calendar date-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認結案</button>
-        </div>
-      </div>
-    </div>
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function () {
+        $('.region-select').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: 0 // 顯示搜尋欄
+        });
+    
+        $('.region-select.region').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: Infinity // 隱藏搜尋欄
+        });
+      });
+    </script>
   </body>
 </html>

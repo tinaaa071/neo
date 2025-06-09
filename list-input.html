@@ -294,7 +294,7 @@
                 <tr>
                   <td class="main-label-column">下拉選單（有搜尋）</td>
                   <td class="content-column">
-                    <div class="select-wrapper">
+                    <div class="select-wrapper" style="width: auto;">
                       <span>選擇個案：</span>
                       <select class="region-select searchable">
                         <option>小美【002】</option>
@@ -312,7 +312,7 @@
                 <tr>
                   <td class="main-label-column">下拉選單（無搜尋）</td>
                   <td class="content-column">
-                    <div class="select-wrapper">
+                    <div class="select-wrapper" style="width: auto;">
                       <span>選擇個案：</span>
                       <select class="region-select no-search">
                         <option>小美【002】</option>
@@ -793,14 +793,14 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        // 有搜尋框的 select（使用 class: .region-select.searchable）
+        // 有搜尋框的
         $('.region-select.searchable').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: 0 // 顯示搜尋欄
         });
     
-        // 沒有搜尋框的 select（使用 class: .region-select.no-search）
+        // 沒有搜尋框的
         $('.region-select.no-search').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
