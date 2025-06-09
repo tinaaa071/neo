@@ -871,7 +871,7 @@ button {
 
 .select2-container--default.select2-container--focus ~ .select-icon {
   color: var(--sys-color-primary-500);
-  transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-90deg);
 }
 
 /* Select2-dropdown */
