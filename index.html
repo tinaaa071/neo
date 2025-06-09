@@ -237,420 +237,433 @@
 
         <div class="sub-content">
           <div class="tabs">
-            <div class="tab active">全部</div>
-            <div class="tab">一般居護</div>
-            <div class="tab">四階 (IDS)</div>
-            <div class="tab">安寧照護</div>
-            <div class="tab">居整</div>
-            <div class="tab">居整(呼吸器)</div>
-            <div class="tab">居整(安寧)</div>
-            <div class="tab">HAH</div>
-            <div class="tab">自費</div>
-            <div class="tab">長照2.0</div>
+            <div class="tab active" data-index="0">全部</div>
+            <div class="tab" data-index="1">一般居護</div>
+            <div class="tab" data-index="2">四階 (IDS)</div>
+            <div class="tab" data-index="3">安寧照護</div>
+            <div class="tab" data-index="4">居整</div>
+            <div class="tab" data-index="5">居整(呼吸器)</div>
+            <div class="tab" data-index="6">居整(安寧)</div>
+            <div class="tab" data-index="7">HAH</div>
+            <div class="tab" data-index="8">自費</div>
+            <div class="tab" data-index="9">長照2.0</div>
           </div>
 
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>
-                    <span>區域</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
+          <div class="tab-contents">
+            <div class="tab-content">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <span>區域</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>案號</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>姓名</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>性別</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>年齡</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>類型</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>收案日</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>
+                        <span>主責人員</span
+                        ><button class="sort-btn">
+                          <i class="fas fa-sort-up"></i
+                          ><i class="fas fa-sort-down"></i>
+                        </button>
+                      </th>
+                      <th>功能</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>全區</td>
+                      <td>0002</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小美
+                        </button>
+                      </td>
+                      <td><i class="fas fa-venus"></i></td>
+                      <td>70歲0個月</td>
+                      <td>
+                        <span class="status-badge status-general">一般居護</span>
+                      </td>
+                      <td>2025-04-30</td>
+                      <td>
+                        黃護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>全區</td>
+                      <td>0003</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小名
+                        </button>
+                      </td>
+                      <td><i class="fas fa-mars"></i></td>
+                      <td>85歲4個月</td>
+                      <td>
+                        <span class="status-badge status-residential">居整</span>
+                      </td>
+                      <td>2025-04-30</td>
+                      <td>
+                        黃護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>新北</td>
+                      <td>0004</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小帥
+                        </button>
+                      </td>
+                      <td><i class="fas fa-mars"></i></td>
+                      <td>46歲7個月</td>
+                      <td><span class="status-badge status-hah">HAH</span></td>
+                      <td>2025-04-30</td>
+                      <td>
+                        黃護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>台北</td>
+                      <td>0005</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小華
+                        </button>
+                      </td>
+                      <td><i class="fas fa-venus"></i></td>
+                      <td>65歲2個月</td>
+                      <td>
+                        <span class="status-badge status-ids">四階 (IDS)</span>
+                      </td>
+                      <td>2025-04-29</td>
+                      <td>
+                        林護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>桃園</td>
+                      <td>0006</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小明
+                        </button>
+                      </td>
+                      <td><i class="fas fa-mars"></i></td>
+                      <td>78歲9個月</td>
+                      <td>
+                        <span class="status-badge status-hospice">安寧照護</span>
+                      </td>
+                      <td>2025-04-28</td>
+                      <td>
+                        王護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>台中</td>
+                      <td>0007</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小芳
+                        </button>
+                      </td>
+                      <td><i class="fas fa-venus"></i></td>
+                      <td>82歲3個月</td>
+                      <td>
+                        <span class="status-badge status-respirator"
+                          >居整(呼吸器)</span
+                        >
+                      </td>
+                      <td>2025-04-27</td>
+                      <td>
+                        張護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>高雄</td>
+                      <td>0008</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小強
+                        </button>
+                      </td>
+                      <td><i class="fas fa-mars"></i></td>
+                      <td>75歲6個月</td>
+                      <td>
+                        <span class="status-badge status-peaceful">居整(安寧)</span>
+                      </td>
+                      <td>2025-04-26</td>
+                      <td>
+                        李護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>台南</td>
+                      <td>0009</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小玲
+                        </button>
+                      </td>
+                      <td><i class="fas fa-venus"></i></td>
+                      <td>68歲1個月</td>
+                      <td>
+                        <span class="status-badge status-self-pay">自費</span>
+                      </td>
+                      <td>2025-04-25</td>
+                      <td>
+                        陳護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>新竹</td>
+                      <td>0010</td>
+                      <td>
+                        <button
+                          class="name-btn"
+                          onclick="window.location.href='case.html'"
+                        >
+                          小偉
+                        </button>
+                      </td>
+                      <td><i class="fas fa-mars"></i></td>
+                      <td>72歲8個月</td>
+                      <td><span class="status-badge status-ltc">長照2.0</span></td>
+                      <td>2025-04-24</td>
+                      <td>
+                        吳護師
+                        <button class="action-btn" data-tooltip="編輯主責人員">
+                          <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button class="action-btn" data-tooltip="修改案號、類型">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="變更區域">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <button class="action-btn" data-tooltip="結案">
+                          <i class="fas fa-user-slash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+                <div class="pagination">
+                  <div>顯示第 1 至 9 筆結果，共 100 筆</div>
+                  <div class="pagination-nav">
+                    <button class="page-btn">
+                      <i class="fa-solid fa-angles-left"></i>
                     </button>
-                  </th>
-                  <th>
-                    <span>案號</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
+                    <button class="page-btn">
+                      <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                  </th>
-                  <th>
-                    <span>姓名</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn">
+                      <i class="fa-solid fa-chevron-right"></i>
                     </button>
-                  </th>
-                  <th>
-                    <span>性別</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
+                    <button class="page-btn">
+                      <i class="fa-solid fa-angles-right"></i>
                     </button>
-                  </th>
-                  <th>
-                    <span>年齡</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>類型</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>收案日</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>
-                    <span>主責人員</span
-                    ><button class="sort-btn">
-                      <i class="fas fa-sort-up"></i
-                      ><i class="fas fa-sort-down"></i>
-                    </button>
-                  </th>
-                  <th>功能</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>全區</td>
-                  <td>0002</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小美
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>70歲0個月</td>
-                  <td>
-                    <span class="status-badge status-general">一般居護</span>
-                  </td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>全區</td>
-                  <td>0003</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小名
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>85歲4個月</td>
-                  <td>
-                    <span class="status-badge status-residential">居整</span>
-                  </td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>新北</td>
-                  <td>0004</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小帥
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>46歲7個月</td>
-                  <td><span class="status-badge status-hah">HAH</span></td>
-                  <td>2025-04-30</td>
-                  <td>
-                    黃護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台北</td>
-                  <td>0005</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小華
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>65歲2個月</td>
-                  <td>
-                    <span class="status-badge status-ids">四階 (IDS)</span>
-                  </td>
-                  <td>2025-04-29</td>
-                  <td>
-                    林護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>桃園</td>
-                  <td>0006</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小明
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>78歲9個月</td>
-                  <td>
-                    <span class="status-badge status-hospice">安寧照護</span>
-                  </td>
-                  <td>2025-04-28</td>
-                  <td>
-                    王護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台中</td>
-                  <td>0007</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小芳
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>82歲3個月</td>
-                  <td>
-                    <span class="status-badge status-respirator"
-                      >居整(呼吸器)</span
-                    >
-                  </td>
-                  <td>2025-04-27</td>
-                  <td>
-                    張護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>高雄</td>
-                  <td>0008</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小強
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>75歲6個月</td>
-                  <td>
-                    <span class="status-badge status-peaceful">居整(安寧)</span>
-                  </td>
-                  <td>2025-04-26</td>
-                  <td>
-                    李護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>台南</td>
-                  <td>0009</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小玲
-                    </button>
-                  </td>
-                  <td><i class="fas fa-venus"></i></td>
-                  <td>68歲1個月</td>
-                  <td>
-                    <span class="status-badge status-self-pay">自費</span>
-                  </td>
-                  <td>2025-04-25</td>
-                  <td>
-                    陳護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>新竹</td>
-                  <td>0010</td>
-                  <td>
-                    <button
-                      class="name-btn"
-                      onclick="window.location.href='case.html'"
-                    >
-                      小偉
-                    </button>
-                  </td>
-                  <td><i class="fas fa-mars"></i></td>
-                  <td>72歲8個月</td>
-                  <td><span class="status-badge status-ltc">長照2.0</span></td>
-                  <td>2025-04-24</td>
-                  <td>
-                    吳護師
-                    <button class="action-btn" data-tooltip="編輯主責人員">
-                      <i class="fa-solid fa-user-pen"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="action-btn" data-tooltip="修改案號、類型">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="變更區域">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                    <button class="action-btn" data-tooltip="結案">
-                      <i class="fas fa-user-slash"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="pagination">
-              <div>顯示第 1 至 9 筆結果，共 100 筆</div>
-              <div class="pagination-nav">
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-left"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-btn">5</button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <button class="page-btn">
-                  <i class="fa-solid fa-angles-right"></i>
-                </button>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="tab-content hidden">這是「一般居護」的內容</div>
+            <div class="tab-content hidden">這是「四階 (IDS)」的內容</div>
+            <div class="tab-content hidden">這是「安寧照護」的內容</div>
+            <div class="tab-content hidden">這是「居整」的內容</div>
+            <div class="tab-content hidden">這是「居整(呼吸器)」的內容</div>
+            <div class="tab-content hidden">這是「居整(安寧)」的內容</div>
+            <div class="tab-content hidden">這是「HAH」的內容</div>
+            <div class="tab-content hidden">這是「自費」的內容</div>
+            <div class="tab-content hidden">這是「長照2.0」的內容</div>
           </div>
         </div>
 
@@ -797,6 +810,22 @@
           }
         });
       });
+
+      // Tab
+      const tabs = document.querySelectorAll(".tab")
+      const contents = document.querySelectorAll(".tab-content")
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          document.querySelector(".tab.active")?.classList.remove("active")
+          tab.classList.add("active")
+
+          const index = parseInt(tab.dataset.index)
+          contents.forEach((content, i) => {
+            content.classList.toggle("hidden", i !== index)
+          })
+        })
+      })
 
       document.addEventListener("DOMContentLoaded", function () {
         const currentYear = new Date().getFullYear();
