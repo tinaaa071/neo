@@ -914,18 +914,11 @@
 
     <!-- Select2 -->
     <script>
-      $(document).ready(function () {
-        $('.region-select').select2({
-          minimumResultsForSearch: Infinity, // 隱藏搜尋欄
-          dropdownParent: $('.select-wrapper'), // dropdown 不要被 body 切出去
-          width: '100%' // 避免寬度問題
-        });
-      });
-
       $(document).ready(function() {
         $('.region-select').select2({
           placeholder: "請選擇一個選項",
-          allowClear: false
+          allowClear: false,
+          minimumResultsForSearch: 0,
         });
       });
     </script>

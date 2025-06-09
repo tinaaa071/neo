@@ -14,6 +14,15 @@
     />
     <!-- CSS -->
     <link href="./neoCare.css" rel="stylesheet" />
+
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (Select2 依賴 jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -273,6 +282,42 @@
                         <input type="time" class="form-time" />
                         <i class="fa-regular fa-clock time-icon"></i>
                       </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 下拉選單（有搜尋框） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">下拉選單（有搜尋）</td>
+                  <td class="content-column">
+                    <div class="select-wrapper">
+                      <span>選擇個案：</span>
+                      <select class="region-select searchable">
+                        <option>小美【002】</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 下拉選單（無搜尋框） -->
+            <div class="form-container">
+              <table class="form-table">
+                <tr>
+                  <td class="main-label-column">下拉選單（無搜尋）</td>
+                  <td class="content-column">
+                    <div class="select-wrapper">
+                      <span>選擇個案：</span>
+                      <select class="region-select no-search">
+                        <option>小美【002】</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down select-icon"></i>
                     </div>
                   </td>
                 </tr>
@@ -744,6 +789,25 @@
         });
       });
     </script>
+
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function () {
+        // 有搜尋框的 select（使用 class: .region-select.searchable）
+        $('.region-select.searchable').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: 0 // 顯示搜尋欄
+        });
+    
+        // 沒有搜尋框的 select（使用 class: .region-select.no-search）
+        $('.region-select.no-search').select2({
+          placeholder: "請選擇一個選項",
+          allowClear: false,
+          minimumResultsForSearch: Infinity // 隱藏搜尋欄
+        });
+      });
+    </script>    
 
     <!-- 編輯主責人員彈出視窗 -->
     <div class="modal" id="editStaffModal">

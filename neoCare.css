@@ -886,10 +886,10 @@ body {
 }
 
 .select-wrapper {
-  position: relative;
-  display: flex;
+  display: inline-flex;
+  width: auto;
   align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .select-icon {
