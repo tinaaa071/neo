@@ -2377,6 +2377,7 @@ code {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--sys-size-spacing-lg);
+  align-items: start;
 }
 
 .form-item {
@@ -2429,7 +2430,6 @@ code {
   font-weight: var(--sys-weight-bold);
   color: var(--sys-color-text-secondary);
   transition: color 0.1s ease-in-out;
-  white-space: nowrap;
 }
 
 .form-item:hover .form-item-icon {
