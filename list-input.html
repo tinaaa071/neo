@@ -644,7 +644,7 @@
         cancelBtn.addEventListener("click", closeModal);
 
         confirmBtn.addEventListener("click", function () {
-          const selectedStaff = document.getElementById("staffSelect").value;
+          const selectedStaff = document.getElementById("staff-select").value;
           if (selectedStaff) {
             closeModal();
           }
@@ -820,9 +820,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="staffSelect">選擇主責人員</label>
+            <label for="staff-select">選擇主責人員</label>
             <div class="select-wrapper">
-              <select id="staffSelect" class="staffSelect">
+              <select id="staff-select" class="staff-select">
                 <option value="">請選擇主責人員</option>
                 <option value="1">黃護師</option>
                 <option value="2">林護師</option>
@@ -858,7 +858,7 @@
           <div class="form-group">
             <label for="closeReason">結案原因</label>
             <div class="select-wrapper">
-              <select id="closeReason" class="staffSelect">
+              <select id="closeReason" class="staff-select">
                 <option value="">請選擇結案原因</option>
                 <option value="1">個案已康復</option>
                 <option value="2">個案轉院</option>

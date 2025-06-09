@@ -931,7 +931,7 @@ body {
   transform: translateY(-50%) rotate(-180deg);
 }
 
-.staffSelect {
+.staff-select {
   padding: var(--sys-size-spacing-sm);
   padding-right: calc(var(--sys-size-spacing-md) * 2 + 12px);
   border: 1.5px solid var(--sys-color-border-primary);
@@ -946,12 +946,12 @@ body {
   width: 100%;
 }
 
-.staffSelect:focus {
+.staff-select:focus {
   outline: 2px solid var(--sys-color-primary-200);
   border: 1.5px solid var(--sys-color-primary-500);
 }
 
-.staffSelect:focus + .select-icon {
+.staff-select:focus + .select-icon {
   color: var(--sys-color-primary-500);
   transform: translateY(-50%) rotate(-180deg);
 }

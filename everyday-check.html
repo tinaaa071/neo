@@ -111,7 +111,8 @@
                 </button>
               </div>
               <span class="expiry-time"
-                >自動登出時間：<span class="number" id="countdown">3000</span> 秒</span
+                >自動登出時間：<span class="number" id="countdown">3000</span>
+                秒</span
               >
             </div>
           </div>
@@ -371,7 +372,7 @@
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById('countdown');
+      const countdownEl = document.getElementById("countdown");
 
       const timer = setInterval(() => {
         countdown--;
@@ -382,7 +383,7 @@
           alert("自動登出");
         }
       }, 1000);
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const backBtn = document.querySelector(".back-btn");
         backBtn.addEventListener("click", function () {
@@ -399,7 +400,7 @@
         navSections.forEach((section) => {
           section.classList.add("collapsed");
         });
-        
+
         navSections.forEach((section) => {
           const header = section.querySelector(".nav-header");
 
@@ -442,7 +443,9 @@
           }
         });
 
-        const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
+        const mobileSidebarToggle = document.querySelector(
+          ".mobile-sidebar-toggle"
+        );
         const sidebarOverlay = document.querySelector(".sidebar-overlay");
 
         function toggleSidebar() {
@@ -453,7 +456,7 @@
         mobileSidebarToggle.addEventListener("click", toggleSidebar);
         sidebarOverlay.addEventListener("click", toggleSidebar);
 
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
           if (window.innerWidth > 1024) {
             sidebar.classList.remove("show");
             sidebarOverlay.classList.remove("show");
@@ -473,9 +476,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="staffSelect">選擇主責人員</label>
+            <label for="staff-select">選擇主責人員</label>
             <div class="select-wrapper">
-              <select id="staffSelect" class="staffSelect">
+              <select id="staff-select" class="staff-select">
                 <option value="">請選擇主責人員</option>
                 <option value="1">黃護師</option>
                 <option value="2">林護師</option>
@@ -511,7 +514,7 @@
           <div class="form-group">
             <label for="closeReason">結案原因</label>
             <div class="select-wrapper">
-              <select id="closeReason" class="staffSelect">
+              <select id="closeReason" class="staff-select">
                 <option value="">請選擇結案原因</option>
                 <option value="1">個案已康復</option>
                 <option value="2">個案轉院</option>
