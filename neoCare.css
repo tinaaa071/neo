@@ -848,6 +848,7 @@ button {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: all 0.1s ease;
 }
 
 .select2-container--default
@@ -1537,6 +1538,7 @@ button {
   background: var(--sys-color-surface-primary);
   width: 80px;
   font-size: var(--sys-size-text-md);
+  transition: all 0.2s ease;
 }
 
 .year-input::placeholder {
@@ -1911,7 +1913,7 @@ button {
   font-size: var(--sys-size-text-md);
   line-height: var(--sys-size-line-height-normal);
   resize: vertical;
-  transition: border-color 0.2s ease;
+  transition: all 0.1s ease;
 }
 
 .form-textarea:focus {
@@ -1960,6 +1962,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  transition: all 0.1s ease;
 }
 
 /* 隱藏預設的日曆圖示 */
@@ -2535,22 +2538,22 @@ code {
   color: var(--sys-color-text-primary);
 }
 
-.login-form-section .form-input {
+.form-input {
   width: 100%;
-  padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-md);
+  padding: var(--sys-size-spacing-sm);
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background-color: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-primary);
-  transition: all 0.2s;
+  transition: all 0.1s ease;
 }
 
-.login-form-section .form-input::placeholder {
+.form-input::placeholder {
   color: var(--comp-color-input-placeholder);
 }
 
-.login-form-section .form-input:focus {
+.form-input:focus {
   outline: 2px solid var(--sys-color-primary-200);
   border-color: var(--sys-color-primary-500);
 }
