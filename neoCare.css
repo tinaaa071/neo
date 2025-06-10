@@ -2108,8 +2108,6 @@ button {
   margin-left: var(--sys-size-spacing-4xl);
   border-left: 1.5px solid var(--sys-color-primary-500);
   padding-left: var(--sys-size-spacing-md);
-
-  /* 新增過渡效果 */
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
     visibility 0.3s ease-out;
   max-height: 300px;
@@ -2669,7 +2667,7 @@ code {
   padding: var(--sys-spacing-sm);
   cursor: pointer;
   color: var(--sys-color-text-quaternary);
-  transition: color var(--sys-transition-fast);
+  transition: color 0.2s ease;
 }
 
 .password-toggle-btn:hover {
@@ -2752,7 +2750,7 @@ code {
   cursor: pointer;
   padding: var(--sys-size-spacing-xs);
   margin-right: var(--sys-size-spacing-sm);
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .mobile-sidebar-toggle:hover {
