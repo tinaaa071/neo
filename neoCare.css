@@ -1422,7 +1422,7 @@ button {
 /* 內容欄樣式 */
 .content-column {
   background-color: var(--sys-color-surface-primary);
-  padding: var(--sys-size-spacing-lg);
+  padding: var(--sys-size-spacing-md);
   width: 100%;
 }
 
