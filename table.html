@@ -272,36 +272,45 @@
 
             <!-- 評估人員欄位 -->
             <div class="form-container">
-              <table class="form-table">
-                <tr>
-                  <td class="main-label-column">指導日期</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper" style="max-width: 100%">
+              <div class="form-row" style="display: flex;">
+                <!-- 區塊 1 -->
+                <div class="" style="flex: 1; display: flex;">
+                  <div class="main-label-column" style="display: flex; align-items: center; justify-content: center;">指導日期</div>
+                  <div class="content-column">
+                    <div class="date-input-wrapper" style="max-width: 100%;">
                       <input
                         type="date"
-                        id="guidanceDate"
+                        id="guidanceDate1"
                         class="form-date"
                         value="2025-05-16"
                         required
                       />
                       <i class="fa-regular fa-calendar date-icon"></i>
                     </div>
-                  </td>
-                  <td class="main-label-column">評估日期</td>
-                  <td class="content-column">
-                    <div class="date-input-wrapper" style="max-width: 100%">
+                  </div>
+                </div>
+            
+                <!-- 區塊 2 -->
+                <div class="" style="flex: 1; display: flex;">
+                  <div class="main-label-column" style="display: flex; align-items: center; justify-content: center;">評估日期</div>
+                  <div class="content-column">
+                    <div class="date-input-wrapper" style="max-width: 100%;">
                       <input
                         type="date"
-                        id="guidanceDate"
+                        id="guidanceDate2"
                         class="form-date"
                         value="2025-05-16"
                         required
                       />
                       <i class="fa-regular fa-calendar date-icon"></i>
                     </div>
-                  </td>
-                  <td class="main-label-column">評估人員</td>
-                  <td class="content-column">
+                  </div>
+                </div>
+            
+                <!-- 區塊 3 -->
+                <div class="" style="flex: 1; display: flex;">
+                  <div class="main-label-column" style="display: flex; align-items: center; justify-content: center;">評估人員</div>
+                  <div class="content-column">
                     <div class="select-wrapper" style="width: 100%;">
                       <select id="staff-select" class="staff-select" style="width: 100%;">
                         <option value="">請選擇主責人員</option>
@@ -315,10 +324,11 @@
                       </select>
                       <i class="fa-solid fa-chevron-down select-icon"></i>
                     </div>
-                  </td>
-                </tr>
-              </table>
+                  </div>
+                </div>
+              </div>
             </div>
+            
 
             <!-- 主要表單內容 -->
             <div class="form-container">

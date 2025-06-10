@@ -1367,11 +1367,13 @@ button {
   background-color: var(--sys-color-surface-quaternary);
   font-weight: var(--sys-weight-semibold);
   text-align: center;
-  width: 120px;
+  width: auto;
+  padding: var(--sys-size-spacing-md);
   color: var(--sys-color-text-primary);
   writing-mode: horizontal-tb;
   text-orientation: mixed;
   border-right: 1px solid var(--sys-color-border-primary);
+  white-space: nowrap;
 }
 
 /* 直式顯示的主標題欄樣式 */
@@ -1421,6 +1423,7 @@ button {
 .content-column {
   background-color: var(--sys-color-surface-primary);
   padding: var(--sys-size-spacing-lg);
+  width: 100%;
 }
 
 /* 單選和多選按鈕組樣式 */
