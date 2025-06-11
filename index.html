@@ -948,6 +948,23 @@
           });
         });
 
+        // editStaffModal
+        const editStaffModal = document.getElementById("editStaffModal");
+        const editStaffConfirmBtn = editStaffModal.querySelector(".confirm-btn");
+
+        editStaffConfirmBtn.addEventListener("click", function () {
+          const staff = document.getElementById("staff").value;
+
+          if (staff) {
+            console.log("選擇的主責人員:", staff);
+            // 這裡可以關閉 modal，例如：
+            // closeEditStaffModal();
+          } else {
+            alert("請選擇主責人員");
+          }
+        });
+
+        // closeCaseModal
         const closeCaseBtns = document.querySelectorAll(
           '.action-btn[data-tooltip="結案"]'
         );
