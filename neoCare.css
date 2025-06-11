@@ -529,9 +529,16 @@ button {
 }
 
 .nav-header-chevron {
-  font-size: 12px;
-  color: var(--sys-color-text-secondary);
+  font-size: var(--sys-size-text-sm);
+  color: var(--sys-color-text-tertiary);
   transition: transform 0.2s ease;
+}
+
+.nav-header-left i {
+  width: 20px;
+  font-size: var(--sys-size-text-md);
+  text-align: center;
+  color: var(--sys-color-primary-500);
 }
 
 .nav-section.collapsed .nav-header-chevron {
@@ -539,11 +546,14 @@ button {
 }
 
 .nav-items {
-  max-height: 500px;
+  max-height: 1000px;
   overflow: hidden;
   transition: max-height 0.3s ease, border-left 0.3s ease, margin-left 0.3s ease;
   border-left: 1.5px solid transparent;
   margin-left: var(--sys-size-spacing-sm);
+  display: flex;
+  flex-direction: column;
+  width: 1;
 }
 
 .nav-section:not(.collapsed) .nav-items {
@@ -555,13 +565,16 @@ button {
 }
 
 .nav-item {
+  all: unset;
+  width: 1;
   padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-md);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   margin: 0 var(--sys-size-spacing-sm);
   border-radius: var(--sys-size-radius-md);
+  display: inline-block;
 }
 
 .nav-item:hover {
@@ -1358,7 +1371,7 @@ button {
   border-bottom: none;
 }
 
-/* 左側主標題欄樣式 */
+/* 第一層 table */
 .main-label-column {
   background-color: var(--sys-color-surface-quaternary);
   font-weight: var(--sys-weight-semibold);
@@ -1372,46 +1385,40 @@ button {
   white-space: nowrap;
 }
 
-/* 直式顯示的主標題欄樣式 */
-.main-label-column.vertical {
+/* 直式顯示 */
+.vertical {
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  width: 80px;
-  border-right: 1px solid var(--sys-color-border-primary);
 }
 
-/* 橫式顯示的主標題欄樣式 */
-.main-label-column.horizontal {
+/* 橫式顯示 */
+.horizontal {
   writing-mode: horizontal-tb;
   text-orientation: mixed;
   transform: none;
-  width: 120px;
-  border-right: 1px solid var(--sys-color-border-primary);
 }
 
-/* 左側次標題欄樣式 */
+/* 第二層 table */
 .sub-label-column {
   background-color: var(--sys-color-surface-tertiary);
   font-weight: var(--sys-weight-semibold);
   text-align: left;
-  min-width: 120px;
   width: auto;
+  padding: var(--sys-size-spacing-md);
   color: var(--sys-color-text-primary);
   white-space: nowrap;
-  padding-right: var(--sys-size-spacing-md);
   border-right: 1px solid var(--sys-color-border-primary);
 }
 
-/* 第三層標題欄樣式（紫色） */
+/* 第三層 table */
 .third-label-column {
   background-color: var(--sys-color-primary-200);
   font-weight: var(--sys-weight-semibold);
   text-align: left;
-  min-width: 120px;
   width: auto;
+  padding: var(--sys-size-spacing-md);
   color: var(--sys-color-text-primary);
   white-space: nowrap;
-  padding-right: var(--sys-size-spacing-md);
   border-right: 1px solid var(--sys-color-border-primary);
 }
 
@@ -1581,17 +1588,6 @@ button {
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
-}
-
-.nav-header-left i {
-  width: 20px;
-  text-align: center;
-  color: var(--sys-color-primary-500);
-}
-
-.nav-header:hover .nav-header-left i,
-.nav-header.active .nav-header-left i {
-  color: var(--sys-color-primary-500);
 }
 
 .search-icon i {
@@ -2045,9 +2041,7 @@ button {
 }
 
 .name-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
   padding: 0;
   font-size: inherit;
   transition: color 0.2s ease;
