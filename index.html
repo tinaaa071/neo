@@ -889,8 +889,10 @@
           sidebar.classList.toggle("minimal");
         });
 
-        const sortButtons = document.querySelectorAll(".sort-btn");
-        const tableBody = document.querySelector(".table tbody");
+        const table = document.querySelector(".table");
+        const tableHead = table.querySelector("thead");
+        const tableBody = table.querySelector("tbody");
+        const headers = tableHead.querySelectorAll("th");
 
         function sortTable(columnIndex, direction) {
           const rows = Array.from(tableBody.querySelectorAll("tr"));
@@ -921,25 +923,29 @@
           rows.forEach((row) => tableBody.appendChild(row));
         }
 
-        sortButtons.forEach((button, index) => {
-          button.addEventListener("click", function () {
-            sortButtons.forEach((btn) => {
-              if (btn !== this) {
-                btn.classList.remove("active", "asc", "desc");
+        headers.forEach((header, index) => {
+          const button = header.querySelector(".sort-btn");
+          if (!button) return;
+
+          header.addEventListener("click", function () {
+            // 移除其他 th 的樣式
+            headers.forEach((h) => {
+              const btn = h.querySelector(".sort-btn");
+              if (btn && btn !== button) {
+                btn.classList.remove("asc", "desc");
               }
             });
 
-            if (!this.classList.contains("active")) {
-              this.classList.add("active", "asc");
-              this.classList.remove("desc");
+            if (!button.classList.contains("asc") && !button.classList.contains("desc")) {
+              button.classList.add("asc");
               sortTable(index, "asc");
-            } else if (this.classList.contains("asc")) {
-              this.classList.remove("asc");
-              this.classList.add("desc");
+            } else if (button.classList.contains("asc")) {
+              button.classList.remove("asc");
+              button.classList.add("desc");
               sortTable(index, "desc");
             } else {
-              this.classList.remove("active", "desc");
-              sortTable(index, "default");
+              button.classList.remove("desc");
+              tableBody.innerHTML = tableBody.innerHTML; // Optional: reset table to original
             }
           });
         });
