@@ -773,7 +773,7 @@
           <div class="form-group">
             <label for="closeReason">結案原因</label>
             <div class="select-wrapper">
-              <select id="closeReason" class="staff-select">
+              <select id="closeReason" class="custom-select">
                 <option value="">請選擇結案原因</option>
                 <option value="1">個案已康復</option>
                 <option value="2">個案轉院</option>
@@ -889,7 +889,7 @@
         cancelBtn.addEventListener("click", closeModal);
 
         confirmBtn.addEventListener("click", function () {
-          const selectedStaff = document.getElementById("staff-select").value;
+          const selectedStaff = document.getElementById("custom-select").value;
           if (selectedStaff) {
             closeModal();
           }
