@@ -553,6 +553,7 @@ button {
   margin-left: var(--sys-size-spacing-sm);
   display: flex;
   flex-direction: column;
+  gap: var(--sys-size-spacing-xs);
   width: 1;
 }
 
