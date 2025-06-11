@@ -36,7 +36,10 @@
   --sys-color-warning-500: #f59e0b;
   --sys-color-warning-600: #d97706;
   --sys-color-success-500: #10b981;
+  --sys-color-success-600: #059669;
   --sys-color-info-500: #3b82f6;
+  --sys-color-info-600: #2563eb;
+
 
   /* Surface Colors - 表面色 */
   --sys-color-surface-primary: var(--sys-color-neutral-0);
