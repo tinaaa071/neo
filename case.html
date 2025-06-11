@@ -214,8 +214,8 @@
             <h1 class="page-title">小美【002】</h1>
             <div class="header-actions">
               <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
+                <label for="case">選擇個案：</label>
+                <select id="case" class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -735,9 +735,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="staff-select">選擇主責人員</label>
+            <label for="staff">選擇主責人員</label>
             <div class="select-wrapper">
-              <select id="staff-select" class="staff-select">
+              <select id="staff" class="custom-select">
                 <option value="">請選擇主責人員</option>
                 <option value="1">黃護師</option>
                 <option value="2">林護師</option>
@@ -1038,7 +1038,7 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $(".custom-select").select2({
+        $("#case").select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: 0,

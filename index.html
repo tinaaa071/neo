@@ -216,7 +216,7 @@
                 </button>
               </div>
               <div class="select-wrapper">
-                <select class="custom-select">
+                <select id="region" class="custom-select">
                   <option>全部區域</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -647,11 +647,11 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="staff-select">選擇主責人員</label>
+            <label for="staff">選擇主責人員</label>
             <div class="select-wrapper" style="width: 100%">
               <select
-                id="staff-select"
-                class="staff-select"
+                id="staff"
+                class="custom-select"
                 style="width: 100%"
               >
                 <option value="">請選擇主責人員</option>
@@ -696,7 +696,7 @@
           <div class="form-group">
             <label for="closeReason">結案原因</label>
             <div class="select-wrapper" style="width: 100%">
-              <select id="closeReason" class="staff-select" style="width: 100%">
+              <select id="closeReason" class="custom-select" style="width: 100%">
                 <option value="">請選擇結案原因</option>
                 <option value="1">個案已康復</option>
                 <option value="2">個案轉院</option>
@@ -993,13 +993,19 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $(".custom-select").select2({
+        $("#region").select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: Infinity,
         });
 
-        $(".staff-select").select2({
+        $("#staff").select2({
+          placeholder: "請選擇",
+          allowClear: false,
+          minimumResultsForSearch: 0,
+        });
+
+        $("#closeReason").select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: 0,

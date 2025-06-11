@@ -583,11 +583,7 @@ button {
 }
 
 .nav-item.active {
-  background: linear-gradient(
-    90deg,
-    var(--sys-color-primary-500),
-    var(--sys-color-primary-700)
-  );
+  background: var(--sys-color-primary-500);
   color: var(--sys-color-text-inverse);
 }
 
@@ -728,7 +724,7 @@ button {
 }
 
 .back-btn i {
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .back-btn:hover {
@@ -748,7 +744,7 @@ button {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 8px;
+  padding: var(--sys-size-spacing-xs) var(--sys-size-spacing-sm);
   background-color: var(--comp-tooltip-bg);
   color: var(--comp-tooltip-text);
   font-size: var(--sys-size-text-xs);
@@ -831,7 +827,6 @@ button {
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background: var(--sys-color-surface-primary);
-  width: 300px;
   font-size: var(--sys-size-text-md);
 }
 
@@ -875,7 +870,7 @@ button {
 .select2-container--default
   .select2-selection--single
   .select2-selection__arrow {
-  display: none; /* 隱藏 Select2 自帶箭頭 */
+  display: none;
 }
 .select2-container--default.select2-container--focus
   .select2-selection--single {
@@ -939,10 +934,6 @@ button {
   background: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-primary);
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
 }
 
 .custom-select:focus {
@@ -963,10 +954,6 @@ button {
   background: var(--sys-color-surface-primary);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-primary);
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
   width: 100%;
 }
 
@@ -1239,7 +1226,7 @@ button {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 8px;
+  padding: var(--sys-size-spacing-xs) var(--sys-size-spacing-sm);
   background-color: var(--comp-tooltip-bg);
   color: var(--comp-tooltip-text);
   font-size: var(--sys-size-text-xs);
@@ -1371,11 +1358,16 @@ button {
   border-bottom: none;
 }
 
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* 第一層 table */
 .main-label-column {
   background-color: var(--sys-color-surface-quaternary);
   font-weight: var(--sys-weight-semibold);
-  text-align: center;
+  text-align: left;
   width: auto;
   padding: var(--sys-size-spacing-md);
   color: var(--sys-color-text-primary);

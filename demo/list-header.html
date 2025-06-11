@@ -236,8 +236,8 @@
             <h1 class="page-title">個案選擇</h1>
             <div class="header-actions">
               <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
+                <label for="case">選擇個案：</label>
+                <select id="case1" class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -261,7 +261,7 @@
                 </button>
               </div>
               <div class="select-wrapper">
-                <select class="custom-select region">
+                <select id="region" class="custom-select">
                   <option>全部區域</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -290,8 +290,8 @@
             </div>
             <div class="header-actions">
               <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
+                <label for="case">選擇個案：</label>
+                <select id="case2" class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -775,13 +775,13 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $(".custom-select").select2({
+        $("#case1, #case2").select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: 0, // 顯示搜尋欄
         });
 
-        $(".custom-select.region").select2({
+        $("#region").select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: Infinity, // 隱藏搜尋欄

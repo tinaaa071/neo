@@ -24,6 +24,11 @@
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
+  <style>
+    .main-label-column {
+      min-width: 180px;
+    }
+  </style>
   <body>
     <div class="container">
       <!-- 側邊欄 -->
@@ -292,8 +297,8 @@
                   <td class="main-label-column">下拉選單（有搜尋）</td>
                   <td class="content-column">
                     <div class="select-wrapper" style="width: auto;">
-                      <span>選擇個案：</span>
-                      <select class="custom-select searchable">
+                      <label for="searchable">選擇個案：</label>
+                      <select id="searchable" class="custom-select">
                         <option>小美【002】</option>
                       </select>
                       <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -310,8 +315,8 @@
                   <td class="main-label-column">下拉選單（無搜尋）</td>
                   <td class="content-column">
                     <div class="select-wrapper" style="width: auto;">
-                      <span>選擇個案：</span>
-                      <select class="custom-select no-search">
+                      <label for="no-search">選擇個案：</label>
+                      <select id="no-search" class="custom-select">
                         <option>小美【002】</option>
                       </select>
                       <i class="fa-solid fa-chevron-down select-icon"></i>
@@ -791,14 +796,14 @@
     <script>
       $(document).ready(function () {
         // 有搜尋框的
-        $('.custom-select.searchable').select2({
+        $('#searchable').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: 0 // 顯示搜尋欄
         });
     
         // 沒有搜尋框的
-        $('.custom-select.no-search').select2({
+        $('#no-search').select2({
           placeholder: "請選擇一個選項",
           allowClear: false,
           minimumResultsForSearch: Infinity // 隱藏搜尋欄

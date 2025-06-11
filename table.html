@@ -212,14 +212,14 @@
             </div>
             <div class="header-actions">
               <div class="select-wrapper">
-                <span>選擇個案：</span>
-                <select class="custom-select">
+                <label for="case">選擇個案：</label>
+                <select id="case" class="custom-select">
                   <option>小美【002】</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-icon"></i>
               </div>
               <div class="select-wrapper">
-                <span style="white-space: nowrap">選擇日期：</span>
+                <label for="" style="white-space: nowrap">選擇日期：</label>
                 <div class="date-input-wrapper">
                   <input
                     type="date"
@@ -264,12 +264,12 @@
           </div>
         </div>
 
-        <div class="sub-content" style="margin-top: 152px;">
+        <div class="sub-content" style="margin-top: 150px;">
           <div class="form-sections">
 
             <!-- 評估人員欄位 -->
             <div class="form-container">
-              <div class="form-row" style="display: flex;">
+              <div class="form-row">
                 <!-- 區塊 1 -->
                 <div class="" style="flex: 1; display: flex;">
                   <div class="main-label-column" style="display: flex; align-items: center; justify-content: center;">指導日期</div>
@@ -309,7 +309,7 @@
                   <div class="main-label-column" style="display: flex; align-items: center; justify-content: center;">評估人員</div>
                   <div class="content-column">
                     <div class="select-wrapper" style="width: 100%;">
-                      <select id="staff-select" class="staff-select" style="width: 100%;">
+                      <select id="staff" class="custom-select" style="width: 100%;">
                         <option value="">請選擇主責人員</option>
                         <option value="1">黃護師</option>
                         <option value="2">林護師</option>
@@ -696,13 +696,13 @@
     <!-- Select2 -->
     <script>
       $(document).ready(function () {
-        $('.custom-select').select2({
+        $('#case').select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: 0
         });
     
-        $('.staff-select').select2({
+        $('#staff').select2({
           placeholder: "請選擇",
           allowClear: false,
           minimumResultsForSearch: 0
