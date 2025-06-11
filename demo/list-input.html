@@ -509,7 +509,7 @@
     <script>
       // 倒計時
       let countdown = 3000;
-      const countdownEl = document.getElementById("countdown");
+      const countdownEl = document.getElementById('countdown');
 
       const timer = setInterval(() => {
         countdown--;
@@ -521,30 +521,27 @@
         }
       }, 1000);
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileSidebarToggle = document.querySelector(
-          ".mobile-sidebar-toggle"
-        );
-        const sidebar = document.querySelector(".sidebar");
-        const sidebarOverlay = document.querySelector(".sidebar-overlay");
-
-        function toggleSidebar() {
-          sidebar.classList.toggle("show");
-          sidebarOverlay.classList.toggle("show");
-        }
-
-        mobileSidebarToggle.addEventListener("click", toggleSidebar);
-        sidebarOverlay.addEventListener("click", toggleSidebar);
-
-        window.addEventListener("resize", function () {
-          if (window.innerWidth > 1024) {
-            sidebar.classList.remove("show");
-            sidebarOverlay.classList.remove("show");
-          }
-        });
-
         const currentYear = new Date().getFullYear();
         document.getElementById("currentYear").textContent = currentYear;
+
+        const navSections = document.querySelectorAll(".nav-section");
+        const sidebar = document.querySelector(".sidebar");
+        const sidebarToggle = document.querySelector(".sidebar-toggle");
+        
+        navSections.forEach((section) => {
+          const header = section.querySelector(".nav-header");
+
+          header.addEventListener("click", () => {
+            if (sidebar.classList.contains("minimal")) {
+              sidebar.classList.remove("minimal");
+            }
+            section.classList.toggle("collapsed");
+          });
+        });
+
+        sidebarToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("minimal");
+        });
 
         const moreBtn = document.querySelector(".more-btn");
         const dropdown = document.querySelector(".more-options-dropdown");
@@ -573,24 +570,83 @@
           }
         });
 
-        const navSections = document.querySelectorAll(".nav-section");
-        const sidebarToggle = document.querySelector(".sidebar-toggle");
+        const vaccineRadios = document.querySelectorAll('input[name="pneumococcal-vaccine"]');
+        const vaccinationDetails = document.getElementById('vaccination-details');
+        const vaccinationYearInput = vaccinationDetails.querySelector('input[type="text"]');
+        const vaccinationUnknownCheckbox = vaccinationDetails.querySelector('input[type="checkbox"]');
 
-        navSections.forEach((section) => {
-          const header = section.querySelector(".nav-header");
+        vaccineRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    vaccinationDetails.classList.remove('hidden');
+                    updateVaccinationFieldStates();
+                } else {
+                    vaccinationDetails.classList.add('hidden');
+                    vaccinationYearInput.value = '';
+                    vaccinationUnknownCheckbox.checked = false;
+                    vaccinationYearInput.disabled = false;
+                    vaccinationUnknownCheckbox.disabled = false;
+                }
+            });
+        });
 
-          header.addEventListener("click", () => {
-            if (sidebar.classList.contains("minimal")) {
-              sidebar.classList.remove("minimal");
+        function updateVaccinationFieldStates() {
+            if (vaccinationYearInput.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else if (vaccinationUnknownCheckbox.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = ''; 
+            } else {
+                vaccinationYearInput.disabled = false;
+                vaccinationUnknownCheckbox.disabled = false;
             }
-            section.classList.toggle("collapsed");
-          });
+        }
+
+        vaccinationYearInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                vaccinationUnknownCheckbox.disabled = true;
+                vaccinationUnknownCheckbox.checked = false;
+            } else {
+                vaccinationUnknownCheckbox.disabled = false;
+            }
         });
 
-        sidebarToggle.addEventListener("click", () => {
-          sidebar.classList.toggle("minimal");
+        vaccinationUnknownCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                vaccinationYearInput.disabled = true;
+                vaccinationYearInput.value = '';
+            } else {
+                vaccinationYearInput.disabled = false;
+            }
         });
-      });
+
+        const initialCheckedRadio = document.querySelector('input[name="pneumococcal-vaccine"]:checked');
+        if (initialCheckedRadio && initialCheckedRadio.value === 'no') {
+            vaccinationDetails.classList.add('hidden');
+        } else if (initialCheckedRadio && initialCheckedRadio.value === 'yes') {
+             vaccinationDetails.classList.remove('hidden');
+             updateVaccinationFieldStates();
+        } else {
+             vaccinationDetails.classList.add('hidden');
+        }
+        const mobileSidebarToggle = document.querySelector(".mobile-sidebar-toggle");
+        const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+        function toggleSidebar() {
+          sidebar.classList.toggle("show");
+          sidebarOverlay.classList.toggle("show");
+        }
+
+        mobileSidebarToggle.addEventListener("click", toggleSidebar);
+        sidebarOverlay.addEventListener("click", toggleSidebar);
+
+        window.addEventListener("resize", function() {
+          if (window.innerWidth > 1024) {
+            sidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          }
+        });
     </script>
 
     <!-- Select2 -->
@@ -610,81 +666,6 @@
           minimumResultsForSearch: Infinity // 隱藏搜尋欄
         });
       });
-    </script>    
-
-    <!-- 編輯主責人員彈出視窗 -->
-    <div class="modal" id="editStaffModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>編輯主責人員</h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="custom-select">選擇主責人員</label>
-            <div class="select-wrapper">
-              <select id="custom-select" class="custom-select">
-                <option value="">請選擇主責人員</option>
-                <option value="1">黃護師</option>
-                <option value="2">林護師</option>
-                <option value="3">王護師</option>
-                <option value="4">張護師</option>
-                <option value="5">李護師</option>
-                <option value="6">陳護師</option>
-                <option value="7">吳護師</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 結案確認彈出視窗 -->
-    <div class="modal" id="closeCaseModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>
-            個案資料 【<span id="caseName"></span> <span id="caseId"></span>】
-          </h3>
-          <button class="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="closeReason">結案原因</label>
-            <div class="select-wrapper">
-              <select id="closeReason" class="custom-select">
-                <option value="">請選擇結案原因</option>
-                <option value="1">個案已康復</option>
-                <option value="2">個案轉院</option>
-                <option value="3">個案拒絕服務</option>
-                <option value="4">個案過世</option>
-                <option value="5">其他原因</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-icon"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="closeDate">結案日期</label>
-            <div class="date-input-wrapper" style="max-width: 100%">
-              <input type="date" id="closeDate" class="form-date" required />
-              <i class="fa-regular fa-calendar date-icon"></i>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary cancel-btn">取消</button>
-          <button class="btn btn-primary confirm-btn">確認結案</button>
-        </div>
-      </div>
-    </div>
+    </script>
   </body>
 </html>
