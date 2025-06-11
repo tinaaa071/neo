@@ -835,8 +835,7 @@ button {
 }
 
 .search-input {
-  padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-xl)
-    var(--sys-size-spacing-sm) var(--sys-size-spacing-md);
+  padding: var(--sys-size-spacing-sm);
   border: 1.5px solid var(--sys-color-border-primary);
   border-radius: var(--sys-size-radius-md);
   background: var(--sys-color-surface-primary);
