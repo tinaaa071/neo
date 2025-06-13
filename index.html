@@ -763,6 +763,9 @@
       </div>
     </div>
 
+    <!-- Toast 容器 -->
+    <div id="toast-container"></div>
+
     <!-- 側邊欄遮罩層 -->
     <div class="sidebar-overlay"></div>
 
@@ -1079,5 +1082,34 @@
         });
       });
     </script>
+    <!-- Toast -->
+    <script>
+      document.querySelector('.confirm-btn').addEventListener('click', function () {
+        const select = document.getElementById('staff');
+        const selectedValue = select.value;
+        const selectedText = select.options[select.selectedIndex].text;
+      
+        if (!selectedValue) {
+          showToast('請先選擇主責人員', 'warning');
+        } else {
+          showToast(`已選擇：${selectedText}`, 'success');
+        }
+      });
+      
+      function showToast(message, type = 'info') {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.textContent = message;
+      
+        const container = document.getElementById('toast-container');
+        container.appendChild(toast);
+      
+        // 自動移除
+        setTimeout(() => {
+          toast.remove();
+        }, 3500);
+      }
+      </script>
+      
   </body>
 </html>
