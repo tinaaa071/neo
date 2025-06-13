@@ -559,7 +559,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--sys-size-spacing-xs);
-  width: 1;
 }
 
 .nav-section:not(.collapsed) .nav-items {
@@ -579,7 +578,6 @@ button {
 
 .nav-item {
   all: unset;
-  width: 1;
   padding: var(--sys-size-spacing-sm) var(--sys-size-spacing-md);
   font-size: var(--sys-size-text-md);
   color: var(--sys-color-text-secondary);
@@ -879,11 +877,10 @@ button {
   line-height: 1.2 !important;
 }
 
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow {
+.select2-selection__arrow {
   display: none;
 }
+
 .select2-container--default.select2-container--focus
   .select2-selection--single {
   outline: 2px solid var(--sys-color-primary-200);
